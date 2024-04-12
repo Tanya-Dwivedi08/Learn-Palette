@@ -2,9 +2,10 @@
 import { useFormik } from "formik";
 // import toast from "react-hot-toast";
 import * as Yup from "yup";
+import toast from "react-hot-toast";
 
 const Signup = () => {
-  const addUserSchema = Yup.object().shape({});
+  // const addUserSchema = Yup.object().shape({});
 
   const addUserForm = useFormik({
     initialValues: {
@@ -12,27 +13,25 @@ const Signup = () => {
       subject: "",
       email: "",
       password: "",
-      createdAt: "",
-      avatar: "",
     },
 
     onSubmit: async (values, action) => {
       // values.image = selFile;
       console.log(values);
-      const res = await fetch("http://localhost:5000/user/add", {
+      const res = await fetch("http://localhost:5000/teacher/add", {
         method: "POST",
         body: JSON.stringify(values),
-        headers: { "Content-type": "application/json" },
+        headers: { "Content-Type": "application/json" },
       });
       console.log(res.status);
       action.resetForm();
       if (res.status === 200) {
-        toast("SignUp successfully");
+        toast.success("SignUp successfully");
       } else {
-        toast("Something went wrong");
+        toast.success("Something went wrong");
       }
     },
-    validationSchema: addUserSchema,
+    // validationSchema: addUserSchema,
   });
 
   return (
@@ -68,7 +67,6 @@ const Signup = () => {
                       <div className="mt-1">
                         <input
                           id="teachername"
-                          name="teachername"
                           type="text"
                           onChange={addUserForm.handleChange}
                           value={addUserForm.values.teachername}
@@ -88,7 +86,6 @@ const Signup = () => {
                       <div className="mt-1">
                         <input
                           id="subject"
-                          name="subject"
                           type="text"
                           onChange={addUserForm.handleChange}
                           value={addUserForm.values.subject}
@@ -109,7 +106,6 @@ const Signup = () => {
                     <div className="mt-1">
                       <input
                         id="email"
-                        name="email"
                         type="email"
                         onChange={addUserForm.handleChange}
                         value={addUserForm.values.email}
@@ -132,31 +128,9 @@ const Signup = () => {
                     <div className="mt-1">
                       <input
                         id="password"
-                        name="password"
                         type="password"
                         onChange={addUserForm.handleChange}
                         value={addUserForm.values.password}
-                        autoComplete="current-password"
-                        required
-                        className="block w-full rounded-md border-0 py-1.5 px-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-black sm:text-sm sm:leading-6 bg-[#ffffff]"
-                      />
-                    </div>
-
-                    <div className="flex items-center justify-between">
-                      <label
-                        htmlFor="avatar"
-                        className="block text-sm font-medium leading-6  mt-3 text-black"
-                      >
-                    Avatar
-                      </label>
-                    </div>
-                    <div className="mt-1">
-                      <input
-                        id="avatar"
-                        name="avatar"
-                        type="String"
-                        onChange={addUserForm.handleChange}
-                        value={addUserForm.values.avatar}
                         autoComplete="current-password"
                         required
                         className="block w-full rounded-md border-0 py-1.5 px-1.5 text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-black sm:text-sm sm:leading-6 bg-[#ffffff]"

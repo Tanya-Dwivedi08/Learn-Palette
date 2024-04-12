@@ -5,8 +5,8 @@ const mySchema = new Schema({
     subject: String,
     email: String,
     password: String,
-    createdAt: Timestamp,
-    avatar: String,
+    createdAt: {type : Date, default: Date.now},
+    avatar: {type : String, default: 'teacher-avatar-placeholder.jpg'},
 });
 
 module.exports = model('teacher', mySchema);

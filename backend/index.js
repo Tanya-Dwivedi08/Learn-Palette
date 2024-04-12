@@ -8,19 +8,19 @@ const cors = require('cors');
 
 // initialize express app
 const app = express();
-const port = 8000;
+const port = 5000;
 
 //middleware
 app.use(cors({
     origin: 'http://localhost:3000'
 }));
+app.use(express.json())
 
 app.use('/student',studentRouter)
 app.use('/teacher',teacherRouter)
 app.use('/class',classRouter)
 app.use('/util',utilRouter)
 
-app.use(express.json())
 
 app.get('/', (req,res) => {
     res.send('rest123');

@@ -1,13 +1,13 @@
-const { Schema, model } = require('../connection');
+const { Schema, model, Types } = require('../connection');
 
 const mySchema = new Schema({
-    teacherid: { type: varchar, required: true},
+    teacher: { type: Types.ObjectId, ref: 'teacher'},
     name: { type: String, required: true },
     description: String,
-    tags: String,
+    tags: [],
     cover: String,
-    icons: String,
-    createdAt: Timestamp,
+    icon: String,
+    createdAt: {type : Date, default: Date.now},
 });
 
 module.exports = model('class', mySchema);

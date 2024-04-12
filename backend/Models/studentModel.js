@@ -5,7 +5,7 @@ const mySchema = new Schema({
     lname: { type: String, required: true },
     email: String,
     password: String,
-    cpassword: String,
+    cpassword: String
 });
 
 module.exports = model('student', mySchema);
