@@ -8,8 +8,8 @@ const navbar = () => {
     <div className="relative flex items-center justify-between">
       <a
         href="/"
-        aria-label="Company"
-        title="Company"
+        aria-label="Learn Palette"
+        title="Learn Palette"
         className="inline-flex items-center"
       >
         <svg
@@ -28,25 +28,25 @@ const navbar = () => {
           <rect x={14} y={11} width={7} height={12} />
         </svg>
         <span className="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
-          Company
+          Learn Palette
         </span>
       </a>
       <ul className="flex items-center hidden space-x-8 lg:flex">
         <li>
           <a
             href="/"
-            aria-label="Our product"
-            title="Our product"
+            aria-label="Home Page"
+            title="Home Page"
             className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
           >
-            Product
+           Home
           </a>
         </li>
         <li>
           <a
             href="/"
             aria-label="Our product"
-            title="Our product"
+            title="Feature"
             className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
           >
             Features
@@ -65,11 +65,21 @@ const navbar = () => {
         <li>
           <a
             href="/"
-            aria-label="About us"
-            title="About us"
+            aria-label="Solutions"
+            title="Solutions"
             className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
           >
-            About us
+            Solutions
+          </a>
+        </li>
+        <li>
+          <a
+            href="/"
+            aria-label="our support"
+            title="our support"
+            className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+          >
+            Support
           </a>
         </li>
       </ul>
