@@ -11,13 +11,13 @@ const Home = () => {
     <div className="mx-auto max-w-screen-md py-12 px-4 sm:px-6 md:max-w-screen-xl md:py-20 lg:py-32 md:px-8">
       <div className="md:pe-8 md:w-1/2 xl:pe-0 xl:w-5/12">
         {/* Title */}
-        <h1 className="text-3xl text-gray-800 font-bold md:text-4xl md:leading-tight lg:text-5xl lg:leading-tight dark:text-gray-200">
-          Solving problems for every{" "}
-          <span className="text-blue-600 dark:text-blue-500">team</span>
+        <h1 className="text-3xl text-gray-500 font-bold md:text-2xl md:leading-tight lg:text-5xl lg:leading-tight dark:text-gray-200">
+          Revolutionizing Collaboration:{""}<p>
+          <span className="text-blue-300 dark:text-blue-300"> The Virtual Whiteboard Experience </span></p>
         </h1>
+     
         <p className="mt-3 text-base text-gray-500">
-          Built on standard web technology, teams use Preline to build beautiful
-          cross-platform hybrid apps in a fraction of the time.
+        
         </p>
         {/* End Title */}
         <div className="mt-8 grid">
@@ -111,7 +111,7 @@ const Home = () => {
         {/* End Form */}
       </div>
     </div>
-    <div className="hidden md:block md:absolute md:top-0 md:start-1/2 md:end-0 h-full bg-[url('https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1981&q=80')] bg-no-repeat bg-center bg-cover" />
+    <div className="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi4N1HNUB0lgYdOtg-TD3cZRrMRLNuJh4OJ5KznjVSHLwRXS7fUojv31BXzDbVLc_bz7I&usqp=CAU"/>
     {/* End Col */}
   </div>
   {/* End Hero */}
