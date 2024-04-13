@@ -1,12 +1,12 @@
 import React from 'react'
 import Sidebar from '../Sidebar'
 
-const ClassRoom = () => {
+const classroom = () => {
   return (
     <div>
-        <Sidebar/>
+     <Sidebar/>
     </div>
   )
 }
 
-export default ClassRoom
+export default classroom
