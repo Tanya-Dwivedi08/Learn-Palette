@@ -44,7 +44,8 @@ const Signup = () => {
           <div className="grid grid-cols-2 h-3/4">
             <div className="w-full h-auto">
               <img
-                src="https://www.pngplay.com/wp-content/uploads/6/E-Commerce-Shopping-PNG-Clipart-Background.png"
+              src="https://smartstudent.app/media/2022/08/featured-image-top-feature-of-class-management-system.png"
+                // src="https://www.pngplay.com/wp-content/uploads/6/E-Commerce-Shopping-PNG-Clipart-Background.png"
                 alt=""
                 className="px-5 py-4 "
               />

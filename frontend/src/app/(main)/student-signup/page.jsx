@@ -41,10 +41,11 @@ const Signup = () => {
         style={{ height: "100vh" }}
       >
         <div className=" w-3/4 --tw-shadow-color: #000;  ">
-          <div className="grid grid-cols-2 h-3/4">
-            <div className="w-full h-auto">
+          <div className="grid grid-cols-2 ">
+            <div className="w-full h-full">
               <img
-                src="https://www.pngplay.com/wp-content/uploads/6/E-Commerce-Shopping-PNG-Clipart-Background.png"
+                src="https://www.atasctkm.com/assets/img/smartclassroom.png"
+                // src="https://www.pngplay.com/wp-content/uploads/6/E-Commerce-Shopping-PNG-Clipart-Background.png"
                 alt=""
                 className="px-5 py-4 "
               />
