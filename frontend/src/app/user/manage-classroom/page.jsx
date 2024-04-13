@@ -1,52 +1,48 @@
-import React from 'react'
+import React, { useState } from 'react';
 
-const manageclassroom = () => {
+function ClassroomManager() {
+  // State for storing student information
+  const [students, setStudents] = useState([]);
+  const [newStudentName, setNewStudentName] = useState('');
+
+  // Function to add a new student
+  const addStudent = () => {
+    if (newStudentName.trim() !== '') {
+      setStudents([...students, { id: Date.now(), name: newStudentName }]);
+      setNewStudentName('');
+    }
+  };
+
+  // Function to remove a student
+  const removeStudent = (id) => {
+    setStudents(students.filter(student => student.id !== id));
+  };
+
   return (
     <div>
-      
-  <meta charSet="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Classroom Management System</title>
-  {/* You can link your CSS file here */}
-  <link rel="stylesheet" href="styles.css" />
-  <header>
-    <h1>Classroom Management System</h1>
-  </header>
-  <nav>
-    <ul>
-      <li>
-        <a href="#">Home</a>
-      </li>
-      <li>
-        <a href="#">Students</a>
-      </li>
-      <li>
-        <a href="#">Teachers</a>
-      </li>
-      <li>
-        <a href="#">Assignments</a>
-      </li>
-      {/* Add more navigation links as needed */}
-    </ul>
-  </nav>
-  <main>
-    {/* Your main content goes here */}
-    <section id="welcome">
-      <h2>Welcome to the Classroom Management System</h2>
-      <p>
-        This system helps manage students, teachers, and assignments
-        efficiently.
-      </p>
-    </section>
-  </main>
-  <footer>
-    <p>© 2024 Classroom Management System. All rights reserved.</p>
-  </footer>
-  {/* You can link your JavaScript file here */}
-
-
+      <h2>Classroom Manager</h2>
+      <div>
+        <input
+          type="text"
+          placeholder="Enter student name"
+          value={newStudentName}
+          onChange={(e) => setNewStudentName(e.target.value)}
+        />
+        <button onClick={addStudent}>Add Student</button>
+      </div>
+      <div>
+        <h3>Students:</h3>
+        <ul>
+          {students.map(student => (
+            <li key={student.id}>
+              {student.name}
+              <button onClick={() => removeStudent(student.id)}>Remove</button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
-  )
+  );
 }
 
-export default manageclassroom
+export default ClassroomManager;
