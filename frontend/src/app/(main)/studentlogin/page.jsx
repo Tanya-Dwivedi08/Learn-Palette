@@ -29,7 +29,7 @@ const Login = () => {
 
           console.log(values);
 
-          const res = await fetch('http://localhost:5000/user/authenticate', {
+          const res = await fetch('http://localhost:5000/student/authenticate', {
               method: 'POST',
               body: JSON.stringify(values),
               headers: {
@@ -76,7 +76,8 @@ const Login = () => {
       <img
         className="mb-3 mx-auto"
         style={{ height: 150 }}
-        src="https://www.fatcow.com/images/free-logos/World-Wide01.jpg"
+        
+        // src="https://www.fatcow.com/images/free-logos/World-Wide01.jpg"
         alt=""
       />
       <span className="flex shadow-md mb-5 text-xs">
