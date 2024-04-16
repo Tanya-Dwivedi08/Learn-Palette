@@ -2,13 +2,14 @@
 import React from 'react'
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import toast from 'react-hot-toast';
 
 
 
 const student = () => {
   const studentValidationSchema = Yup.object().shape({
     email: Yup.string().email('Email is invalid').required('Email is required'),
-    name: Yup.string().required('Name is required'),
+    fname: Yup.string().required('Name is required'),
     password: Yup.string().required('Password is required').min(6, 'Too short')
       .matches(/[a-z]/, 'password must contain lowercase letter')
       .matches(/[A-Z]/, 'password must contain uppercase letter')
@@ -28,7 +29,7 @@ const student = () => {
     },
     onSubmit: (values, { resetForm }) => {
 
-      const res = fetch("http://localhost:5000/teacher/add", {
+      const res = fetch("http://localhost:5000/student/add", {
         method: "POST",
         body: JSON.stringify(values),
         headers: { "Content-Type": "application/json" },
@@ -42,7 +43,7 @@ const student = () => {
             toast.success("Something went wrong");
           }
         }).catch((err) => {
-
+          console.log(err);
         });
 
 
@@ -97,27 +98,27 @@ const student = () => {
                     <div className="mx-auto max-w-xs">
 
                       {
-                        studentForm.touched.name &&
+                        studentForm.touched.fname &&
                         <small class="text-red-500">{studentForm.errors.name}</small>
                       }
                       <input
                         className="w-full px-8 py-4 mb-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
                         type="text"
                         placeholder=" First Name"
-                        id="name"
+                        id="fname"
                         onChange={studentForm.handleChange}
                         value={studentForm.values.fname}
 
                       />
                       {
-                        studentForm.touched.name &&
-                        <small class="text-red-500">{studentForm.errors.name}</small>
+                        studentForm.touched.fname &&
+                        <small class="text-red-500">{studentForm.errors.lname}</small>
                       }
                       <input
                         className="w-full px-8 py-4 mb-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
                         type="text"
                         placeholder=" Last Name"
-                        id="name"
+                        id="lname"
                         onChange={studentForm.handleChange}
                         value={studentForm.values.lname}
 

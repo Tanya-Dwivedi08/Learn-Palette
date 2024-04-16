@@ -23,6 +23,16 @@ const Managestudent = () => {
         fetchStudentsData();
     }, [])
 
+    const deleteFunc = async (id) => {
+        console.log(id);
+         const res = await fetch ('http://localhost:5000/student/delete/' + id ,{
+            method: "DELETE"
+         })
+         if (res.status ===200){
+            fetchStudentsData();
+         }
+    }
+
 
     const displayStudents = () => {
         return studentList.map(student => (
@@ -31,11 +41,11 @@ const Managestudent = () => {
                     scope="row"
                     className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                 >
-                    Apple MacBook Pro 17"
+                    {student.fname}
                 </th>
-                <td className="px-6 py-4">Silver</td>
-                <td className="px-6 py-4">Laptop</td>
-                <td className="px-6 py-4">$2999</td>
+                <td className="px-6 py-4">{student.lname}</td>
+                <td className="px-6 py-4">{student.email}</td>
+                <td className="px-6 py-4">{student.password}</td>
                 <td className="px-6 py-4">
                     <a
                         href="#"
@@ -43,6 +53,15 @@ const Managestudent = () => {
                     >
                         Edit
                     </a>
+                </td>
+                <td className="px-6 py-4">
+                    <button
+                        href="#"
+                        className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                        onClick={() => {deleteFunc(student._id)}}
+                    >
+                        Delete
+                    </button>
                 </td>
             </tr>
         ))
@@ -55,16 +74,16 @@ const Managestudent = () => {
                     <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
                             <th scope="col" className="px-6 py-3">
-                                Student ID
+                               First name
                             </th>
                             <th scope="col" className="px-6 py-3">
-                                Student name
+                                Last name
                             </th>
                             <th scope="col" className="px-6 py-3">
-                                Class
+                                Email
                             </th>
                             <th scope="col" className="px-6 py-3">
-                                Subject
+                                Password
                             </th>
                             <th scope="col" className="px-6 py-3">
                                 update
