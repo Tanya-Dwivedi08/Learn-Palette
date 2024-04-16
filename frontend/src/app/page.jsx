@@ -92,12 +92,12 @@ const  Home = () => {
     <section className="relative">
       <div className="relative pt-24 lg:pt-28">
         <div className="mx-auto px-6 max-w-7xl md:px-12">
-          <div className="text-center sm:mx-auto sm:w-10/12 lg:mr-auto lg:mt-0 lg:w-4/5">
+          <div className="text-center  sm:mx-auto sm:w-10/12 lg:mr-auto lg:mt-0 lg:w-4/5">
             <a
               href="https://beta.tailus.io/demo"
-              className="border w-fit mx-auto flex justify-between items-center transition duration-200 rounded-[--annonce-border-radius] border-[--ui-light-border-color] hover:border-[--ui-light-border-hover-color] dark:border-[--ui-dark-border-color] dark:hover:border-[--ui-dark-border-hover-color] p-1 group gap-2"
+              className="border mb-4 w-fit mx-auto flex justify-between items-center transition duration-200 rounded-[--annonce-border-radius] border-[--ui-light-border-color] hover:border-[--ui-light-border-hover-color] dark:border-[--ui-dark-border-color] dark:hover:border-[--ui-dark-border-hover-color] p-1 group gap-2"
             >
-              <span className="block text-sm px-2 py-0.5 rounded-[calc(var(--annonce-border-radius)-0.375rem)] text-white bg-primary-600">
+              <span className="block text-sm px-2 py-0.5  rounded-[calc(var(--annonce-border-radius)-0.375rem)] text-white bg-primary-600">
                 New
               </span>
               <span className="text-sm font-medium text-gray-700 dark:text-gray-300 flex gap-6">
