@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 import React from 'react'
 
 const ManageClassroom = () => {
@@ -131,4 +129,3 @@ const ManageClassroom = () => {
 }
 
 export default ManageClassroom
->>>>>>> c5b281db133e856b2ab06ff3f8e26df52bd06788
