@@ -7,7 +7,7 @@ const contact = () => {
     <>
   <section className="relative z-10 overflow-hidden bg-white dark:bg-dark py-20 lg:py-[120px]">
     <div className="container mx-auto">
-    <span className="block mb-4 text-center text-4xl text-base font-semibold text-primary">
+    <span className="block mb-4 text-center text-6xl text-base font-semibold text-primary">
               Contact Us
             </span>
       <div className="flex flex-wrap -mx-4 lg:justify-between">

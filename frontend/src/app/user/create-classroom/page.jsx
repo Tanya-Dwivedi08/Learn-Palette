@@ -1,6 +1,3 @@
-
-
-
 'use client';
 import React from 'react'
 import { useFormik } from 'formik';
@@ -17,17 +14,16 @@ const createclass = () => {
       .matches(/[A-Z]/, 'password must contain uppercase letter')
       .matches(/[0-9]/, 'password must contain number')
       .matches(/\W/, 'password must contain special symbol'),
-    cpassword: Yup.string().required('Confirm Password is required')
-      .oneOf([Yup.ref('password'), null], 'Passwords must match')
+    // cpassword: Yup.string().required('Confirm Password is required')
+    //   .oneOf([Yup.ref('password'), null], 'Passwords must match')
   })
 
   const createclassForm = useFormik({
     initialValues: {
-      fname: '',
-      lname: '',
+      Subject: '',
       email: '',
       password: '',
-      cpassword: ''
+      createdAt: '',
     },
     onSubmit: (values, { resetForm }) => {
 
@@ -106,13 +102,13 @@ const createclass = () => {
                       <input
                         className="w-full px-8 py-4 mb-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
                         type="text"
-                        placeholder=" First Name"
+                        placeholder=" Subject"
                         id="name"
                         onChange={createclassForm.handleChange}
-                        value={createclassForm.values.fname}
+                        value={createclassForm.values.subject}
 
                       />
-                      {
+                      {/* {
                         createclassForm.touched.name &&
                         <small class="text-red-500">{createclassForm.errors.name}</small>
                       }
@@ -124,7 +120,7 @@ const createclass = () => {
                         onChange={createclassForm.handleChange}
                         value={createclassForm.values.lname}
 
-                      />
+                      /> */}
 
                       {
                         createclassForm.touched.email &&
@@ -152,19 +148,19 @@ const createclass = () => {
                         value={createclassForm.values.password}
 
                       />
-                      {
-                        createclassForm.touched.cpassword &&
-                        <small class="text-red-500">{createclassForm.errors.cpassword}</small>
+                      {/* {
+                        createclassForm.touched.createdAt &&
+                        <small class="text-red-500">{createclassForm.errors.createdAt}</small>
                       }
                       <input
                         className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
-                        type="cpassword"
-                        placeholder="confirm Password"
+                        type=""
+                        placeholder="createdAt"
                         id="cpassword"
                         onChange={createclassForm.handleChange}
-                        value={createclassForm.values.cpassword}
+                        value={createclassForm.values.createdAt}
 
-                      />
+                      /> */}
                       <button type="submit" className="mt-5 mb-5 tracking-wide font-semibold bg-green-400 text-white-500 w-full py-4 rounded-lg hover:bg-green-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
                         <svg
                           className="w-6 h-6 -ml-2"
