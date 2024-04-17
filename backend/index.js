@@ -5,7 +5,7 @@ const utilRouter = require('./Routers/utilRouter');
 const classRouter = require('./Routers/classRouter');
 const studentRouter = require('./Routers/studentRouter');
 const lectureRouter = require('./Routers/lectureRouter');
-
+const whiteboardRouter = require('./Routers/whiteboardRouter');
 const cors = require('cors');
 
 // initialize express app
@@ -23,6 +23,7 @@ app.use('/teacher',teacherRouter)
 app.use('/class',classRouter)
 app.use('/util',utilRouter)
 app.use('/lecture',lectureRouter)
+app.use('/whiteboard',whiteboardRouter)
 
 
 app.get('/', (req,res) => {
