@@ -1,186 +1,261 @@
-import React from 'react'
+'use client'
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import React from "react";
 
-const contact = () => {
+const Contact = () => {
 
+
+  const addContactSchema = Yup.object().shape({});
+
+  const addContactForm = useFormik({
+    initialValues: {
+      fname:"",
+      lname:"",
+      email:"",
+      message:""
+    },
+    onSubmit: async(values, action)=>{
+      console.log(values);
+      const res = await fetch("http://localhost:5000/contact/add", {
+        method: "POST",
+        body: JSON.stringify(values),
+        headers: { "Content-type": "application/json" },
+      });
+      console.log(res.status);
+      action.resetForm();
+      if (res.status === 200) {
+        toast("SignUp successfully");
+        
+      } else {
+        toast("Something went wrong");
+      }
+    },
+    validationSchema: addContactSchema,
+  })
   return (
-    <div>
     <>
-  <div className="flex items-center h-screen justify-center">
-<div className="w-3/4 h-3/4 shadow bg-transparent">
-  <div className="grid grid-cols-2">
-    {/* <div className="">hi</div> */}
-    {/* <div className=""> */}
-    <div className="w-full px-4 lg:w-1/2 xl:w-6/12">
-          <div className="mb-12 max-w-[570px] lg:mb-0">
-            
-            <h2 className="text-dark dark:text-white mb-4 text-[25px] font-bold uppercase sm:text-[25px] lg:text-[25px] xl:text-[30px]">
-              GET IN TOUCH WITH US
-            </h2>
-            {/* <p className="text-base leading-relaxed text-body-color dark:text-dark-6 mb-9">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eius tempor incididunt ut labore et dolore magna aliqua. Ut enim
-              adiqua minim veniam quis nostrud exercitation ullamco
-            </p> */}
-            <div className="mb-8 flex w-full max-w-[370px]">
-              <div className="bg-primary/5 text-primary mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded sm:h-[70px] sm:max-w-[70px]">
-                <svg
-                  width={32}
-                  height={32}
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M30.6 11.8002L17.7 3.5002C16.65 2.8502 15.3 2.8502 14.3 3.5002L1.39998 11.8002C0.899983 12.1502 0.749983 12.8502 1.04998 13.3502C1.39998 13.8502 2.09998 14.0002 2.59998 13.7002L3.44998 13.1502V25.8002C3.44998 27.5502 4.84998 28.9502 6.59998 28.9502H25.4C27.15 28.9502 28.55 27.5502 28.55 25.8002V13.1502L29.4 13.7002C29.6 13.8002 29.8 13.9002 30 13.9002C30.35 13.9002 30.75 13.7002 30.95 13.4002C31.3 12.8502 31.15 12.1502 30.6 11.8002ZM13.35 26.7502V18.5002C13.35 18.0002 13.75 17.6002 14.25 17.6002H17.75C18.25 17.6002 18.65 18.0002 18.65 18.5002V26.7502H13.35ZM26.3 25.8002C26.3 26.3002 25.9 26.7002 25.4 26.7002H20.9V18.5002C20.9 16.8002 19.5 15.4002 17.8 15.4002H14.3C12.6 15.4002 11.2 16.8002 11.2 18.5002V26.7502H6.69998C6.19998 26.7502 5.79998 26.3502 5.79998 25.8502V11.7002L15.5 5.4002C15.8 5.2002 16.2 5.2002 16.5 5.4002L26.3 11.7002V25.8002Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </div>
-              <div className="w-full">
-                <h4 className="mb-1 text-xl font-bold text-dark dark:text-white">
-                  Our Location
-                </h4>
-                <p className="text-base text-body-color dark:text-dark-6">
-                 ..............
-                </p>
-              </div>
-            </div>
-            <div className="mb-8 flex w-full max-w-[370px]">
-              <div className="bg-primary/5 text-primary mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded sm:h-[70px] sm:max-w-[70px]">
-                <svg
-                  width={32}
-                  height={32}
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g clipPath="url(#clip0_941_17577)">
-                    <path
-                      d="M24.3 31.1499C22.95 31.1499 21.4 30.7999 19.7 30.1499C16.3 28.7999 12.55 26.1999 9.19997 22.8499C5.84997 19.4999 3.24997 15.7499 1.89997 12.2999C0.39997 8.59994 0.54997 5.54994 2.29997 3.84994C2.34997 3.79994 2.44997 3.74994 2.49997 3.69994L6.69997 1.19994C7.74997 0.599942 9.09997 0.899942 9.79997 1.89994L12.75 6.29994C13.45 7.34994 13.15 8.74994 12.15 9.44994L10.35 10.6999C11.65 12.7999 15.35 17.9499 21.25 21.6499L22.35 20.0499C23.2 18.8499 24.55 18.4999 25.65 19.2499L30.05 22.1999C31.05 22.8999 31.35 24.2499 30.75 25.2999L28.25 29.4999C28.2 29.5999 28.15 29.6499 28.1 29.6999C27.2 30.6499 25.9 31.1499 24.3 31.1499ZM3.79997 5.54994C2.84997 6.59994 2.89997 8.74994 3.99997 11.4999C5.24997 14.6499 7.64997 18.0999 10.8 21.2499C13.9 24.3499 17.4 26.7499 20.5 27.9999C23.2 29.0999 25.35 29.1499 26.45 28.1999L28.85 24.0999C28.85 24.0499 28.85 24.0499 28.85 23.9999L24.45 21.0499C24.45 21.0499 24.35 21.0999 24.25 21.2499L23.15 22.8499C22.45 23.8499 21.1 24.1499 20.1 23.4999C13.8 19.5999 9.89997 14.1499 8.49997 11.9499C7.84997 10.8999 8.09997 9.54994 9.09997 8.84994L10.9 7.59994V7.54994L7.94997 3.14994C7.94997 3.09994 7.89997 3.09994 7.84997 3.14994L3.79997 5.54994Z"
-                      fill="currentColor"
-                    />
-                    <path
-                      d="M29.3 14.25C28.7 14.25 28.25 13.8 28.2 13.2C27.8 8.15003 23.65 4.10003 18.55 3.75003C17.95 3.70003 17.45 3.20003 17.5 2.55003C17.55 1.95003 18.05 1.45003 18.7 1.50003C24.9 1.90003 29.95 6.80003 30.45 13C30.5 13.6 30.05 14.15 29.4 14.2C29.4 14.25 29.35 14.25 29.3 14.25Z"
-                      fill="currentColor"
-                    />
-                    <path
-                      d="M24.35 14.7002C23.8 14.7002 23.3 14.3002 23.25 13.7002C22.95 11.0002 20.85 8.90018 18.15 8.55018C17.55 8.50018 17.1 7.90018 17.15 7.30018C17.2 6.70018 17.8 6.25018 18.4 6.30018C22.15 6.75018 25.05 9.65018 25.5 13.4002C25.55 14.0002 25.15 14.5502 24.5 14.6502C24.4 14.7002 24.35 14.7002 24.35 14.7002Z"
-                      fill="currentColor"
-                    />
+      <div className="max-w-screen-lg mx-auto p-5">
+        <div className="grid grid-cols-1 md:grid-cols-12 border">
+          <div className="bg-[#1E2852] md:col-span-4 p-10 text-white">
+            <p className="mt-4 text-sm leading-10 font-regular uppercase">
+              Contact
+            </p>
+            <h3 className="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight">
+              Get In <span className="text-indigo-600">Touch</span>
+            </h3>
+            <p className="mt-4 leading-7 text-gray-200">
+              Need help or have a question? We're here for you! 
+            </p>
+            <div className="flex items-center mt-5">
+              <svg
+                className="h-6 mr-2 text-indigo-600"
+                fill="currentColor"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 489.536 489.536"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+                enableBackground="new 0 0 489.536 489.536"
+              >
+                <g>
+                  <g>
+                    <path d="m488.554,476l-99-280.2c-1-4.2-5.2-7.3-9.4-7.3h-45.6c12.9-31.1 19.6-54.9 19.6-70.8 0-64.6-50-117.7-112.5-117.7-61.5,0-112.5,52.1-112.5,117.7 0,17.6 8.2,43.1 19.9,70.8h-39.7c-4.2,0-8.3,3.1-9.4,7.3l-99,280.2c-3.2,10.3 6.3,13.5 9.4,13.5h468.8c4.2,0.5 12.5-4.2 9.4-13.5zm-246.9-455.3c51,1.06581e-14 91.7,43.7 91.7,96.9 0,56.5-79.2,182.3-91.7,203.1-31.3-53.1-91.7-161.5-91.7-203.1 0-53.1 40.6-96.9 91.7-96.9zm-216.7,448l91.7-259.4h41.7c29.9,64.1 83.3,151 83.3,151s81.4-145.7 83.8-151h47.4l91.7,259.4h-439.6z"></path>
+                    <rect width="136.5" x="177.054" y="379.1" height="20.8" />
+                    <path d="m289.554,108.2c0-26-21.9-47.9-47.9-47.9s-47.9,21.9-47.9,47.9 20.8,47.9 47.9,47.9c27.1,0 47.9-21.8 47.9-47.9zm-75-1c0-14.6 11.5-27.1 27.1-27.1s27.1,12.5 27.1,27.1-11.5,27.1-27.1,27.1c-14.6,2.84217e-14-27.1-12.5-27.1-27.1z"></path>
                   </g>
-                  <defs>
-                    <clipPath id="clip0_941_17577">
-                      <rect width={32} height={32} fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-              </div>
-              <div className="w-full">
-                <h4 className="mb-1 text-xl font-bold text-dark dark:text-white">
-                  Phone Number
-                </h4>
-                <p className="text-base text-body-color dark:text-dark-6">
-                  91xxxxxxxx
-                </p>
-              </div>
+                </g>
+              </svg>
+              <span className="text-sm">
+                hazratganj lko
+              </span>
             </div>
-            <div className="mb-8 flex w-full max-w-[370px]">
-              <div className="bg-primary/5 text-primary mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded sm:h-[70px] sm:max-w-[70px]">
-                <svg
-                  width={32}
-                  height={32}
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+            <div className="flex items-center mt-5">
+              <svg
+                className="h-6 mr-2 text-indigo-600"
+                fill="currentColor"
+                version="1.1"
+                id="Capa_1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                viewBox="0 0 60.002 60.002"
+                style={{ enableBackground: "new 0 0 60.002 60.002" }}
+                xmlSpace="preserve"
+              >
+                <g>
                   <path
-                    d="M28 4.7998H3.99998C2.29998 4.7998 0.849976 6.1998 0.849976 7.9498V24.1498C0.849976 25.8498 2.24998 27.2998 3.99998 27.2998H28C29.7 27.2998 31.15 25.8998 31.15 24.1498V7.8998C31.15 6.1998 29.7 4.7998 28 4.7998ZM28 7.0498C28.05 7.0498 28.1 7.0498 28.15 7.0498L16 14.8498L3.84998 7.0498C3.89998 7.0498 3.94998 7.0498 3.99998 7.0498H28ZM28 24.9498H3.99998C3.49998 24.9498 3.09998 24.5498 3.09998 24.0498V9.2498L14.8 16.7498C15.15 16.9998 15.55 17.0998 15.95 17.0998C16.35 17.0998 16.75 16.9998 17.1 16.7498L28.8 9.2498V24.0998C28.9 24.5998 28.5 24.9498 28 24.9498Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </div>
-              <div className="w-full">
-                <h4 className="mb-1 text-xl font-bold text-dark dark:text-white">
-                  Email Address
-                </h4>
-                <p className="text-base text-body-color dark:text-dark-6">
-                  abc@gmail.com
-                </p>
-              </div>
+                    d="M59.002,37.992c-3.69,0-6.693-3.003-6.693-6.693c0-0.553-0.447-1-1-1s-1,0.447-1,1c0,4.794,3.899,8.693,8.693,8.693
+		c0.553,0,1-0.447,1-1S59.554,37.992,59.002,37.992z"
+                  ></path>
+                  <path
+                    d="M58.256,35.65c0.553,0,1-0.447,1-1s-0.447-1-1-1c-0.886,0-1.605-0.72-1.605-1.605c0-0.553-0.447-1-1-1s-1,0.447-1,1
+		C54.65,34.033,56.267,35.65,58.256,35.65z"
+                  ></path>
+                  <path
+                    d="M20.002,2.992c3.691,0,6.693,3.003,6.693,6.693c0,0.553,0.448,1,1,1s1-0.447,1-1c0-4.794-3.9-8.693-8.693-8.693
+		c-0.552,0-1,0.447-1,1S19.449,2.992,20.002,2.992z"
+                  ></path>
+                  <path
+                    d="M19.748,6.334c0,0.553,0.448,1,1,1c0.885,0,1.604,0.72,1.604,1.605c0,0.553,0.448,1,1,1s1-0.447,1-1
+		c0-1.988-1.617-3.605-3.604-3.605C20.196,5.334,19.748,5.781,19.748,6.334z"
+                  ></path>
+                  <path
+                    d="M44.076,37.889c-1.276-0.728-2.597-0.958-3.721-0.646c-0.844,0.234-1.532,0.768-1.996,1.546
+		c-1.02,1.22-2.286,2.646-2.592,2.867c-2.367,1.604-4.25,1.415-6.294-0.629L17.987,29.542c-2.045-2.045-2.233-3.928-0.631-6.291
+		c0.224-0.31,1.65-1.575,2.87-2.596c0.778-0.464,1.312-1.152,1.546-1.996c0.311-1.123,0.082-2.444-0.652-3.731
+		c-0.173-0.296-4.291-7.27-8.085-9.277c-1.926-1.019-4.255-0.669-5.796,0.872L4.7,9.059c-4.014,4.014-5.467,8.563-4.321,13.52
+		c0.956,4.132,3.742,8.529,8.282,13.068l14.705,14.706c5.762,5.762,11.258,8.656,16.298,8.656c3.701,0,7.157-1.562,10.291-4.695
+		l2.537-2.537c1.541-1.541,1.892-3.87,0.872-5.796C51.356,42.186,44.383,38.069,44.076,37.889z M51.078,50.363L48.541,52.9
+		c-6.569,6.567-14.563,5.235-23.76-3.961L10.075,34.233c-4.271-4.271-6.877-8.344-7.747-12.104
+		c-0.995-4.301,0.244-8.112,3.786-11.655l2.537-2.537c0.567-0.566,1.313-0.862,2.07-0.862c0.467,0,0.939,0.112,1.376,0.344
+		c3.293,1.743,7.256,8.454,7.29,8.511c0.449,0.787,0.62,1.608,0.457,2.196c-0.1,0.36-0.324,0.634-0.684,0.836l-0.15,0.104
+		c-0.853,0.712-2.883,2.434-3.308,3.061c-0.612,0.904-1.018,1.792-1.231,2.665c-0.711-1.418-1.286-3.06-1.475-4.881
+		c-0.057-0.548-0.549-0.935-1.098-0.892c-0.549,0.058-0.949,0.549-0.892,1.099c0.722,6.953,6.129,11.479,6.359,11.668
+		c0.025,0.02,0.054,0.028,0.08,0.045l10.613,10.613c0.045,0.045,0.092,0.085,0.137,0.129c0.035,0.051,0.058,0.108,0.104,0.154
+		c0.189,0.187,4.704,4.567,11.599,5.283c0.035,0.003,0.07,0.005,0.104,0.005c0.506,0,0.94-0.383,0.994-0.896
+		c0.057-0.55-0.342-1.041-0.892-1.099c-2.114-0.219-3.987-0.839-5.548-1.558c0.765-0.23,1.543-0.612,2.332-1.146
+		c0.628-0.426,2.35-2.455,3.061-3.308l0.104-0.151c0.202-0.359,0.476-0.583,0.836-0.684c0.588-0.159,1.409,0.008,2.186,0.45
+		c0.067,0.04,6.778,4.003,8.521,7.296C52.202,48.062,51.994,49.447,51.078,50.363z"
+                  ></path>
+                </g>
+              </svg>
+              <span className="text-sm">+91 889875764</span>
+            </div>
+            <div className="flex items-center mt-5">
+              <svg
+                className="h-6 mr-2 text-indigo-600"
+                fill="currentColor"
+                version="1.1"
+                id="Capa_1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+                x="0px"
+                y="0px"
+                viewBox="0 0 300.988 300.988"
+                style={{ enableBackground: "new 0 0 300.988 300.988" }}
+                xmlSpace="preserve"
+              >
+                <g>
+                  <g>
+                    <path
+                      d="M150.494,0.001C67.511,0.001,0,67.512,0,150.495s67.511,150.493,150.494,150.493s150.494-67.511,150.494-150.493
+          S233.476,0.001,150.494,0.001z M150.494,285.987C75.782,285.987,15,225.206,15,150.495S75.782,15.001,150.494,15.001
+          s135.494,60.782,135.494,135.493S225.205,285.987,150.494,285.987z"
+                    ></path>
+                    <polygon points="142.994,142.995 83.148,142.995 83.148,157.995 157.994,157.995 157.994,43.883 142.994,43.883 		"></polygon>
+                  </g>
+                </g>
+              </svg>
+              <span className="text-sm">24/7</span>
             </div>
           </div>
+          <form className="md:col-span-8 p-10 bg-purple-50" onSubmit={addContactForm.handleSubmit}>
+            <div className="flex flex-wrap -mx-3 mb-6">
+              <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                <label
+                  className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  htmlFor="grid-first-name"
+                >
+                  First Name
+                </label>
+                <input
+                  className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  id="grid-first-name"
+                  name="fname"
+                  type="text"
+                  onChange={addContactForm.handleChange}
+                  value={addContactForm.values.fname}
+                  placeholder="Jane"
+                />
+              </div>
+              <div className="w-full md:w-1/2 px-3">
+                <label
+                  className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  htmlFor="grid-last-name"
+                >
+                  Last Name
+                </label>
+                <input
+                  className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 "
+                  id="grid-last-name"
+                  name="lname"
+                  type="text"
+                  onChange={addContactForm.handleChange}
+                  value={addContactForm.values.lname}
+                  placeholder="Doe"
+                />
+              </div>
+            </div>
+            <div className="flex flex-wrap -mx-3 mb-6">
+              <div className="w-full px-3">
+                <label
+                  className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  htmlFor="grid-password"
+                >
+                  Email Address
+                </label>
+                <input
+                  className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  id="grid-email"
+                  name="email"
+                  type="email"
+                  onChange={addContactForm.handleChange}
+                  value={addContactForm.values.email}
+                  placeholder="********@*****.**"
+                />
+              </div>
+            </div>
+            <div className="flex flex-wrap -mx-3 mb-6">
+              <div className="w-full px-3">
+                <label
+                  className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                  htmlFor="grid-password"
+                >
+                  Your Message
+                </label>
+                <textarea
+                  rows={10}
+                  className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  defaultValue={""}
+                  name="message"
+                  onChange={addContactForm.handleChange}
+                  value={addContactForm.values.message}
+                />
+              </div>
+              <div className="flex justify-between w-full px-3">
+                <div className="md:flex md:items-center">
+                  <label className="block text-gray-500 font-bold">
+                    <input className="mr-2 leading-tight" type="checkbox" />
+                    <span className="text-sm">Send me your newsletter!</span>
+                  </label>
+                </div>
+                <button
+                  className="shadow bg-indigo-600 hover:bg-indigo-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded"
+                  type="submit"
+                  name="message"
+                >
+                  Send Message
+                </button>
+              </div>
+            </div>
+            <div className="relative w-full h-48">
+            {/* <iframe
+              className="absolute top-0 left-0 w-full h-full"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12080.73732861526!2d-74.0059418!3d40.7127847!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM40zMDA2JzEwLjAiTiA3NMKwMjUnMzcuNyJX!5e0!3m2!1sen!2sus!4v1648482801994!5m2!1sen!2sus"
+              frameBorder={0}
+              style={{ border: 0 }}
+              allowFullScreen=""
+              aria-hidden="false"
+              tabIndex={0}
+            ></iframe> */}
+          </div>
+          </form>
+          
         </div>
-      <section className="bg-white dark:bg-gray-900">
-  <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-    <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
-      Contact Us
-    </h2>
-    <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
-      Got a technical issue? Want to send feedback about a beta feature? Need
-      details about our Business plan? Let us know.
-    </p>
-    <form action="#" className="space-y-8">
-      <div>
-        <label
-          htmlFor="email"
-          className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-        >
-          Your email
-        </label>
-        <input
-          type="email"
-          id="email"
-          className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-          placeholder="name@flowbite.com"
-          required=""
-        />
       </div>
-      <div>
-        <label
-          htmlFor="subject"
-          className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-        >
-          Subject
-        </label>
-        <input
-          type="text"
-          id="subject"
-          className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
-          placeholder="Let us know how we can help you"
-          required=""
-        />
-      </div>
-      <div className="sm:col-span-2">
-        <label
-          htmlFor="message"
-          className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
-        >
-          Your message
-        </label>
-        <textarea
-          id="message"
-          rows={6}
-          className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-          placeholder="Leave a comment..."
-          defaultValue={""}
-        />
-      </div>
-      <button
-        type="submit"
-        className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-      >
-        Send message
-      </button>
-    </form>
-  </div>
-</section>
-</div>
-  </div>
-</div>
-</>
-</div>
-    
-  )
-}
+    </>
+  );
+};
 
-export default contact;
+export default Contact;

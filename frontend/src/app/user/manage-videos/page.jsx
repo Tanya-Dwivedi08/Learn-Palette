@@ -1,11 +1,11 @@
 'use client';
 import React, { useEffect, useState } from 'react'
 
-const Managevideo= () => {
+const Managevideo = () => {
 
     const [videoList, setvideoList] = useState([]);
 
-    const fetchvideoData = () => {
+    const fetchvideosData = () => {
         fetch('http://localhost:5000/video/getall')
             .then((response) => {
                 return response.json();
@@ -20,22 +20,32 @@ const Managevideo= () => {
     }
 
     useEffect(() => {
-        fetchvideoData();
+        fetchvideosData();
     }, [])
 
+    const deleteFunc = async (id) => {
+        console.log(id);
+         const res = await fetch ('http://localhost:5000/video/delete/' + id ,{
+            method: "DELETE"
+         })
+         if (res.status ===200){
+            fetchvideosData();
+         }
+    }
 
-    const displayvideo = () => {
+
+    const displayvideos = () => {
         return videoList.map(video => (
             <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
                 <th
                     scope="row"
                     className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                 >
-                    Apple MacBook Pro 17"
+                    {video.fname}
                 </th>
-                <td className="px-6 py-4">Silver</td>
-                <td className="px-6 py-4">Laptop</td>
-                <td className="px-6 py-4">$2999</td>
+                <td className="px-6 py-4">{video.lname}</td>
+                <td className="px-6 py-4">{video.email}</td>
+                <td className="px-6 py-4">{video.password}</td>
                 <td className="px-6 py-4">
                     <a
                         href="#"
@@ -43,6 +53,15 @@ const Managevideo= () => {
                     >
                         Edit
                     </a>
+                </td>
+                <td className="px-6 py-4">
+                    <button
+                        href="#"
+                        className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                        onClick={() => {deleteFunc(video._id)}}
+                    >
+                        Delete
+                    </button>
                 </td>
             </tr>
         ))
@@ -55,16 +74,16 @@ const Managevideo= () => {
                     <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
                             <th scope="col" className="px-6 py-3">
-                                Student ID
+                               First name
                             </th>
                             <th scope="col" className="px-6 py-3">
-                                Student name
+                                Last name
                             </th>
                             <th scope="col" className="px-6 py-3">
-                                Class
+                                Email
                             </th>
                             <th scope="col" className="px-6 py-3">
-                                Subject
+                                Password
                             </th>
                             <th scope="col" className="px-6 py-3">
                                 update
@@ -75,7 +94,7 @@ const Managevideo= () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {displayvideo()}
+                        {displayvideos()}
                     </tbody>
                 </table>
             </div>

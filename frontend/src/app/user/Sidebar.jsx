@@ -4,6 +4,7 @@ import { MdVideoSettings } from "react-icons/md";
 import { FaBookOpenReader } from "react-icons/fa6";
 import { FaChalkboardTeacher } from "react-icons/fa";
 import { SiGoogleclassroom } from "react-icons/si";
+import Link from 'next/link';
 
 
 const Sidebar = () => {
@@ -39,8 +40,8 @@ const Sidebar = () => {
           <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
             <ul className="space-y-2 font-medium">
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/user/create new classroom"
                   className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                 >
                   <svg
@@ -54,11 +55,11 @@ const Sidebar = () => {
                     <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
                   </svg>
                   <span className="ms-3">Create New Classroom</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/user/manage-classroom"
                   className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                 >
                   {/* <svg
@@ -76,11 +77,11 @@ const Sidebar = () => {
                   {/* <span className="inline-flex items-center justify-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">
                     Pro
                   </span> */}
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/user/manage-student"
                   className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                 >
                   <svg
@@ -98,11 +99,11 @@ const Sidebar = () => {
                   {/* <span className="inline-flex items-center justify-center w-3 h-3 p-3 ms-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">
                     3
                   </span> */}
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/user/manage-lecture"
                   className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                 >
                   {/* <svg
@@ -119,11 +120,11 @@ const Sidebar = () => {
                   <FaBookOpenReader className='text-2xl' />
 
                   <span className="flex-1 ms-3 whitespace-nowrap">Manage Lecture</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/user/manage-whiteboard"
                   className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                 >
                   {/* <svg
@@ -138,11 +139,11 @@ const Sidebar = () => {
                   <FaChalkboardTeacher className='text-2xl'/>
 
                   <span className="flex-1 ms-3 whitespace-nowrap">Manage Whiteboard</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  href="/user/manage-videos"
                   className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                 >
                   {/* <svg
@@ -157,7 +158,7 @@ const Sidebar = () => {
                   <MdVideoSettings className='text-2xl'/>
 
                   <span className="flex-1 ms-3 whitespace-nowrap">Manage Videos</span>
-                </a>
+                </Link>
               </li>
               {/* <li>
                 <a
