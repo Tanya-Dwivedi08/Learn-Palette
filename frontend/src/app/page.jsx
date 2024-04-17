@@ -46,7 +46,7 @@ const  Home = () => {
                     href="#"
                     className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
                   >
-                    <span>Playground</span>
+                    <span>Resources</span>
                   </a>
                 </li>
                 <li>
@@ -54,7 +54,7 @@ const  Home = () => {
                     href="#"
                     className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
                   >
-                    <span>Docs</span>
+                    <span>Solutions</span>
                   </a>
                 </li>
                 <li>
@@ -62,7 +62,15 @@ const  Home = () => {
                     href="#"
                     className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
                   >
-                    <span>Blog</span>
+                    <span>plan&pricing</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
+                  >
+                    <span>support</span>
                   </a>
                 </li>
               </ul>
@@ -93,7 +101,7 @@ const  Home = () => {
                 New
               </span>
               <span className="text-sm font-medium text-gray-700 dark:text-gray-300 flex gap-6">
-                Introducing Tailus UI React !
+                Introducing Learn Palette!
                 <div className="flex items-center -space-x-3 group-hover:-translate-x-1 transition-transform duration-300">
                   <span className="w-2.5 translate-y-[-0.3px] -translate-x-px opacity-0 h-[1.5px] rounded bg-gray-950 dark:bg-white origin-left scale-x-0 transition duration-300 group-hover:opacity-100 group-hover:scale-x-100" />
                   <svg
@@ -101,9 +109,12 @@ const  Home = () => {
                     xmlns="http://www.w3.org/2000/svg"
                     className="size-4 text-gray-950 dark:text-white -translate-x-2 transition duration-300 group-hover:translate-x-px"
                     fill="none"
-                    viewBox="0 0 24 24"
+                    viewBox="0 0 20 20"
                     stroke="currentColor"
                     strokeWidth={2}
+                  
+                    
+
                   >
                     <path
                       strokeLinecap="round"
@@ -114,17 +125,29 @@ const  Home = () => {
                 </div>
               </span>
             </a>
-            <h1 className="mt-8 text-wrap text-4xl md:text-5xl font-semibold text-gray-950 dark:text-white xl:text-5xl xl:[line-height:1.125]">
-              Tame the Wild West <br className="hidden sm:block" /> of Frontend
-              Development
-            </h1>
+            {/* <h1 className="mt-8 text-wrap text-4xl md:text-5xl font-semibold text-gray-950 dark:text-white xl:text-5xl xl:[line-height:1.125]">
+              Revolutionizing Collaboration:<br className="hidden sm:block" /> "The Virtual WhiteBoard Experiences."
+             
+            </h1> */}
+            <>
+  <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-5xl">
+    <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-400 from-sky-300">
+      LEARN PALETTE
+    </span>{" "}</h1>
+    <p className="mb-3 text-2xl font-bold text-gray-900 dark:text-white md:text-3xl lg:text-5xl">
+    Revolutionizing Collaboration:
+    </p>
+  
+  <p className="text-lg font-normal text-fuchsia-50 lg:text-xl dark:text-fuchsia-100">
+  "The Virtual WhiteBoard Experiences."
+  </p>
+</>
+
             <p className="text-wrap mx-auto mt-8 max-w-2xl text-lg text-gray-700 dark:text-gray-300 hidden sm:block">
-              Tailwindcss highly customizable components for building modern
-              websites and applications that look and feel the way you mean it.
+              
             </p>
             <p className="text-wrap mx-auto mt-6 max-w-2xl text-gray-700 dark:text-gray-300 sm:hidden">
-              Highly customizable components for building modern websites and
-              applications, with your personal spark.
+             
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4">
               <div className="p-1 rounded-[calc(var(--btn-border-radius)+4px)] bg-gray-950/5 border dark:border-white/10 dark:bg-white/5">
@@ -148,7 +171,7 @@ const  Home = () => {
                       fill="currentColor"
                     />
                   </svg>
-                  <span className="text-nowrap">Start Building</span>
+                  <span className="text-nowrap">Start Learning</span>
                 </a>
               </div>
               <button className="hidden *:select-none *:disabled:opacity-20 dark:*:disabled:!text-white dark:hover:bg-gray-500/15 group h-9 items-center justify-center gap-1.5 rounded-[--btn-border-radius] bg-gray-100 px-3 text-base text-gray-800 hover:bg-gray-200/75 active:bg-gray-100 disabled:border disabled:border-gray-200 disabled:bg-gray-100 disabled:text-gray-950 dark:bg-gray-500/10 dark:text-gray-300 dark:active:bg-gray-500/10 dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 [&>*:not(.sr-only)]:relative">
@@ -317,7 +340,7 @@ const  Home = () => {
                         </defs>
                       </svg>
                       <p className="mt-6 text-lg text-gray-950 dark:text-white text-center">
-                        30% Increase in revenue
+                        
                       </p>
                     </div>
                     <span className="glow absolute inset-[calc(var(--border-width)*-1)] rounded-[--card-border-radius] border-[length:var(--border-width)] border-transparent ![mask-clip:padding-box,_border-box] ![mask-composite:intersect] [mask:linear-gradient(transparent,transparent),linear-gradient(white,white)]">
@@ -383,7 +406,7 @@ const  Home = () => {
                         </defs>
                       </svg>
                       <p className="mt-6 text-lg text-gray-950 dark:text-white text-center">
-                        30% Increase in revenue
+                        
                       </p>
                     </div>
                     <span className="glow absolute inset-[calc(var(--border-width)*-1)] rounded-[--card-border-radius] border-[length:var(--border-width)] border-transparent ![mask-clip:padding-box,_border-box] ![mask-composite:intersect] [mask:linear-gradient(transparent,transparent),linear-gradient(white,white)]">

@@ -9,7 +9,7 @@ import toast from 'react-hot-toast';
 const student = () => {
   const studentValidationSchema = Yup.object().shape({
     email: Yup.string().email('Email is invalid').required('Email is required'),
-    name: Yup.string().required('Name is required'),
+    fname: Yup.string().required('Name is required'),
     password: Yup.string().required('Password is required').min(6, 'Too short')
       .matches(/[a-z]/, 'password must contain lowercase letter')
       .matches(/[A-Z]/, 'password must contain uppercase letter')
@@ -36,14 +36,14 @@ const student = () => {
       })
         .then((response) => {
           console.log(response.status);
-          if (res.status === 200) {
-            toast.success("Add successfully");
+          if (response.status === 200) {
+            toast.success("SignUp successfully");
             action.resetForm();
           } else {
             toast.success("Something went wrong");
           }
         }).catch((err) => {
-         console.log(err);
+          console.log(err);
         });
 
 
@@ -99,7 +99,7 @@ const student = () => {
 
                       {
                         studentForm.touched.fname &&
-                        <small class="text-red-500">{studentForm.errors.fname}</small>
+                        <small class="text-red-500">{studentForm.errors.name}</small>
                       }
                       <input
                         className="w-full px-8 py-4 mb-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
@@ -111,7 +111,7 @@ const student = () => {
 
                       />
                       {
-                        studentForm.touched.lname &&
+                        studentForm.touched.fname &&
                         <small class="text-red-500">{studentForm.errors.lname}</small>
                       }
                       <input
