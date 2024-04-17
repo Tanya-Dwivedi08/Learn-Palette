@@ -186,9 +186,9 @@ const student = () => {
               </div>
             </div>
             <div className="flex-1 bg-green-100 text-center hidden lg:flex">
-              <div
+              {/* <div
                 className="m-12 xl:m-16 w-full h-auto bg-contain bg-center bg-no-repeat flex items-center justify-center"
-              ><img src="/class.jpeg" alt="" /></div>
+              ><img src="/class.jpeg" alt="" /></div> */}
             </div>
           </div>
         </div>

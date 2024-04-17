@@ -148,6 +148,11 @@ const lecture = () => {
                         value={lectureForm.values.topic}
 
                       />
+
+                      <div>
+                      <label htmlFor="">
+                          Thumbnail
+                        </label>
                       {
                         lectureForm.touched.thumbnail &&
                         <small className="text-red-500">{lectureForm.errors.topic}</small>
@@ -161,7 +166,7 @@ const lecture = () => {
                         value={lectureForm.values.thumbnail}
 
                       />
-
+                      </div>
                       
                       
                       <button type="submit" className="mt-5 mb-5 tracking-wide font-semibold bg-green-400 text-white-500 w-full py-4 rounded-lg hover:bg-green-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
@@ -187,9 +192,9 @@ const lecture = () => {
               </div>
             </div>
             <div className="flex-1 bg-green-100 text-center hidden lg:flex">
-              <div
+              {/* <div
                 className="m-12 xl:m-16 w-full h-auto bg-contain bg-center bg-no-repeat flex items-center justify-center"
-              ><img src="/class.jpeg" alt="" /></div>
+              ><img src="/class.jpeg" alt="" /></div> */}
             </div>
           </div>
         </div>
