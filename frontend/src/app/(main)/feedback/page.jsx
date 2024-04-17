@@ -1,6 +1,40 @@
 import React from 'react'
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import toast from 'react-hot-toast';
 
 const feedback = () => {
+  const feedbackform = useFormik({
+    initialValues: {
+   suggestion:'',
+      email: '',
+  
+    },
+    onSubmit: (values, { resetForm }) => {
+
+      const res = fetch("http://localhost:5000/feedback/add", {
+        method: "POST",
+        body: JSON.stringify(values),
+        headers: { "Content-Type": "application/json" },
+      })
+        .then((response) => {
+          console.log(response.status);
+          if (res.status === 200) {
+            toast.success("feedback successfully");
+            action.resetForm();
+          } else {
+            toast.success("Something went wrong");
+          }
+        }).catch((err) => {
+          console.log(err);
+        });
+
+
+    },
+   
+  })
+
+
   return (
     <div>
       <>
@@ -40,11 +74,14 @@ const feedback = () => {
                           type="email"
                           name="email"
                           id="email"
+                          onChange={feedbackform.handleChange}
+                        value={feedbackform.values.email}
+
                           className="border-0 px-3 py-3 rounded text-sm shadow w-full
               bg-gray-300 placeholder-black text-gray-800 outline-none focus:bg-gray-400"
-                          placeholder=" "
+                          placeholder="email "
                           style={{ transition: "all 0.15s ease 0s" }}
-                          required=""
+                          
                         />
                       </div>
                       <div className="relative w-full mb-3">
@@ -61,9 +98,12 @@ const feedback = () => {
                           rows={4}
                           cols={80}
                           className="border-0 px-3 py-3 bg-gray-300 placeholder-black text-gray-800 rounded text-sm shadow focus:outline-none w-full"
-                          placeholder=""
-                          required=""
+                          placeholder="message"
+                         
                           defaultValue={""}
+                          onChange={feedbackform.handleChange}
+                        value={feedbackform.values.message}
+
                         />
                       </div>
                       <div className="text-center mt-6">
