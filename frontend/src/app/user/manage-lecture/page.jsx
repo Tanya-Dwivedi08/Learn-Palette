@@ -19,9 +19,13 @@ const Managelecture = () => {
             });
     }
 
+    
     useEffect(() => {
         fetchlecturesData();
     }, [])
+
+    
+
 
     const deleteFunc = async (id) => {
         console.log(id);

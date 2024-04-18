@@ -8,7 +8,7 @@ const Manageclassroom = () => {
     const [classroomList, setclassroomList] = useState([]);
 
     const fetchclassroomsData = () => {
-        fetch('http://localhost:5000/classroom/getall')
+        fetch('http://localhost:5000/class/getall')
             .then((response) => {
                 return response.json();
             })
@@ -20,21 +20,20 @@ const Manageclassroom = () => {
                 console.log(err);
             });
     }
-
-    useEffect(() => {
+ 
+   useEffect(() => {
         fetchclassroomsData();
     }, [])
 
     const deleteFunc = async (id) => {
         console.log(id);
-         const res = await fetch ('http://localhost:5000/classroom/delete/' + id ,{
+         const res = await fetch ('http://localhost:5000/class/delete/' + id ,{
             method: "DELETE"
          })
          if (res.status ===200){
             fetchclassroomsData();
          }
     }
-
 
     const displayclassrooms = () => {
         return classroomList.map(classroom => (

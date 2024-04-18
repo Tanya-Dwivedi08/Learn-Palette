@@ -36,7 +36,7 @@ const student = () => {
       })
         .then((response) => {
           console.log(response.status);
-          if (res.status === 200) {
+          if (response.status === 200) {
             toast.success("SignUp successfully");
             action.resetForm();
           } else {
@@ -186,9 +186,9 @@ const student = () => {
               </div>
             </div>
             <div className="flex-1 bg-green-100 text-center hidden lg:flex">
-              <div
-                className="m-12 xl:m-16 w-full h-auto bg-contain bg-center bg-no-repeat"
-              ><img src="/class.jpeg" alt="" /></div>
+              {/* <div
+                className="m-12 xl:m-16 w-full h-auto bg-contain bg-center bg-no-repeat flex items-center justify-center"
+              ><img src="/class.jpeg" alt="" /></div> */}
             </div>
           </div>
         </div>

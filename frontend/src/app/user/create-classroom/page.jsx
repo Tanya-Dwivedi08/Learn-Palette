@@ -1,6 +1,3 @@
-
-
-
 'use client';
 import React from 'react'
 import { useFormik } from 'formik';
@@ -17,17 +14,21 @@ const createclass = () => {
       .matches(/[A-Z]/, 'password must contain uppercase letter')
       .matches(/[0-9]/, 'password must contain number')
       .matches(/\W/, 'password must contain special symbol'),
-    cpassword: Yup.string().required('Confirm Password is required')
-      .oneOf([Yup.ref('password'), null], 'Passwords must match')
+    // cpassword: Yup.string().required('Confirm Password is required')
+    //   .oneOf([Yup.ref('password'), null], 'Passwords must match')
   })
 
   const createclassForm = useFormik({
     initialValues: {
-      fname: '',
-      lname: '',
-      email: '',
-      password: '',
-      cpassword: ''
+      // Subject: '',
+      // email: '',
+      // password: '',
+      // createdAt: '',
+      name: '',
+      description: '',
+      tags: '',
+      cover: '',
+      icon: '',
     },
     onSubmit: (values, { resetForm }) => {
 
@@ -38,8 +39,8 @@ const createclass = () => {
       })
         .then((response) => {
           console.log(response.status);
-          if (res.status === 200) {
-            toast.success("SignUp successfully");
+          if (response.status === 200) {
+            toast.success("create successfully");
             action.resetForm();
           } else {
             toast.success("Something went wrong");
@@ -99,72 +100,103 @@ const createclass = () => {
                   <form onSubmit={createclassForm.handleSubmit}>
                     <div className="mx-auto max-w-xs">
 
+                      <div>
+                        <label htmlFor="">
+                          Name
+                        </label>
+                        {
+                          createclassForm.touched.name &&
+                          <small class="text-red-500">{createclassForm.errors.name}</small>
+                        }
+                        <input
+                          className="w-full px-8 py-4 mb-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
+                          type="text"
+                          placeholder=" Name"
+                          id="name"
+                          onChange={createclassForm.handleChange}
+                          value={createclassForm.values.name}
+
+                        />
+                      </div>
+
+                      <div>
+                      <label htmlFor="">
+                          Description
+                        </label>
                       {
-                        createclassForm.touched.name &&
-                        <small class="text-red-500">{createclassForm.errors.name}</small>
+                        createclassForm.touched.description &&
+                        <small class="text-red-500">{createclassForm.errors.description}</small>
                       }
                       <input
                         className="w-full px-8 py-4 mb-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
                         type="text"
-                        placeholder=" First Name"
+                        placeholder=" Description"
                         id="name"
                         onChange={createclassForm.handleChange}
-                        value={createclassForm.values.fname}
-
-                      />
-                      {
-                        createclassForm.touched.name &&
-                        <small class="text-red-500">{createclassForm.errors.name}</small>
-                      }
-                      <input
-                        className="w-full px-8 py-4 mb-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
-                        type="text"
-                        placeholder=" Last Name"
-                        id="name"
-                        onChange={createclassForm.handleChange}
-                        value={createclassForm.values.lname}
+                        value={createclassForm.values.description}
 
                       />
 
+                      </div>
+
+                      <div>
+                      <label htmlFor="">
+                          Tags
+                        </label>
                       {
-                        createclassForm.touched.email &&
-                        <small class="text-red-500">{createclassForm.errors.email}</small>
+                        createclassForm.touched.tags &&
+                        <small class="text-red-500">{createclassForm.errors.tags}</small>
                       }
                       <input
                         className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
-                        type="email"
-                        placeholder="Email"
-                        id="email"
+                        type="tags"
+                        placeholder="Tags"
+                        id="tags"
                         onChange={createclassForm.handleChange}
-                        value={createclassForm.values.email}
+                        value={createclassForm.values.tags}
 
                       />
+
+                      </div>
+                      
+                      
+                     <div>
+                     <label htmlFor="">
+                          Cover
+                        </label>
                       {
-                        createclassForm.touched.password &&
-                        <small class="text-red-500">{createclassForm.errors.password}</small>
+                        createclassForm.touched.cover &&
+                        <small class="text-red-500">{createclassForm.errors.cover}</small>
                       }
                       <input
                         className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
-                        type="password"
-                        placeholder="Password"
-                        id="password"
+                        type="file"
+                        placeholder="Cover"
+                        id="cover"
                         onChange={createclassForm.handleChange}
-                        value={createclassForm.values.password}
+                        value={createclassForm.values.cover}
 
                       />
+                      </div>
+
+                      <div>
+                      <label htmlFor="">
+                          Icon
+                        </label>
                       {
-                        createclassForm.touched.cpassword &&
-                        <small class="text-red-500">{createclassForm.errors.cpassword}</small>
+                        createclassForm.touched.icon &&
+                        <small class="text-red-500">{createclassForm.errors.icon}</small>
                       }
                       <input
                         className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
-                        type="cpassword"
-                        placeholder="confirm Password"
-                        id="cpassword"
+                        type="file"
+                        placeholder="Icon"
+                        id="icon"
                         onChange={createclassForm.handleChange}
-                        value={createclassForm.values.cpassword}
+                        value={createclassForm.values.icon}
 
                       />
+                      </div>
                       <button type="submit" className="mt-5 mb-5 tracking-wide font-semibold bg-green-400 text-white-500 w-full py-4 rounded-lg hover:bg-green-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
                         <svg
                           className="w-6 h-6 -ml-2"
@@ -188,9 +220,9 @@ const createclass = () => {
               </div>
             </div>
             <div className="flex-1 bg-green-100 text-center hidden lg:flex">
-              <div
+              {/* <div
                 className="m-12 xl:m-16 w-full h-auto bg-contain bg-center bg-no-repeat"
-              ><img src="/class.jpeg" alt="" /></div>
+              ><img src="/class.jpeg" alt="" /></div> */}
             </div>
           </div>
         </div>
