@@ -7,6 +7,7 @@ const studentRouter = require('./Routers/studentRouter');
 const lectureRouter = require('./Routers/lectureRouter');
 const whiteboardRouter = require('./Routers/whiteboardRouter');
 const feedbackRouter = require('./Routers/feedbackRouter');
+const contactRouter = require('./Routers/contactRouter');
 
 const cors = require('cors');
 
@@ -27,6 +28,7 @@ app.use('/util',utilRouter)
 app.use('/lecture',lectureRouter)
 app.use('/whiteboard',whiteboardRouter)
 app.use('/feedback', feedbackRouter)
+app.use('/contact', contactRouter)
 
 
 

@@ -1,5 +1,5 @@
+'use client'
 import React from 'react'
-
 const About = () => {
   return (
     <div>
@@ -12,15 +12,15 @@ const About = () => {
                   <div className="py-3 sm:py-4">
                     <img
                       // src="https://cdn.tailgrids.com/2.0/image/marketing/images/about/about-01/image-1.jpg"
-                   
-                    src="https://www.datasciencecentral.com/wp-content/uploads/2022/07/Smart-Learning-and-Education1.jpeg"
+
+                      src="https://www.datasciencecentral.com/wp-content/uploads/2022/07/Smart-Learning-and-Education1.jpeg"
                       alt=""
                       className="w-full rounded-2xl"
                     />
                   </div>
                   <div className="py-3 sm:py-4">
                     <img
-                        // src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf1u77fTqHle6lKsO79EH6UniMZqKfeGIN8g&s"
+                      // src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf1u77fTqHle6lKsO79EH6UniMZqKfeGIN8g&s"
                       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqDCzGJo5CGh5rYsGe-uYfvzgZAweAno8p_A&s"
 
                       alt=""
@@ -38,8 +38,8 @@ const About = () => {
                       className="w-full rounded-2xl"
                     />
                     <span className="absolute -right-7 -bottom-7 z-[-1]">
-                     
-                        
+
+
                     </span>
                   </div>
                 </div>
@@ -74,7 +74,6 @@ const About = () => {
           </div>
         </div>
       </section>
-
     </div>
   )
 }

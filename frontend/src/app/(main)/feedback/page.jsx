@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -12,14 +13,14 @@ const feedback = () => {
     },
     onSubmit: (values, { resetForm }) => {
 
-      const res = fetch("http://localhost:5000/feedback/add", {
+      const response = fetch("http://localhost:5000/feedback/add", {
         method: "POST",
         body: JSON.stringify(values),
         headers: { "Content-Type": "application/json" },
       })
         .then((response) => {
           console.log(response.status);
-          if (res.status === 200) {
+          if (response.status === 200) {
             toast.success("feedback successfully");
             action.resetForm();
           } else {
@@ -42,7 +43,7 @@ const feedback = () => {
   <section>
     <div className="bg-black text-white py-20">
       <div className="container mx-auto flex flex-col md:flex-row my-6 md:my-24">
-        <div className="flex flex-col w-full lg:w-1/3 p-8">
+        <div className="flex flex-col w-full lg:w-1/3 p-8 text-center">
           <p className="ml-6 text-yellow-300 text-lg uppercase tracking-loose">
             REVIEW
           </p>
@@ -62,7 +63,8 @@ const feedback = () => {
                     <h4 className="text-2xl mb-4 text-black font-semibold">
                       Have a suggestion?
                     </h4>
-                    <form id="feedbackForm" action="" method="">
+                    <form onSubmit={feedbackform.handleSubmit}
+>
                       <div className="relative w-full mb-3">
                         <label
                           className="block uppercase text-gray-700 text-xs font-bold mb-2"
