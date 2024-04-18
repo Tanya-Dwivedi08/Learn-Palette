@@ -20,10 +20,6 @@ const createclass = () => {
 
   const createclassForm = useFormik({
     initialValues: {
-      // Subject: '',
-      // email: '',
-      // password: '',
-      // createdAt: '',
       name: '',
       description: '',
       tags: '',
@@ -32,7 +28,7 @@ const createclass = () => {
     },
     onSubmit: (values, { resetForm }) => {
 
-      const res = fetch("http://localhost:5000/teacher/add", {
+      const res = fetch("http://localhost:5000/class/add", {
         method: "POST",
         body: JSON.stringify(values),
         headers: { "Content-Type": "application/json" },
@@ -43,10 +39,10 @@ const createclass = () => {
             toast.success("create successfully");
             action.resetForm();
           } else {
-            toast.success("Something went wrong");
+            toast.error("Something went wrong");
           }
         }).catch((err) => {
-
+         console.log(err);
         });
 
 
@@ -131,7 +127,7 @@ const createclass = () => {
                         className="w-full px-8 py-4 mb-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
                         type="text"
                         placeholder=" Description"
-                        id="name"
+                        id="description"
                         onChange={createclassForm.handleChange}
                         value={createclassForm.values.description}
 
