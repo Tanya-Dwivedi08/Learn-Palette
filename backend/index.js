@@ -5,6 +5,7 @@ const utilRouter = require('./Routers/utilRouter');
 const classRouter = require('./Routers/classRouter');
 const studentRouter = require('./Routers/studentRouter');
 const feedbackRouter = require('./Routers/feedbackRouter');
+const contactRouter = require('./Routers/contactRouter');
 
 const cors = require('cors');
 
@@ -23,6 +24,7 @@ app.use('/teacher',teacherRouter)
 app.use('/class',classRouter)
 app.use('/util',utilRouter)
 app.use('/feedback', feedbackRouter)
+app.use('/contact', contactRouter)
 
 
 

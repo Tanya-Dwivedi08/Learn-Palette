@@ -2,6 +2,7 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import React from "react";
+import toast from 'react-hot-toast';
 
 const Contact = () => {
 
@@ -17,15 +18,15 @@ const Contact = () => {
     },
     onSubmit: async(values, action)=>{
       console.log(values);
-      const res = await fetch("http://localhost:5000/contact/add", {
+      const response = await fetch("http://localhost:5000/contact/add", {
         method: "POST",
         body: JSON.stringify(values),
         headers: { "Content-type": "application/json" },
       });
-      console.log(res.status);
+      console.log(response.status);
       action.resetForm();
-      if (res.status === 200) {
-        toast("SignUp successfully");
+      if (response.status === 200) {
+        toast("Contact successfully");
         
       } else {
         toast("Something went wrong");
