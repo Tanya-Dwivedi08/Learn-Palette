@@ -39,7 +39,7 @@ const createclass = () => {
       })
         .then((response) => {
           console.log(response.status);
-          if (res.status === 200) {
+          if (response.status === 200) {
             toast.success("create successfully");
             action.resetForm();
           } else {
