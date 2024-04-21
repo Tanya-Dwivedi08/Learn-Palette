@@ -37,10 +37,10 @@ const student = () => {
         .then((response) => {
           console.log(response.status);
           if (response.status === 200) {
-            toast.success("SignUp successfully");
+            toast.success("Add successfully");
             action.resetForm();
           } else {
-            toast.success("Something went wrong");
+            toast.error("Something went wrong");
           }
         }).catch((err) => {
           console.log(err);
