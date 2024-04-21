@@ -77,7 +77,7 @@ const Login = () => {
         className="mb-3 mx-auto"
         style={{ height: 150 }}
             
-        // src="https://www.fatcow.com/images/free-logos/World-Wide01.jpg"
+        //  src="https://www.fatcow.com/images/free-logos/World-Wide01.jpg"
         alt=""
       />
       <span className="flex shadow-md mb-5 text-xs">

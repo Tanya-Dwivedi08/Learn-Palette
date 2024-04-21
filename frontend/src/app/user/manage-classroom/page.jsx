@@ -42,11 +42,12 @@ const Manageclassroom = () => {
                     scope="row"
                     className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                 >
-                    {classroom.fname}
+                    {classroom.name}
                 </th>
-                <td className="px-6 py-4">{classroom.lname}</td>
-                <td className="px-6 py-4">{classroom.email}</td>
-                <td className="px-6 py-4">{classroom.password}</td>
+                <td className="px-6 py-4">{classroom.description}</td>
+                <td className="px-6 py-4">{classroom.tags}</td>
+                <td className="px-6 py-4">{classroom.cover}</td>
+                <td className="px-6 py-4">{classroom.icons}</td>
                 <td className="px-6 py-4">
                     <a
                         href="#"
@@ -76,19 +77,22 @@ const Manageclassroom = () => {
                     <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
                             <th scope="col" className="px-6 py-3">
-                               Teacher name
+                              Name
                             </th>
                             <th scope="col" className="px-6 py-3">
-                               Subject
+                              Description
                             </th>
                             <th scope="col" className="px-6 py-3">
-                                Email
+                                Tags
                             </th>
                             <th scope="col" className="px-6 py-3">
-                                Password
+                                Cover
                             </th>
                             <th scope="col" className="px-6 py-3">
-                               CreateAT
+                               icon
+                            </th>
+                            <th scope="col" className="px-6 py-3">
+                               CreatedAt
                             </th>
                             <th scope="col" className="px-6 py-3">
                                 update
