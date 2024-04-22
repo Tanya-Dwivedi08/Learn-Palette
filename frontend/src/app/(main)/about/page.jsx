@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 'use client'
 import React from 'react'
 const About = () => {
@@ -81,4 +79,3 @@ const About = () => {
 }
 
 export default About;
->>>>>>> 74ea2517c40cdd18000ad0ab27404246459a47ed

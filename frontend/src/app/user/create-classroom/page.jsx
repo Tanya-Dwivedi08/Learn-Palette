@@ -2,20 +2,18 @@
 import React from 'react'
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import toast from 'react-hot-toast';
 
 
 
 const createclass = () => {
   const createclassValidationSchema = Yup.object().shape({
-    email: Yup.string().email('Email is invalid').required('Email is required'),
     name: Yup.string().required('Name is required'),
-    password: Yup.string().required('Password is required').min(6, 'Too short')
-      .matches(/[a-z]/, 'password must contain lowercase letter')
-      .matches(/[A-Z]/, 'password must contain uppercase letter')
-      .matches(/[0-9]/, 'password must contain number')
-      .matches(/\W/, 'password must contain special symbol'),
-    // cpassword: Yup.string().required('Confirm Password is required')
-    //   .oneOf([Yup.ref('password'), null], 'Passwords must match')
+    description: Yup.string().required('Description is required'),
+    tags: Yup.string().required('Tags is required'),
+    cover: Yup.string().required('cover is required'),
+    icon: Yup.string().required('icon is required'),
+   
   })
 
   const createclassForm = useFormik({
