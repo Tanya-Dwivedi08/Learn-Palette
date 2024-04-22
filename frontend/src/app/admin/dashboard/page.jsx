@@ -34,11 +34,17 @@ const AdminDashboard = () => {
     >
       <div className="flex flex-wrap items-center">
         <div className="flex flex-shrink md:w-1/3 justify-center md:justify-start text-white">
-          <Link href="#" aria-label="Home">
+          {/* <Link href="#" aria-label="Home">
             <span className="text-xl pl-2">
               <i className="em em-grinning" />
             </span>
-          </Link>
+          </Link> */}
+          <Link
+                className="inline-block py-6 px-8 text-white no-underline"
+                href="/student-signup"
+              >
+              LEARN PALETTE
+              </Link>
         </div>
         <div className="flex flex-1 md:w-1/3 justify-center md:justify-start text-white px-2">
           <span className="relative w-full">
@@ -47,8 +53,9 @@ const AdminDashboard = () => {
               type="search"
               id="search"
               placeholder="Search"
-              className="w-full bg-gray-900 text-white transition border border-transparent focus:outline-none focus:border-gray-400 rounded py-3 px-2 pl-10 appearance-none leading-normal"
+              className="w-full bg-gray-700 text-white transition border border-transparent focus:outline-none focus:border-gray-300 rounded py-3 px-2 pl-10 appearance-none leading-normal"
             />
+            
             <div
               className="absolute search-icon"
               style={{ top: "1rem", left: ".8rem" }}

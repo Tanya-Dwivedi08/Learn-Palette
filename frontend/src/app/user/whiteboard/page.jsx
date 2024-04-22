@@ -1,132 +1,89 @@
-import React from 'react'
+'use client'
+import React, { useState, useRef, useEffect } from 'react';
+import ColorPicker from 'react-color'; // Assuming you've installed react-color
 
-const page = () => {
- 
-      import { useEffect, useState } from "react"
+function Whiteboard() {
+  const canvasRef = useRef(null);
+  const [isDrawing, setIsDrawing] = useState(false);
+  const [color, setColor] = useState('black');
+  const [lineWidth, setLineWidth] = useState(3);
+  const [lines, setLines] = useState([]); // Array to store drawing data
 
-import { useRouter } from "next/router"
+  const handleMouseDown = (e) => {
+    setIsDrawing(true);
+    const ctx = canvasRef.current.getContext('2d');
+    ctx.beginPath();
+    ctx.lineWidth = lineWidth;
+    ctx.strokeStyle = color;
+    ctx.moveTo(e.nativeEvent.offsetX, e.nativeEvent.offsetY);
+  };
 
-import { socket } from "@/common/lib/socket"
-import { useModal } from "@/common/recoil/modal"
-import { useSetRoomId } from "@/common/recoil/room"
-
-import NotFoundModal from "../modals/NotFound"
-
-const Home = () => {
-    return (
-        <div>
-  const { openModal } = useModal()
-  const setAtomRoomId = useSetRoomId()
-
-  const [roomId, setRoomId] = useState("")
-  const [username, setUsername] = useState("")
-
-  const router = useRouter()
-
-  useEffect(() => {
-    document.body.style.backgroundColor = "white"
-  }, [])
-
-  useEffect(() => {
-    socket.on("created", roomIdFromServer => {
-      setAtomRoomId(roomIdFromServer)
-      router.push(roomIdFromServer)
-    })
-
-    const handleJoinedRoom = (roomIdFromServer, failed) => {
-      if (!failed) {
-        setAtomRoomId(roomIdFromServer)
-        router.push(roomIdFromServer)
-      } else {
-        openModal(<NotFoundModal id={roomId} />)
-      }
+  const handleMouseMove = (e) => {
+    if (isDrawing) {
+      const ctx = canvasRef.current.getContext('2d');
+      ctx.lineTo(e.nativeEvent.offsetX, e.nativeEvent.offsetY);
+      ctx.stroke();
     }
+  };
 
-    socket.on("joined", handleJoinedRoom)
+  const handleMouseUp = () => {
+    setIsDrawing(false);
+    const ctx = canvasRef.current.getContext('2d');
+    ctx.closePath();
 
-    return () => {
-      socket.off("created")
-      socket.off("joined", handleJoinedRoom)
-    }
-  }, [openModal, roomId, router, setAtomRoomId])
+    // Store the new line data (including color and lineWidth)
+    setLines([...lines, { color, lineWidth, points: [ctx.beginPath().moveTo(e.nativeEvent.offsetX, e.nativeEvent.offsetY)] }]); // Example format
+  };
+
+  const clearCanvas = () => {
+    const ctx = canvasRef.current.getContext('2d');
+    ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+    setLines([]);
+  };
+
+  const undo = () => {
+    // Implement undo logic (e.g., remove the last line from the lines array)
+    const newLines = [...lines];
+    newLines.pop();
+    setLines(newLines);
+    redrawLines(); // Call redrawLines to reflect the change on canvas
+  };
+
+  const redo = () => {
+    // Implement redo logic (e.g., restore a previously removed line)
+    // Assuming you have a mechanism to store past undo states
+  };
+
+  const redrawLines = () => {
+    const ctx = canvasRef.current.getContext('2d');
+    ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height); // Clear previous drawings
+    lines.forEach((line) => {
+      ctx.beginPath();
+      ctx.lineWidth = line.lineWidth;
+      ctx.strokeStyle = line.color;
+      line.points.forEach((point) => ctx.lineTo(...point)); // Redraw each point
+      ctx.stroke();
+    });
+  };
 
   useEffect(() => {
-    socket.emit("leave_room")
-    setAtomRoomId("")
-  }, [setAtomRoomId])
+    redrawLines(); // Redraw existing lines on component mount
+  }, [lines]); // Re-render canvas whenever lines state changes
 
-  const handleCreateRoom = () => {
-    socket.emit("create_room", username)
-  }
-
-  const handleJoinRoom = e => {
-    e.preventDefault()
-
-    if (roomId) socket.emit("join_room", roomId, username)
-  }
+  const handleColorChange = (newColor) => {
+    setColor(newColor.hex); // Assuming the ColorPicker returns hex value
+  };
 
   return (
-    <div className="flex flex-col items-center py-24">
-      <h1 className="text-5xl font-extrabold leading-tight sm:text-extra">
-        Digiboard
-      </h1>
-      <h3 className="text-xl sm:text-2xl">Real-time whiteboard</h3>
-
-      <div className="mt-10 flex flex-col gap-2">
-        <label className="self-start font-bold leading-tight">
-          Enter your name
-        </label>
-        <input
-          className="input"
-          id="room-id"
-          placeholder="Username..."
-          value={username}
-          onChange={e => setUsername(e.target.value.slice(0, 15))}
-        />
-      </div>
-
-      <div className="my-8 h-px w-96 bg-zinc-200" />
-
-      <form
-        className="flex flex-col items-center gap-3"
-        onSubmit={handleJoinRoom}
-      >
-        <label htmlFor="room-id" className="self-start font-bold leading-tight">
-          Enter room id
-        </label>
-        <input
-          className="input"
-          id="room-id"
-          placeholder="Room id..."
-          value={roomId}
-          onChange={e => setRoomId(e.target.value)}
-        />
-        <button className="btn" type="submit">
-          Join
-        </button>
-      </form>
-
-      <div className="my-8 flex w-96 items-center gap-2">
-        <div className="h-px w-full bg-zinc-200" />
-        <p className="text-zinc-400">or</p>
-        <div className="h-px w-full bg-zinc-200" />
-      </div>
-
-      <div className="flex flex-col items-center gap-2">
-        <h5 className="self-start font-bold leading-tight">Create new room</h5>
-
-        <button className="btn" onClick={handleCreateRoom}>
-          Create
-        </button>
-      </div>
+    <div>
+      <canvas ref={canvasRef} width={1200} height={800} onMouseDown={handleMouseDown} onMouseMove={handleMouseMove} onMouseUp={handleMouseUp} />
+      <button onClick={clearCanvas}>Clear Canvas</button>
+      <button onClick={undo} disabled={lines.length === 0}>Undo</button>
+      {/* <button onClick={redo} disabled=Implement redo disabled logic>Redo</button> */}
+      <ColorPicker color={color} onChange={handleColorChange} />
+      <input type="range" min="1" max="10" value={lineWidth} onChange={(e) => setLineWidth(e.target.value)} />
     </div>
-  )
+  );
 }
 
-export default Home
-
-    </div>
-  )
-}
-
-export default page
+export default Whiteboard;
