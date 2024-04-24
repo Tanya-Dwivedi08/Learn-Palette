@@ -119,8 +119,8 @@ const classroom = () => {
             </div>
 
 
-        </div>
-    )
+    </div>
+  )
 }
 
 export default classroom
