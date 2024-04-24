@@ -1,8 +1,8 @@
 'use client'
 import React, { useState, useRef, useEffect } from 'react';
 import ColorPicker from 'react-color'; // Assuming you've installed react-color
-import React, { useState, useRef } from 'react';
-import Whiteboard from 'react-whiteboard';
+// import React, { useState, useRef } from 'react';
+// import Whiteboard from 'react-whiteboard';
 
 function Whiteboard() {
 
