@@ -1,8 +1,12 @@
 'use client'
 import React, { useState, useRef, useEffect } from 'react';
 import ColorPicker from 'react-color'; // Assuming you've installed react-color
+import React, { useState, useRef } from 'react';
+import Whiteboard from 'react-whiteboard';
 
 function Whiteboard() {
+
+  const [whiteboardData, setWhiteboardData] = useState(null);
   const canvasRef = useRef(null);
   const [isDrawing, setIsDrawing] = useState(false);
   const [color, setColor] = useState('black');
@@ -74,11 +78,35 @@ function Whiteboard() {
     setColor(newColor.hex); // Assuming the ColorPicker returns hex value
   };
 
+  const saveWhiteboard = () => {
+    const data = whiteboardRef.current.toJSON(); // Capture whiteboard data from library
+    setWhiteboardData(data); // Store data in state (optional, for UI feedback)
+    sendWhiteboardDataToServer(data);
+  };
+
+  const sendWhiteboardDataToServer = async (data) => {
+    try {
+      const response = await fetch('http://localhost:5000/lecture', {
+        method: 'POST',
+        body: JSON.stringify(data), // Send data as JSON
+      });
+
+      if (response.ok) {
+        console.log('Whiteboard content saved successfully');
+      } else {
+        console.error('Error saving whiteboard content');
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div>
       <canvas ref={canvasRef} width={1200} height={800} onMouseDown={handleMouseDown} onMouseMove={handleMouseMove} onMouseUp={handleMouseUp} />
       <button onClick={clearCanvas}>Clear Canvas</button>
       <button onClick={undo} disabled={lines.length === 0}>Undo</button>
+      <button onClick={redo} disabled={lines.length === 0}>Redo</button>
       {/* <button onClick={redo} disabled=Implement redo disabled logic>Redo</button> */}
       <ColorPicker color={color} onChange={handleColorChange} />
       <input type="range" min="1" max="10" value={lineWidth} onChange={(e) => setLineWidth(e.target.value)} />

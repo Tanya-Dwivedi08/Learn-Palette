@@ -7,6 +7,7 @@ const mySchema = new Schema({
     description: String,
     topic: String,
     thumbnail: String,
+    canvas:String,
     createdAt: {type : Date, default: Date.now},
    
 });
