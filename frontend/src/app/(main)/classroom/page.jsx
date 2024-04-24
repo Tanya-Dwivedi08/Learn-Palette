@@ -1,6 +1,9 @@
 import React from 'react'
 
 const classroom = () => {
+
+
+
     return (
         <div className='grid grid-cols-3'>
             <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -116,8 +119,8 @@ const classroom = () => {
             </div>
 
 
-        </div>
-    )
+    </div>
+  )
 }
 
 export default classroom

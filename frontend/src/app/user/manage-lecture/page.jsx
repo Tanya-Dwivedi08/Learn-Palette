@@ -50,6 +50,7 @@ const Managelecture = () => {
                 <td className="px-6 py-4">{lecture.description}</td>
                 <td className="px-6 py-4">{lecture.topic}</td>
                 <td className="px-6 py-4">{lecture.thumbnail}</td>
+                {/* <td className="px-6 py-4">{lecture.createdAt}</td> */}
                 <td className="px-6 py-4">
                     <a
                         href="#"
