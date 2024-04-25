@@ -2,12 +2,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import ColorPicker from 'react-color'; // Assuming you've installed react-color
 
-
 function Whiteboard() {
-
-  const [whiteboardData, setWhiteboardData] = useState(null);
   const canvasRef = useRef(null);
-  const [isDrawing, setIsDrawing] = useState(false);
+  const [drawingData, setDrawingData] = useState([]);
   const [color, setColor] = useState('black');
   const [lineWidth, setLineWidth] = useState(3);
   const [lines, setLines] = useState([]); // Array to store drawing data
@@ -52,10 +49,7 @@ function Whiteboard() {
     redrawLines(); // Call redrawLines to reflect the change on canvas
   };
 
-  const redo = () => {
-    // Implement redo logic (e.g., restore a previously removed line)
-    // Assuming you have a mechanism to store past undo states
-  };
+
 
   const redrawLines = () => {
     const ctx = canvasRef.current.getContext('2d');
@@ -77,23 +71,18 @@ function Whiteboard() {
     setColor(newColor.hex); // Assuming the ColorPicker returns hex value
   };
 
-  const saveWhiteboard = () => {
-    const data = whiteboardRef.current.toJSON(); // Capture whiteboard data from library
-    setWhiteboardData(data); // Store data in state (optional, for UI feedback)
-    sendWhiteboardDataToServer(data);
-  };
-
-  const sendWhiteboardDataToServer = async (data) => {
+  const saveDrawing = async () => {
     try {
-      const response = await fetch('http://localhost:5000/lecture', {
+      const response = await fetch('http://localhost:5000/lecture/save-canvas', {
         method: 'POST',
-        body: JSON.stringify(data), // Send data as JSON
+        body: JSON.stringify({ drawingData }),
       });
-
+  
       if (response.ok) {
-        console.log('Whiteboard content saved successfully');
+        console.log('Canvas data saved successfully');
+        // Clear canvas or provide user feedback
       } else {
-        console.error('Error saving whiteboard content');
+        console.error('Error saving canvas data');
       }
     } catch (error) {
       console.error(error);
@@ -105,7 +94,8 @@ function Whiteboard() {
       <canvas ref={canvasRef} width={1200} height={800} onMouseDown={handleMouseDown} onMouseMove={handleMouseMove} onMouseUp={handleMouseUp} />
       <button onClick={clearCanvas}>Clear Canvas</button>
       <button onClick={undo} disabled={lines.length === 0}>Undo</button>
-      <button onClick={redo} disabled={lines.length === 0}>Redo</button>
+      <button onClick={saveDrawing}>Save Canvas</button>
+
       {/* <button onClick={redo} disabled=Implement redo disabled logic>Redo</button> */}
       <ColorPicker color={color} onChange={handleColorChange} />
       <input type="range" min="1" max="10" value={lineWidth} onChange={(e) => setLineWidth(e.target.value)} />
