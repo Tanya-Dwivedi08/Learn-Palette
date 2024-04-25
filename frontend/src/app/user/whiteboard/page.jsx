@@ -1,10 +1,12 @@
 'use client'
 import React, { useState, useRef, useEffect } from 'react';
 import ColorPicker from 'react-color'; // Assuming you've installed react-color
-import React, { useState, useRef } from 'react';
-import Whiteboard from 'react-whiteboard';
+// import React, { useState, useRef } from 'react';
+// import Whiteboard from 'react-whiteboard';
 
 function Whiteboard() {
+  let ctx;
+ 
 
   const [whiteboardData, setWhiteboardData] = useState(null);
   const canvasRef = useRef(null);
@@ -100,6 +102,51 @@ function Whiteboard() {
       console.error(error);
     }
   };
+  // useEffect(() => {
+  //   const canvas = canvasRef.current;
+  //   ctx = canvas.getContext('2d');
+  //   ctx.strokeStyle = '#000000'; // Set default stroke color
+  //   ctx.lineWidth = 2; // Set default line width
+
+  //   const handleMouseMove = (e) => {
+  //     if (e.buttons !== 1) return; // Only draw when mouse is pressed
+  //     const x = e.pageX - canvas.offsetLeft;
+  //     const y = e.pageY - canvas.offsetTop;
+  //     ctx.lineTo(x, y);
+  //     ctx.stroke();
+  //     setDrawingData((prevData) => [...prevData, { x, y }]);
+  //   };
+
+  //   const startDrawing = (e) => {
+  //     ctx.beginPath();
+  //     const x = e.pageX - canvas.offsetLeft;
+  //     const y = e.pageY - canvas.offsetTop;
+  //     ctx.moveTo(x, y);
+  //     canvas.addEventListener('mousemove', handleMouseMove);
+  //   };
+
+  //   const stopDrawing = () => {
+  //     canvas.removeEventListener('mousemove', handleMouseMove);
+  //   };
+
+  //   canvas.addEventListener('mousedown', startDrawing);
+  //   canvas.addEventListener('mouseup', stopDrawing);
+
+  //   return () => {
+  //     canvas.removeEventListener('mousedown', startDrawing);
+  //     canvas.removeEventListener('mouseup', stopDrawing);
+  //   };
+  // }, []);
+
+  const saveDrawing = async () => {
+    try {
+      await axios.post('/api/save-drawing', { drawingData });
+      alert('Drawing saved successfully!');
+    } catch (error) {
+      console.error('Error saving drawing:', error);
+      alert('Error saving drawing. Please try again.');
+    }
+  };
 
   return (
     <div>
@@ -109,8 +156,10 @@ function Whiteboard() {
       <button onClick={redo} disabled={lines.length === 0}>Redo</button>
       {/* <button onClick={redo} disabled=Implement redo disabled logic>Redo</button> */}
       <ColorPicker color={color} onChange={handleColorChange} />
-      <input type="range" min="1" max="10" value={lineWidth} onChange={(e) => setLineWidth(e.target.value)} />
+    
+      // <button onClick={saveDrawing}>Save Drawing</button>
     </div>
+    
   );
 }
 
