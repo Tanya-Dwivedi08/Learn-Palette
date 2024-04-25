@@ -26,7 +26,7 @@ router.post("/authenticate", (req, res) => {
      {
     payload,
     process.env.JWT_SECRET,
-    {expiry: '2 days'},
+    {expiresIn: '10 days'},
     (err, token) => {
     if(err) {
     res.status(500).json({message: 'error creating token'})

@@ -1,8 +1,8 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-
 const classroom = () => {
 const [classroom, setclassroom] = useState([])
+
     const fetchclassroom = async () => {
         const res= await fetch('http://localhost:5000/classroom/getall');
         console.log(res.status);

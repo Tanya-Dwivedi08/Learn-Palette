@@ -122,6 +122,7 @@ const Sidebar = () => {
                   <span className="flex-1 ms-3 whitespace-nowrap">Manage Lecture</span>
                 </Link>
               </li>
+             
               <li>
                 <Link
                   href="/user/manage-whiteboard"
