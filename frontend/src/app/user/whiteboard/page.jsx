@@ -138,15 +138,15 @@ function Whiteboard() {
   //   };
   // }, []);
 
-  const saveDrawing = async () => {
-    try {
-      await axios.post('/api/save-drawing', { drawingData });
-      alert('Drawing saved successfully!');
-    } catch (error) {
-      console.error('Error saving drawing:', error);
-      alert('Error saving drawing. Please try again.');
-    }
-  };
+  // const saveDrawing = async () => {
+  //   try {
+  //     await axios.post('/api/save-drawing', { drawingData });
+  //     alert('Drawing saved successfully!');
+  //   } catch (error) {
+  //     console.error('Error saving drawing:', error);
+  //     alert('Error saving drawing. Please try again.');
+  //   }
+  // };
 
   return (
     <div>
@@ -156,8 +156,9 @@ function Whiteboard() {
       <button onClick={redo} disabled={lines.length === 0}>Redo</button>
       {/* <button onClick={redo} disabled=Implement redo disabled logic>Redo</button> */}
       <ColorPicker color={color} onChange={handleColorChange} />
-    
-      // <button onClick={saveDrawing}>Save Drawing</button>
+      <input type="range" min="1" max="10" value={lineWidth} onChange={(e) => setLineWidth(e.target.value)} />
+      {/* <canvas ref={canvasRef} width={800} height={600} />
+      <button onClick={saveDrawing}>Save Drawing</button> */}
     </div>
     
   );
