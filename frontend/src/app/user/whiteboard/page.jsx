@@ -1,22 +1,16 @@
 'use client'
 import React, { useState, useRef, useEffect } from 'react';
 import ColorPicker from 'react-color'; // Assuming you've installed react-color
-// import React, { useState, useRef } from 'react';
-// import Whiteboard from 'react-whiteboard';
 
 function Whiteboard() {
-  let ctx;
- 
-
-  const [whiteboardData, setWhiteboardData] = useState(null);
   const canvasRef = useRef(null);
-  const [isDrawing, setIsDrawing] = useState(false);
+  const [IsdrawingData, setIsDrawingData] = useState([]);
   const [color, setColor] = useState('black');
   const [lineWidth, setLineWidth] = useState(3);
   const [lines, setLines] = useState([]); // Array to store drawing data
 
   const handleMouseDown = (e) => {
-    setIsDrawing(true);
+    setIsDrawingData(true);
     const ctx = canvasRef.current.getContext('2d');
     ctx.beginPath();
     ctx.lineWidth = lineWidth;
@@ -25,7 +19,7 @@ function Whiteboard() {
   };
 
   const handleMouseMove = (e) => {
-    if (isDrawing) {
+    if (IsdrawingData) {
       const ctx = canvasRef.current.getContext('2d');
       ctx.lineTo(e.nativeEvent.offsetX, e.nativeEvent.offsetY);
       ctx.stroke();
@@ -33,7 +27,7 @@ function Whiteboard() {
   };
 
   const handleMouseUp = () => {
-    setIsDrawing(false);
+    setIsDrawingData(false);
     const ctx = canvasRef.current.getContext('2d');
     ctx.closePath();
 
@@ -55,10 +49,7 @@ function Whiteboard() {
     redrawLines(); // Call redrawLines to reflect the change on canvas
   };
 
-  const redo = () => {
-    // Implement redo logic (e.g., restore a previously removed line)
-    // Assuming you have a mechanism to store past undo states
-  };
+
 
   const redrawLines = () => {
     const ctx = canvasRef.current.getContext('2d');
@@ -80,87 +71,35 @@ function Whiteboard() {
     setColor(newColor.hex); // Assuming the ColorPicker returns hex value
   };
 
-  const saveWhiteboard = () => {
-    const data = whiteboardRef.current.toJSON(); // Capture whiteboard data from library
-    setWhiteboardData(data); // Store data in state (optional, for UI feedback)
-    sendWhiteboardDataToServer(data);
-  };
-
-  const sendWhiteboardDataToServer = async (data) => {
+  const saveDrawing = async () => {
     try {
-      const response = await fetch('http://localhost:5000/lecture', {
+      const response = await fetch('http://localhost:5000/lecture/save-canvas', {
         method: 'POST',
-        body: JSON.stringify(data), // Send data as JSON
+        body: JSON.stringify({ IsdrawingData }),
       });
-
+  
       if (response.ok) {
-        console.log('Whiteboard content saved successfully');
+        console.log('Canvas data saved successfully');
+        // Clear canvas or provide user feedback
       } else {
-        console.error('Error saving whiteboard content');
+        console.error('Error saving canvas data');
       }
     } catch (error) {
       console.error(error);
     }
   };
-  // useEffect(() => {
-  //   const canvas = canvasRef.current;
-  //   ctx = canvas.getContext('2d');
-  //   ctx.strokeStyle = '#000000'; // Set default stroke color
-  //   ctx.lineWidth = 2; // Set default line width
-
-  //   const handleMouseMove = (e) => {
-  //     if (e.buttons !== 1) return; // Only draw when mouse is pressed
-  //     const x = e.pageX - canvas.offsetLeft;
-  //     const y = e.pageY - canvas.offsetTop;
-  //     ctx.lineTo(x, y);
-  //     ctx.stroke();
-  //     setDrawingData((prevData) => [...prevData, { x, y }]);
-  //   };
-
-  //   const startDrawing = (e) => {
-  //     ctx.beginPath();
-  //     const x = e.pageX - canvas.offsetLeft;
-  //     const y = e.pageY - canvas.offsetTop;
-  //     ctx.moveTo(x, y);
-  //     canvas.addEventListener('mousemove', handleMouseMove);
-  //   };
-
-  //   const stopDrawing = () => {
-  //     canvas.removeEventListener('mousemove', handleMouseMove);
-  //   };
-
-  //   canvas.addEventListener('mousedown', startDrawing);
-  //   canvas.addEventListener('mouseup', stopDrawing);
-
-  //   return () => {
-  //     canvas.removeEventListener('mousedown', startDrawing);
-  //     canvas.removeEventListener('mouseup', stopDrawing);
-  //   };
-  // }, []);
-
-  // const saveDrawing = async () => {
-  //   try {
-  //     await axios.post('/api/save-drawing', { drawingData });
-  //     alert('Drawing saved successfully!');
-  //   } catch (error) {
-  //     console.error('Error saving drawing:', error);
-  //     alert('Error saving drawing. Please try again.');
-  //   }
-  // };
 
   return (
     <div>
       <canvas ref={canvasRef} width={1200} height={800} onMouseDown={handleMouseDown} onMouseMove={handleMouseMove} onMouseUp={handleMouseUp} />
       <button onClick={clearCanvas}>Clear Canvas</button>
       <button onClick={undo} disabled={lines.length === 0}>Undo</button>
-      <button onClick={redo} disabled={lines.length === 0}>Redo</button>
+      <button onClick={saveDrawing}>Save Canvas</button>
+
       {/* <button onClick={redo} disabled=Implement redo disabled logic>Redo</button> */}
       <ColorPicker color={color} onChange={handleColorChange} />
       <input type="range" min="1" max="10" value={lineWidth} onChange={(e) => setLineWidth(e.target.value)} />
-      {/* <canvas ref={canvasRef} width={800} height={600} />
-      <button onClick={saveDrawing}>Save Drawing</button> */}
     </div>
-    
   );
 }
 
