@@ -1,214 +1,148 @@
-// 'use client';
-// import * as Yup from 'yup'
-// import { useFormik } from 'formik'
-// import { useRouter } from 'next/navigation';
+"use client";
+import { useFormik } from "formik";
+// import toast from "react-hot-toast";
+import * as Yup from "yup";
+import toast from "react-hot-toast";
 
-// // import useAppContext from '../../context/AppContext';
+const studentlogin = () => {
+  // const addUserSchema = Yup.object().shape({});
 
+  const addUserForm = useFormik({
+    initialValues: {
+      fname: "",
+      lname: "",
+      email: "",
+      password: "",
+    },
 
-// const LoginSchema = Yup.object().shape({
-//   email: Yup.string()
-//       .required('Required'),
-//   password: Yup.string()
-//       .min(8, 'Too short')
-//       .max(20, 'Too long')
-//       .required('Required'),
-// })
-// const Login = () => {
-//   const router = useRouter();
-//   // const { setLoggedIn } = useAppContext();
+    onSubmit: async (values, action) => {
+      // values.image = selFile;
+      console.log(values);
+      const res = await fetch("http://localhost:5000/student/add", {
+        method: "POST",
+        body: JSON.stringify(values),
+        headers: { "Content-Type": "application/json" },
+      });
+      console.log(res.status);
+      action.resetForm();
+      if (res.status === 200) {
+        toast.success("login successfully");
+      } else {
+        toast.success("Something went wrong");
+      }
+    },
+    // validationSchema: addUserSchema,
+  });
 
-//   //step1 : formik initialization
-//   const LoginForm = useFormik({
-//       initialValues: {
-
-//           email: '',
-//           password: '',
-//       },
-//       onSubmit: async (values, action) => {
-
-//           console.log(values);
-
-//           const res = await fetch('http://localhost:5000/student/authenticate', {
-//               method: 'POST',
-//               body: JSON.stringify(values),
-//               headers: {
-//                   'Content-Type': 'application/json'
-//               }
-
-//           });
-//           console.log(res.status)
-//           action.resetForm();
-
-//           if (res.status === 200) {
-//               Swal.fire({
-//                   icon: 'success',
-//                   text: 'Logged in Successfully!'
-//               })
-        
-          
-//           }
-//           else if (res.status === 400
-//           ) {
-//               Swal.fire({
-//                   icon: 'error',
-//                   title: 'Oops...',
-//                   text: 'Error!'
-//               })
-//           }
-
-//       },
-//       validationSchema: LoginSchema
-
-//   })
-
-
-//   return (
-//     <>
-    
-//     <div className='flex justify-center items-center h-screen'>
-// <form onSubmit={LoginForm.handleSubmit}>
-//   <div
-//     className="login_form  p-10 pt-5 shadow-sm mx-auto flex rounded"
-//     style={{ width: 500 }}
-//   >
-//     <div className="sec flex-1">
-//       <img
-//         className="mb-3 mx-auto"
-//         style={{ height: 150 }}
-            
-//         //  src="https://www.fatcow.com/images/free-logos/World-Wide01.jpg"
-//         alt=""
-//       />
-//       <span className="flex shadow-md mb-5 text-xs">
-//         <span className="bg-indigo-500 w-28 font-bold text-center text-gray-200 p-3 px-5 rounded-l">
-//           Email
-//         </span>
-//         <input
-//           className="field text-sm text-gray-600 p-2 px-3 rounded-r w-full"
-//           type="text"
-//           placeholder="school@gmail.com"
-//           onChange={LoginForm.handleChange}
-//           value={LoginForm.values.email}
-//           id="email"
-//         />
-//                             <span style={{ color: 'red', fontsize: '10', marginLeft: '50' }}>{LoginForm.touched.email && LoginForm.errors.email}</span>
-
-//       </span>
-//       <span className="flex shadow-md mb-5 text-xs">
-//         <span className="bg-indigo-500 w-28 font-bold text-center text-gray-200 p-3 px-5 rounded-l">
-//           Password
-//         </span>
-//         <input
-//           className="field text-sm text-gray-600 p-2 px-3 rounded-r w-full"
-//           type="password"
-//           placeholder="..........................."
-//           onChange={LoginForm.handleChange}
-//           value={LoginForm.values.password}
-//           id="password"
-//         />
-//         <span style={{ color: 'red', fontsize: '10', marginLeft: '50' }}>{LoginForm.touched.password && LoginForm.errors.password}</span>
-
-//       </span>
-     
-//       <button type="submit" className="border-2 border-indigo-500 w-full hover:bg-indigo-500 hover:text-gray-100 mt-3 text-indigo-500 block text-center p-3 px-4 text-sm rounded cursor-pointer font-bold">
-//         Login
-//       </button>
-//     </div>
-//   </div>
-//   </form>
-// </div>
-
-    
-//     </>
-//   )
-// }
-
-// export default Login
-import React from 'react'
-
-const page = () => {
   return (
     <div>
-     <>
+      <>
+  {/* Header */}
+  <meta charSet="utf-8" />
+  <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="description" content="My Express JS website" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   {/* component */}
-  <div className="bg-gray-100 flex justify-center items-center h-screen">
-    {/* Left: Image */}
-    <div className="w-1/2 h-screen hidden lg:block">
-      <img
-        src=""
-        alt="Placeholder Image"
-        className="object-cover w-72 h-64"
-      />
-    </div>
-    {/* Right: Login Form */}
-    <div className="lg:p-36 md:p-52 sm:20 p-8 w-full lg:w-1/2">
-      <h1 className="text-2xl font-semibold mb-4">Login</h1>
-      <form action="#" method="POST">
-        {/* Username Input */}
-        <div className="mb-4">
-          <label htmlFor="username" className="block text-gray-600">
-            Username
-          </label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
-            autoComplete="off"
-          />
+  <div className="h-screen bg-gradient-to-br from-pink-600 to-cyan-300 flex justify-center items-center w-full">
+    <form method="POST" action="#">
+      <div className="bg-white px-10 py-8 rounded-xl w-screen shadow-xl max-w-sm">
+        <div className="space-y-4">
+          <h1 className="text-center text-2xl font-semibold text-gray-600">
+            Login
+          </h1>
+          <hr />
+          <div className="flex items-center border-2 py-2 px-3 rounded-md mb-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5 text-gray-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
+              />
+            </svg>
+            <input
+              className="pl-2 outline-none border-none w-full"
+              type="email"
+              name="email"
+              defaultValue=""
+              placeholder="Email"
+              required=""
+            />
+          </div>
+          <div className="flex items-center border-2 py-2 px-3 rounded-md">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5 text-gray-400"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                clipRule="evenodd"
+              />
+            </svg>
+            <input
+              className="pl-2 outline-none border-none w-full"
+              type="password"
+              name="password"
+              id=""
+              placeholder="Password"
+              required=""
+            />
+          </div>
         </div>
-        {/* Password Input */}
-        <div className="mb-4">
-          <label htmlFor="password" className="block text-gray-600">
-            Password
-          </label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
-            autoComplete="off"
-          />
+        {/* Remember Me checkbox */}
+        <div className="flex justify-center items-center mt-4">
+          <p className="inline-flex items-center text-gray-700 font-medium text-xs text-center">
+            <input
+              type="checkbox"
+              id="rememberMeCheckbox"
+              name="rememberMe"
+              className="mr-2"
+            />
+            <span className="text-xs font-semibold">Remember me?</span>
+          </p>
         </div>
-        {/* Remember Me Checkbox */}
-        <div className="mb-4 flex items-center">
-          <input
-            type="checkbox"
-            id="remember"
-            name="remember"
-            className="text-blue-500"
-          />
-          <label htmlFor="remember" className="text-gray-600 ml-2">
-            Remember Me
-          </label>
-        </div>
-        {/* Forgot Password Link */}
-        <div className="mb-6 text-blue-500">
-          <a href="#" className="hover:underline">
-            Forgot Password?
-          </a>
-        </div>
-        {/* Login Button */}
         <button
           type="submit"
-          className="bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full"
+          value="login"
+          id="login"
+          className="mt-6 w-full shadow-xl bg-gradient-to-tr from-blue-600 to-red-400 hover:to-red-700 text-indigo-100 py-2 rounded-md text-lg tracking-wide transition duration-1000"
         >
           Login
         </button>
-      </form>
-      {/* Sign up  Link */}
-      <div className="mt-6 text-blue-500 text-center">
-        <a href="#" className="hover:underline">
-          Sign up Here
-        </a>
+        <hr />
+        <div className="flex justify-center items-center mt-4">
+          <p className="inline-flex items-center text-gray-700 font-medium text-xs text-center">
+            <span className="ml-2">
+              You don't have an account?
+              <a href="#" className="text-xs ml-2 text-blue-500 font-semibold">
+                Register now →
+              </a>
+            </span>
+          </p>
+        </div>
       </div>
-    </div>
+      <div className="pt-6 text-base font-semibold leading-7">
+        <p className="font-sans text-black-500 text-md hover:text-red-800">
+          <a href="/" className="absolute">
+            ← Home
+          </a>
+        </p>
+      </div>
+    </form>
   </div>
 </>
- 
-    </div>
-  )
-}
 
-export default page
+    </div>
+  );
+};
+
+export default studentlogin;
