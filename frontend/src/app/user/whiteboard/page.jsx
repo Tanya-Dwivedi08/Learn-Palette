@@ -9,6 +9,12 @@ function Whiteboard() {
   const [lineWidth, setLineWidth] = useState(3);
   const [lines, setLines] = useState([]); // Array to store drawing data
 
+  useEffect(() => {
+    const ctx = canvasRef.current.getContext('2d');
+    ctx.
+  }, [])
+  
+
   const handleMouseDown = (e) => {
     setIsDrawingData(true);
     const ctx = canvasRef.current.getContext('2d');
@@ -45,7 +51,7 @@ function Whiteboard() {
     // Implement undo logic (e.g., remove the last line from the lines array)
     const newLines = [...lines];
     newLines.pop();
-    setLines(newLines);
+    setLines[(newLines)];
     redrawLines(); // Call redrawLines to reflect the change on canvas
   };
 

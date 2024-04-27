@@ -1,22 +1,25 @@
 'use client'
 import React, { useRef } from 'react';
-import { Whiteboard } from 'react-whiteboard';
+import Whiteboard from './Whiteboard';
 
-const WhiteboardComponent = () => {
+
+
+
+const canvas = () => {
   const whiteboardRef = useRef(null);
 
   // Function to save content to localStorage
-  const saveWhiteboardContent = () => {
+  const savecanvas = () => {
     const content = whiteboardRef.current.getContent();
-    localStorage.setItem('whiteboardContent', JSON.stringify(content));
+    localStorage.setItem('canvas', JSON.stringify(content));
     console.log('Content saved to localStorage');
   };
 
   // Function to load content from localStorage
-  const loadWhiteboardContent = () => {
-    const savedContent = localStorage.getItem('whiteboardContent');
-    if (savedContent) {
-      const parsedContent = JSON.parse(savedContent);
+  const loadcanvas = () => {
+    const savecanvas = localStorage.getItem('canvas');
+    if (savecanvas) {
+      const parsedContent = JSON.parse(savecanvas);
       whiteboardRef.current.setContent(parsedContent);
       console.log('Content loaded from localStorage');
     } else {
@@ -28,11 +31,11 @@ const WhiteboardComponent = () => {
     <div>
       <Whiteboard ref={whiteboardRef} />
       <div>
-        <button onClick={saveWhiteboardContent}>Save Content</button>
-        <button onClick={loadWhiteboardContent}>Load Content</button>
+        <button onClick={savecanvas}>Save Content</button>
+        <button onClick={loadcanvas}>Load Content</button>
       </div>
     </div>
   );
 };
 
-export default WhiteboardComponent;
+export default canvas;
