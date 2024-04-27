@@ -47,7 +47,7 @@ router.post("/authenticate", (req, res) => {
     });
 
 router.get('/getall', (req, res) => {
-    Model.find()
+    Model.find({})
     .then((result) => {
         res.status(200).json(result);
     }).catch((err) => {

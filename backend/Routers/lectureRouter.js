@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Model = require('../Models/lectureModel');
+const fs = require('fs').promises;
 
 router.post('/add', (req, res) => {
     console.log(req.body);
@@ -78,9 +79,9 @@ router.put('/update', (req, res) => {
    });
 });
 
-import fs from 'fs/promises'; // For Node.js file system access
+// import fs from 'fs/promises'; // For Node.js file system access
 
-export default async function handler(req, res) {
+async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ message: 'Method not allowed' });
   }
@@ -99,4 +100,5 @@ export default async function handler(req, res) {
   }
 }
 
+module.exports = handler;
 module.exports = router;
