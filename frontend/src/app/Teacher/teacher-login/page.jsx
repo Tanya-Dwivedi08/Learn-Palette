@@ -35,7 +35,7 @@ const teacherlogin = () => {
           sessionStorage.setItem("teacher", JSON.stringify(data));
           setTeacherLoggedIn(true);
           setCurrentTeacher(data);
-          router.push("/user/create-classroom");
+          router.push("/Teacher/create-classroom");
         });
       } else if (res.status === 401){
         toast.error("Something went wrong");
@@ -140,7 +140,7 @@ const teacherlogin = () => {
             </div>
             <div className="mt-4 text-sm flex justify-between items-center container-mr">
               <p className="mr-3 md:mr-0 ">If you don't have an account..</p>
-              <Link href="/teacher-signup" className="hover:border register text-white bg-[#002D74] hover:border-gray-400 rounded-xl py-2 px-5 hover:scale-110 hover:bg-[#002c7424] font-semibold duration-300">
+              <Link href="/Teacher/teacher-signup" className="hover:border register text-white bg-[#002D74] hover:border-gray-400 rounded-xl py-2 px-5 hover:scale-110 hover:bg-[#002c7424] font-semibold duration-300">
                 Register
               </Link>
             </div>

@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useRef, useEffect } from 'react';
 import ColorPicker from 'react-color'; // Assuming you've installed react-color
+
 // import React, { useState, useRef } from 'react';
 // import Whiteboard from 'react-whiteboard';
 
@@ -107,6 +108,7 @@ function Whiteboard() {
 
       {/* <button onClick={redo} disabled=Implement redo disabled logic>Redo</button> */}
       <ColorPicker color={color} onChange={handleColorChange} />
+    
       <input type="range" min="1" max="10" value={lineWidth} onChange={(e) => setLineWidth(e.target.value)} />
     </div>
   );
