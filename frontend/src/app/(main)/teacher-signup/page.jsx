@@ -3,10 +3,11 @@ import { useFormik } from "formik";
 // import toast from "react-hot-toast";
 import * as Yup from "yup";
 import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 const Signup = () => {
   // const addUserSchema = Yup.object().shape({});
-
+const router = useRouter();
   const addUserForm = useFormik({
     initialValues: {
       teachername: "",
@@ -27,6 +28,7 @@ const Signup = () => {
       action.resetForm();
       if (res.status === 200) {
         toast.success("SignUp successfully");
+        router.push('/teacher-login')
       } else {
         toast.success("Something went wrong");
       }

@@ -12,7 +12,6 @@ const teacherlogin = () => {
 
   const { setCurrentTeacher, setTeacherLoggedIn } = useTeacherContext();
   const router = useRouter();
-
   const loginForm = useFormik({
     initialValues: {
       email: "",
@@ -38,12 +37,14 @@ const teacherlogin = () => {
           setCurrentTeacher(data);
           router.push("/user/create-classroom");
         });
-      } else {
+      } else if (res.status === 401){
         toast.error("Something went wrong");
       }
+      
     },
     // validationSchema: addUserSchema,
   });
+
   return (
     <div>
       <section className="bg-gray-100 min-h-screen flex box-border justify-center items-center">
