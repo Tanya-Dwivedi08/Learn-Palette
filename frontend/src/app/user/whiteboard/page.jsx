@@ -14,7 +14,8 @@ function Whiteboard() {
   useEffect(() => {
     const ctx = canvasRef.current.getContext('2d');
     ctx.
-  }, [])
+  }, 
+  [])
   
 
   const handleMouseDown = (e) => {

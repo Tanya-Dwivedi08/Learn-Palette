@@ -3,9 +3,13 @@ import { useFormik } from "formik";
 // import toast from "react-hot-toast";
 import * as Yup from "yup";
 import toast from "react-hot-toast";
-
+import Link from "next/link";
+import { useRouter } from 'next/navigation';
+import { useContext } from "react";
 const studentlogin = () => {
   // const addUserSchema = Yup.object().shape({});
+  const { setCurrentStudent, setStudentLoggedIn } = use();
+  const router = useRouter();
 
   const addUserForm = useFormik({
     initialValues: {
@@ -119,13 +123,16 @@ const studentlogin = () => {
           Login
         </button>
         <hr />
+        <Link href="/resetpassword" className="mt-10 text-sm border-b border-gray-500 py-5 playfair tooltip">
+              Forget password?
+            </Link> 
         <div className="flex justify-center items-center mt-4">
           <p className="inline-flex items-center text-gray-700 font-medium text-xs text-center">
             <span className="ml-2">
               You don't have an account?
-              <a href="#" className="text-xs ml-2 text-blue-500 font-semibold">
+              <Link href="/student-signup" className="text-xs ml-2 text-blue-500 font-semibold">
                 Register now →
-              </a>
+              </Link>
             </span>
           </p>
         </div>
