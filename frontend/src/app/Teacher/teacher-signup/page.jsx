@@ -7,7 +7,12 @@ import { useRouter } from "next/navigation";
 
 const Signup = () => {
   // const addUserSchema = Yup.object().shape({});
+<<<<<<< HEAD:frontend/src/app/(main)/teacher-signup/page.jsx
 const router = useRouter();
+=======
+  const router = useRouter();
+
+>>>>>>> 4257137ef096e0c6cf33a18020a8d9a4ebd349f2:frontend/src/app/Teacher/teacher-signup/page.jsx
   const addUserForm = useFormik({
     initialValues: {
       teachername: "",
@@ -28,8 +33,14 @@ const router = useRouter();
       action.resetForm();
       if (res.status === 200) {
         toast.success("SignUp successfully");
+<<<<<<< HEAD:frontend/src/app/(main)/teacher-signup/page.jsx
         router.push('/teacher-login')
       } else {
+=======
+        router.push("/user/create-classroom");
+} 
+      else {
+>>>>>>> 4257137ef096e0c6cf33a18020a8d9a4ebd349f2:frontend/src/app/Teacher/teacher-signup/page.jsx
         toast.success("Something went wrong");
       }
     },

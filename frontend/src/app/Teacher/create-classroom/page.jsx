@@ -4,11 +4,12 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import toast from 'react-hot-toast';
 import useTeacherContext from '@/app/context/TeacherContext';
+import { useRouter } from 'next/navigation';
 
 
 
 const createclass = () => {
-
+const router = useRouter();
   const [currentTeacher, setCurrentTeacher] = useState(JSON.parse(sessionStorage.getItem('teacher')));
 
   const createclassValidationSchema = Yup.object().shape({
@@ -42,6 +43,7 @@ const createclass = () => {
           console.log(response.status);
           if (response.status === 200) {
             toast.success("create successfully");
+            router.push('/teacher/manage-classroom')
             resetForm();
           } else {
             toast.error("Something went wrong");
