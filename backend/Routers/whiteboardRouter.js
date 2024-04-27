@@ -77,5 +77,23 @@ router.put('/update', (req, res) => {
     res.status(500).json(err);
    });
 });
+// pages/api/save-drawing.js
+
+export default async function handler(req, res) {
+    if (req.method !== 'POST') {
+      return res.status(405).json({ message: 'Method Not Allowed' });
+    }
+  
+    const { drawingData } = req.body;
+  
+    // Here you would typically save the drawing data to a database or file
+    // For demonstration purposes, let's just log it
+    console.log('Received drawing data:', drawingData);
+  
+    // Send a success response
+    res.status(200).json({ message: 'Drawing saved successfully' });
+  }
+  
+
 
 module.exports = router;

@@ -6,13 +6,19 @@ import ColorPicker from 'react-color'; // Assuming you've installed react-color
 
 function Whiteboard() {
   const canvasRef = useRef(null);
-  const [drawingData, setDrawingData] = useState([]);
+  const [IsdrawingData, setIsDrawingData] = useState([]);
   const [color, setColor] = useState('black');
   const [lineWidth, setLineWidth] = useState(3);
   const [lines, setLines] = useState([]); // Array to store drawing data
 
+  useEffect(() => {
+    const ctx = canvasRef.current.getContext('2d');
+    ctx.
+  }, [])
+  
+
   const handleMouseDown = (e) => {
-    setIsDrawing(true);
+    setIsDrawingData(true);
     const ctx = canvasRef.current.getContext('2d');
     ctx.beginPath();
     ctx.lineWidth = lineWidth;
@@ -21,7 +27,7 @@ function Whiteboard() {
   };
 
   const handleMouseMove = (e) => {
-    if (isDrawing) {
+    if (IsdrawingData) {
       const ctx = canvasRef.current.getContext('2d');
       ctx.lineTo(e.nativeEvent.offsetX, e.nativeEvent.offsetY);
       ctx.stroke();
@@ -29,7 +35,7 @@ function Whiteboard() {
   };
 
   const handleMouseUp = () => {
-    setIsDrawing(false);
+    setIsDrawingData(false);
     const ctx = canvasRef.current.getContext('2d');
     ctx.closePath();
 
@@ -47,7 +53,7 @@ function Whiteboard() {
     // Implement undo logic (e.g., remove the last line from the lines array)
     const newLines = [...lines];
     newLines.pop();
-    setLines(newLines);
+    setLines[(newLines)];
     redrawLines(); // Call redrawLines to reflect the change on canvas
   };
 
@@ -77,7 +83,7 @@ function Whiteboard() {
     try {
       const response = await fetch('http://localhost:5000/lecture/save-canvas', {
         method: 'POST',
-        body: JSON.stringify({ drawingData }),
+        body: JSON.stringify({ IsdrawingData }),
       });
   
       if (response.ok) {
