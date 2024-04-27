@@ -25,12 +25,12 @@ const Managewhiteboard = () => {
 
     const deleteFunc = async (id) => {
         console.log(id);
-         const res = await fetch ('http://localhost:5000/whiteboard/delete/' + id ,{
+        const res = await fetch('http://localhost:5000/whiteboard/delete/' + id, {
             method: "DELETE"
-         })
-         if (res.status ===200){
+        })
+        if (res.status === 200) {
             fetchwhiteboardsData();
-         }
+        }
     }
 
 
@@ -58,7 +58,7 @@ const Managewhiteboard = () => {
                     <button
                         href="#"
                         className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                        onClick={() => {deleteFunc(whiteboard._id)}}
+                        onClick={() => { deleteFunc(whiteboard._id) }}
                     >
                         Delete
                     </button>
@@ -74,7 +74,7 @@ const Managewhiteboard = () => {
                     <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
                             <th scope="col" className="px-6 py-3">
-                               Lecture id
+                                Lecture id
                             </th>
                             <th scope="col" className="px-6 py-3">
                                 content

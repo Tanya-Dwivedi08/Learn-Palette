@@ -1,11 +1,13 @@
+'use client';
 import React from 'react';
+import { TeacherProvider } from './context/TeacherContext';
 
 
 const Template = ({children}) => {
 
     
   return (
-    <>{children}</>
+    <TeacherProvider>{children}</TeacherProvider>
   )
 }
 

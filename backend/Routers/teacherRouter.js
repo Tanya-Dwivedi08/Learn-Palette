@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const Model = require('../Models/teacherModel');
+const jwt = require('jsonwebtoken');
+require('dotenv').config();
 
 router.post('/add', (req, res) => {
     console.log(req.body);
@@ -12,27 +14,31 @@ router.post('/add', (req, res) => {
             res.status(500).json(err);
         });
 });
+
 router.post("/authenticate", (req, res) => {
     console.log(req.body);
-    Model.find(req.body)
+    Model.findOne(req.body)
         // for generation JWT required 4 things 1 payload 2
         .then((result) => {
             if (result) {
-                const { _id, name, email } = result;
-                const payload = { _id, name, email };
+                // console.log(result);
+                const { _id, teachername, email, avatar } = result;
+                const payload = { _id, teachername, email };
                 jwt.sign
-                {
-                    payload,
+                    (
+                        payload,
                         process.env.JWT_SECRET,
-                        { expiry: '2 days' },
+                        { expiresIn: '2 days' },
                         (err, token) => {
+                            // console.log(token);
                             if (err) {
+                                console.log(err);
                                 res.status(500).json({ message: 'error creating token' })
                             } else {
-                                res.status(200).json({ token, role: result.role })
+                                res.status(200).json({ token, avatar, teachername })
                             }
                         }
-                }
+                    )
 
             } else {
                 res.status(401).json({ message: 'Invalid Credentials' })
@@ -43,6 +49,7 @@ router.post("/authenticate", (req, res) => {
             res.status(500).json(err);
         });
 });
+
 router.get('/getall', (req, res) => {
     Model.find()
         .then((result) => {
