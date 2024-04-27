@@ -18,7 +18,7 @@ router.post('/add', verifyToken, (req, res) => {
 });
 router.post("/authenticate", (req, res) => {
     console.log(req.body);
-    model.find(req.body)
+    Model.find(req.body)
         // for generation JWT required 4 things 1 payload 2
         .then((result) => {
             if (result) {

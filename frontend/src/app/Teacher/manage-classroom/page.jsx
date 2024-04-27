@@ -1,4 +1,5 @@
 'use client';
+import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 
 
@@ -6,6 +7,7 @@ const Manageclassroom = () => {
 
   
     const [classroomList, setclassroomList] = useState([]);
+    const router = useRouter();
 
     const fetchclassroomsData = () => {
         fetch('http://localhost:5000/class/getall')

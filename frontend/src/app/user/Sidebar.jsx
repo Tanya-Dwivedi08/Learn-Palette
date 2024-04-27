@@ -32,7 +32,7 @@ const Sidebar = () => {
 
               <li>
                 <Link
-                  href="/user/create new classroom"
+                  href="/teacher/create-classroom"
                   className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                 >
                   <IoAddCircle className='text-2xl' />
@@ -42,7 +42,7 @@ const Sidebar = () => {
               </li>
               <li>
                 <Link
-                  href="/user/manage-classroom"
+                  href="/teacher/manage-classroom"
                   className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                 >
                  
@@ -56,7 +56,7 @@ const Sidebar = () => {
               </li>
               <li>
                 <Link
-                  href="/user/manage-student"
+                  href="/teacher/manage-student"
                   className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                 >
                   <svg
@@ -78,7 +78,7 @@ const Sidebar = () => {
               </li>
               <li>
                 <Link
-                  href="/user/manage-lecture"
+                  href="/teacher/manage-lecture"
                   className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                 >
                   {/* <svg
@@ -100,7 +100,7 @@ const Sidebar = () => {
              
               <li>
                 <Link
-                  href="/user/manage-whiteboard"
+                  href="/teacher/manage-whiteboard"
                   className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                 >
                   {/* <svg
@@ -119,7 +119,7 @@ const Sidebar = () => {
               </li>
               <li>
                 <Link
-                  href="/user/manage-videos"
+                  href="/teacher/manage-videos"
                   className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
                 >
                   {/* <svg
