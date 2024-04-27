@@ -1,19 +1,23 @@
 'use client';
-import React from 'react'
+import React, { useState } from 'react'
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import toast from 'react-hot-toast';
+import useTeacherContext from '@/app/context/TeacherContext';
 
 
 
 const createclass = () => {
+
+  const [currentTeacher, setCurrentTeacher] = useState(JSON.parse(sessionStorage.getItem('teacher')));
+
   const createclassValidationSchema = Yup.object().shape({
     name: Yup.string().required('Name is required'),
     description: Yup.string().required('Description is required'),
     tags: Yup.string().required('Tags is required'),
     cover: Yup.string().required('cover is required'),
     icon: Yup.string().required('icon is required'),
-   
+
   })
 
   const createclassForm = useFormik({
@@ -26,21 +30,24 @@ const createclass = () => {
     },
     onSubmit: (values, { resetForm }) => {
 
-      const res = fetch("http://localhost:5000/class/add", {
+      fetch("http://localhost:5000/class/add", {
         method: "POST",
         body: JSON.stringify(values),
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "x-auth-token": currentTeacher.token,
+        },
       })
         .then((response) => {
           console.log(response.status);
           if (response.status === 200) {
             toast.success("create successfully");
-            action.resetForm();
+            resetForm();
           } else {
             toast.error("Something went wrong");
           }
         }).catch((err) => {
-         console.log(err);
+          console.log(err);
         });
 
 
@@ -114,82 +121,82 @@ const createclass = () => {
                       </div>
 
                       <div>
-                      <label htmlFor="">
+                        <label htmlFor="">
                           Description
                         </label>
-                      {
-                        createclassForm.touched.description &&
-                        <small class="text-red-500">{createclassForm.errors.description}</small>
-                      }
-                      <input
-                        className="w-full px-8 py-4 mb-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
-                        type="text"
-                        placeholder=" Description"
-                        id="description"
-                        onChange={createclassForm.handleChange}
-                        value={createclassForm.values.description}
+                        {
+                          createclassForm.touched.description &&
+                          <small class="text-red-500">{createclassForm.errors.description}</small>
+                        }
+                        <input
+                          className="w-full px-8 py-4 mb-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
+                          type="text"
+                          placeholder=" Description"
+                          id="description"
+                          onChange={createclassForm.handleChange}
+                          value={createclassForm.values.description}
 
-                      />
+                        />
 
                       </div>
 
                       <div>
-                      <label htmlFor="">
+                        <label htmlFor="">
                           Tags
                         </label>
-                      {
-                        createclassForm.touched.tags &&
-                        <small class="text-red-500">{createclassForm.errors.tags}</small>
-                      }
-                      <input
-                        className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
-                        type="tags"
-                        placeholder="Tags"
-                        id="tags"
-                        onChange={createclassForm.handleChange}
-                        value={createclassForm.values.tags}
+                        {
+                          createclassForm.touched.tags &&
+                          <small class="text-red-500">{createclassForm.errors.tags}</small>
+                        }
+                        <input
+                          className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
+                          type="tags"
+                          placeholder="Tags"
+                          id="tags"
+                          onChange={createclassForm.handleChange}
+                          value={createclassForm.values.tags}
 
-                      />
+                        />
 
                       </div>
-                      
-                      
-                     <div>
-                     <label htmlFor="">
+
+
+                      <div>
+                        <label htmlFor="">
                           Cover
                         </label>
-                      {
-                        createclassForm.touched.cover &&
-                        <small class="text-red-500">{createclassForm.errors.cover}</small>
-                      }
-                      <input
-                        className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
-                        type="file"
-                        placeholder="Cover"
-                        id="cover"
-                        onChange={createclassForm.handleChange}
-                        value={createclassForm.values.cover}
+                        {
+                          createclassForm.touched.cover &&
+                          <small class="text-red-500">{createclassForm.errors.cover}</small>
+                        }
+                        <input
+                          className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
+                          type="file"
+                          placeholder="Cover"
+                          id="cover"
+                          onChange={createclassForm.handleChange}
+                          value={createclassForm.values.cover}
 
-                      />
+                        />
                       </div>
 
                       <div>
-                      <label htmlFor="">
+                        <label htmlFor="">
                           Icon
                         </label>
-                      {
-                        createclassForm.touched.icon &&
-                        <small class="text-red-500">{createclassForm.errors.icon}</small>
-                      }
-                      <input
-                        className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
-                        type="file"
-                        placeholder="Icon"
-                        id="icon"
-                        onChange={createclassForm.handleChange}
-                        value={createclassForm.values.icon}
+                        {
+                          createclassForm.touched.icon &&
+                          <small class="text-red-500">{createclassForm.errors.icon}</small>
+                        }
+                        <input
+                          className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
+                          type="file"
+                          placeholder="Icon"
+                          id="icon"
+                          onChange={createclassForm.handleChange}
+                          value={createclassForm.values.icon}
 
-                      />
+                        />
                       </div>
                       <button type="submit" className="mt-5 mb-5 tracking-wide font-semibold bg-green-400 text-white-500 w-full py-4 rounded-lg hover:bg-green-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
                         <svg

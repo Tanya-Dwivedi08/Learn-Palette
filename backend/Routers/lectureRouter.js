@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Model = require('../Models/lectureModel');
+const fs = require('fs').promises;
 
 router.post('/add', (req, res) => {
     console.log(req.body);
@@ -78,25 +79,23 @@ router.put('/update', (req, res) => {
    });
 });
 
-import fs from 'fs/promises'; // For Node.js file system access
+// export default async function handler(req, res) {
+//   if (req.method !== 'POST') {
+//     return res.status(405).json({ message: 'Method not allowed' });
+//   }
 
-export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ message: 'Method not allowed' });
-  }
+//   try {
+//     const whiteboardData = await req.body;
 
-  try {
-    const whiteboardData = await req.body;
+//     // Generate a unique filename and save the whiteboard data
+//     const filename = `${Date.now()}.json`; // Or other suitable format
+//     await fs.writeFile(`whiteboards/${filename}`, JSON.stringify(whiteboardData));
 
-    // Generate a unique filename and save the whiteboard data
-    const filename = `${Date.now()}.json`; // Or other suitable format
-    await fs.writeFile(`whiteboards/${filename}`, JSON.stringify(whiteboardData));
-
-    res.status(200).json({ message: 'Whiteboard content saved successfully' });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Error saving whiteboard content' });
-  }
-}
+//     res.status(200).json({ message: 'Whiteboard content saved successfully' });
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ message: 'Error saving whiteboard content' });
+//   }
+// }
 
 module.exports = router;
