@@ -98,4 +98,5 @@ router.put('/update', (req, res) => {
 //   }
 // }
 
+module.exports = handler;
 module.exports = router;
