@@ -1,5 +1,6 @@
 'use client'
 import React, { useState, useRef, useEffect } from 'react';
+import { MdDownloadForOffline } from 'react-icons/md';
 
 const ScreenRecorder = () => {
   const [isRecording, setIsRecording] = useState(false);
@@ -48,12 +49,14 @@ const ScreenRecorder = () => {
   }, []);
 
   return (
-    <div>
+    <div >
       <button onClick={startRecording} disabled={isRecording}>
-        {isRecording ? "Stop Recording" : "Start Recording"}
+        {isRecording ?   <button className='bg-red-500 text-white px-5 text-lg  rounded-xl '>Stop</button>:  <button className='bg-green-500 text-white px-5 text-lg  rounded-xl '>Start</button>}
+      
+       
       </button>
       <button onClick={stopRecording} disabled={!isRecording}>
-        Download Recording
+       <button className='bg-black text-white text-2xl rounded-xl mx-4 mt-1 '><MdDownloadForOffline /></button>
       </button>
       <button onClick={handleDownload}>Download Existing Recordings</button>
       {/* Add any UI elements for recording options (optional) */}

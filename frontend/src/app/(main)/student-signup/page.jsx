@@ -1,6 +1,6 @@
 "use client";
 import { useFormik } from "formik";
-// import toast from "react-hot-toast";
+import toast from "react-hot-toast";
 import * as Yup from "yup";
 
 const Signup = () => {
