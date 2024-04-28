@@ -29,14 +29,8 @@ const Signup = () => {
       action.resetForm();
       if (res.status === 200) {
         toast.success("SignUp successfully");
-<<<<<<< HEAD
-        router.push("/user/create-classroom");
-} 
-      else {
-=======
         router.push('/teacher-login')
       } else {
->>>>>>> fee8c5b9db00ce9d74214dbd9c3a45c99e76e66a
         toast.success("Something went wrong");
       }
     },
