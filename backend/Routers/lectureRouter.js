@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Model = require('../Models/lectureModel');
+const { log } = require('console');
 const fs = require('fs').promises;
 
 router.post('/add', (req, res) => {
@@ -54,6 +55,16 @@ router.get('/getall', (req, res) => {
         res.status(500).json(err);
     });
 });
+
+router.get('/getbyid/:id', (req,res) => {
+    Model.findById(req.params.id) 
+    .then((result) => {
+        res.status(200).json(result)
+    }).catch((err) => {
+        console.log(err);
+        res.status(500).json(err)
+    });
+})
 
 // : denote url parameter
 
