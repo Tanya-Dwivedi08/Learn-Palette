@@ -6,7 +6,7 @@ const Teacher = ({ children }) => {
     return (
         <>
 
-            {/* <Sidebar /> */}
+            <Sidebar />
             <div className='ms-72'>{children}</div>
         </>
     )
