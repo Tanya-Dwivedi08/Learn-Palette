@@ -1,7 +1,8 @@
 'use client'
 import ScreenRecorder from '@/app/(main)/screenrecorder/page';
 import React, { useState, useRef, useEffect } from 'react';
-import ColorPicker from 'react-color'; // Assuming you've installed react-color
+import ColorPicker from 'react-color';
+import KeyboardTextArea from '../KeyboardTextArea'; // Assuming you've installed react-color
 // import React, { useState, useRef } from 'react';
 // import Whiteboard from 'react-whiteboard';
 
@@ -103,6 +104,7 @@ function Whiteboard() {
     <div>
       <div className="bg-blue-200 px-3 py-1 mb-5">
       <ScreenRecorder  /></div>
+      <KeyboardTextArea />
       <button onClick={clearCanvas}>Clear Canvas</button>
       <button onClick={undo} disabled={lines.length === 0}>Undo</button>
       <button onClick={saveDrawing}>Save Canvas</button>
