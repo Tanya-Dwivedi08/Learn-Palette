@@ -5,9 +5,9 @@ import Sidebar from './Sidebar';
 const Teacher = ({ children }) => {
     return (
         <>
-         
+
             <Sidebar />
-             <div className='ms-72'>{children}</div>
+            <div className='ms-72'>{children}</div>
         </>
     )
 }

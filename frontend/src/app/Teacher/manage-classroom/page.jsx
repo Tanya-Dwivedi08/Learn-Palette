@@ -1,4 +1,5 @@
 'use client'
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 
@@ -52,12 +53,12 @@ const Manageclassroom = () => {
                 <td className="px-6 py-4">{classroom.thumbnail}</td>
                 <td className="px-6 py-4">{classroom.createAT}</td>
                 <td className="px-6 py-4">
-                    <a
-                        href="#"
+                    <Link
+                        href={`/Teacher/updateClass/${classroom._id}`}
                         className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
                     >
                         Edit
-                    </a>
+                    </Link>
                 </td>
                 <td className="px-6 py-4">
                     <button

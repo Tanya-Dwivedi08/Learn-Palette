@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 
 const Managelecture = () => {
@@ -41,23 +42,24 @@ const Managelecture = () => {
     const displaylectures = () => {
         return lectureList.map(lecture => (
             <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                <th
+                <td className="px-6 py-4">{lecture._id}</td>
+              
+                <td
                     scope="row"
                     className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                 >
                     {lecture.subject}
-                </th>
+                </td>
                 <td className="px-6 py-4">{lecture.description}</td>
                 <td className="px-6 py-4">{lecture.topic}</td>
                 <td className="px-6 py-4">{lecture.thumbnail}</td>
                 {/* <td className="px-6 py-4">{lecture.createdAt}</td> */}
                 <td className="px-6 py-4">
-                    <a
-                        href="#"
+                    <Link href={`/Teacher/updateLecture/${lecture._id}`}
                         className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
                     >
                         Edit
-                    </a>
+                    </Link>
                 </td>
                 <td className="px-6 py-4">
                     <button
@@ -78,9 +80,9 @@ const Managelecture = () => {
                 <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                     <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
-                            {/* <th scope="col" className="px-6 py-3">
-                              Class ID
-                            </th> */}
+                            <th scope="col" className="px-6 py-3">
+                              Lecture ID
+                            </th>
                             <th scope="col" className="px-6 py-3">
                                 Subject
                             </th>
@@ -93,9 +95,9 @@ const Managelecture = () => {
                             <th scope="col" className="px-6 py-3">
                                 Thumbnail
                             </th>
-                            <th scope="col" className="px-6 py-3">
+                            {/* <th scope="col" className="px-6 py-3">
                                CreateAT
-                            </th>
+                            </th> */}
                             <th scope="col" className="px-6 py-3">
                                 update
                             </th>
