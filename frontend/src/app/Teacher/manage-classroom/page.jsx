@@ -8,9 +8,14 @@ const Manageclassroom = () => {
   
     const [classroomList, setclassroomList] = useState([]);
     const router = useRouter();
+    const [currentTeacher, setCurrentTeacher] = useState(JSON.parse(sessionStorage.getItem('teacher')));
 
     const fetchclassroomsData = () => {
-        fetch('http://localhost:5000/class/getall')
+        fetch('http://localhost:5000/class/getbyteacher', {
+            headers: {
+                'x-auth-token' : currentTeacher.token
+            }
+        })
             .then((response) => {
                 return response.json();
             })

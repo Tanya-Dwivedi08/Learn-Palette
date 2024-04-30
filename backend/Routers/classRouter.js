@@ -83,4 +83,16 @@ router.put('/update', (req, res) => {
         });
 });
 
+// getbyteacher
+router.get('/getbyteacher', verifyToken, (req, res) => {
+    Model.find({ teacher: req.user._id })
+        .then((result) => {
+            res.status(200).json(result);
+        })
+        .catch((err) => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
 module.exports = router;
