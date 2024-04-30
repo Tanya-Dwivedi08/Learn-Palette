@@ -1,11 +1,10 @@
-
 'use client'
 import React, { useEffect, useState } from 'react'
 
 const classroom = () => {
    const [classData, setclassData] = useState([])
 
-const fetchclasss = async () => {
+const fetchclass = async () => {
 const res= await fetch('http://localhost:5000/class/getall');
 console.log(res.status);
 if(res.status === 200) {
@@ -14,7 +13,7 @@ if(res.status === 200) {
     setclassData(data)
 }}
 useEffect(() => {
-    fetchclasss();
+    fetchclass();
   }, []);
 
   const displayclasss = () => {
@@ -62,9 +61,14 @@ useEffect(() => {
   }
 
 
-
-    return (
-     <div>{displayclasss()}</div>
-    )
-  }
+  return (
+    <>
+    
+    <div className='grid grid-cols-3'>
+           {displayclasss()}
+        </div>
+    
+    </>
+  )
+}
 export default classroom;
