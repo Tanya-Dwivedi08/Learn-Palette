@@ -43,7 +43,7 @@ const router = useRouter();
           console.log(response.status);
           if (response.status === 200) {
             toast.success("create successfully");
-            router.push(`/viewClass/${id}`)
+            router.push('/classroom')
             resetForm();
           } else {
             toast.error("Something went wrong");
