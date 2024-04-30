@@ -3,21 +3,23 @@ import { useFormik } from "formik";
 // import toast from "react-hot-toast";
 import * as Yup from "yup";
 import toast from "react-hot-toast";
-import Link from "next/link";
-import { useRouter } from 'next/navigation';
-import { useContext, useState } from "react";
-const studentlogin = () => {
-  // const addUserSchema = Yup.object().shape({});
-  const { setCurrentStudent, setStudentLoggedIn } = useState();
-  const router = useRouter();
 
-  const addUserForm = useFormik({
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+
+const Studentlogin = () => {
+  // const addUserSchema = Yup.object().shape({});
+
+  
+  const router = useRouter();
+  const loginForm = useFormik({
     initialValues: {
-      fname: "",
-      lname: "",
+      fname:"",
+      lname:"",
       email: "",
       password: "",
     },
+
 
     onSubmit: async (values, action) => {
       // values.image = selFile;
@@ -30,13 +32,20 @@ const studentlogin = () => {
       console.log(res.status);
       action.resetForm();
       if (res.status === 200) {
-        toast.success("login successfully");
-      } else {
-        toast.success("Something went wrong");
+        toast.success("studentlogin successfully");
+        res.json().then((data) => {
+          console.log(data);
+         
+          router.push("/classroom");
+        });
+      } else if (res.status === 401){
+        toast.error("Something went wrong");
       }
+      
     },
     // validationSchema: addUserSchema,
   });
+     
 
   return (
     <div>
@@ -139,9 +148,9 @@ const studentlogin = () => {
       </div>
       <div className="pt-6 text-base font-semibold leading-7">
         <p className="font-sans text-black-500 text-md hover:text-red-800">
-          <a href="/" className="absolute">
+          <Link Link href="/" className="absolute">
             ← Home
-          </a>
+          </Link>
         </p>
       </div>
     </form>
@@ -152,4 +161,5 @@ const studentlogin = () => {
   );
 };
 
-export default studentlogin;
+
+export default Studentlogin;
