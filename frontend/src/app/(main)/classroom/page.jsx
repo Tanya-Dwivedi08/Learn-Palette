@@ -18,7 +18,7 @@ useEffect(() => {
 
   const displayclasss = () => {
      return classData.map((classroom) => (
-        <div className='grid grid-cols-2 rows-5 mb-2 mt-6 ml-3 mr-4'>
+        <div className='grid grid-cols-2 rows-5  mt-6 ml-3 mr-4'>
         <div className="max-w-sm my-9 mx-2 ms-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
           
             <div className="p-7 ">
