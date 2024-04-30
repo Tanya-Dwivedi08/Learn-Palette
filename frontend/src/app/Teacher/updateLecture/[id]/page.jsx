@@ -1,10 +1,12 @@
 'use client'
+import useTeacherContext from "@/app/context/TeacherContext";
 import { Formik } from "formik";
 import { useParams, useRouter } from "next/navigation";
 import  { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
 const UpdateLecture = () => {
+  const {currentTeacher} = useTeacherContext();
   const { id } = useParams();
   const [LectureData, setLectureData] = useState(null);
   const [selFile, setSelFile] = useState("");
@@ -30,10 +32,11 @@ const router = useRouter();
       method: 'PUT',
       body: JSON.stringify(values),
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        "x-auth-token" : currentTeacher.token
       }
     });
-
+  
     console.log(res.status);
 
     if (res.status === 200) {

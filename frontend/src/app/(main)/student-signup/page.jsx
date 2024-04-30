@@ -1,9 +1,11 @@
 "use client";
 import { useFormik } from "formik";
+import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import * as Yup from "yup";
 
 const Signup = () => {
+  const router = useRouter()
   const addUserSchema = Yup.object().shape({});
 
   const addUserForm = useFormik({
@@ -18,7 +20,7 @@ const Signup = () => {
     onSubmit: async (values, action) => {
       // values.image = selFile;
       console.log(values);
-      const res = await fetch("http://localhost:5000/user/add", {
+      const res = await fetch("http://localhost:5000/student/add", {
         method: "POST",
         body: JSON.stringify(values),
         headers: { "Content-type": "application/json" },
@@ -27,6 +29,7 @@ const Signup = () => {
       action.resetForm();
       if (res.status === 200) {
         toast("SignUp successfully");
+        router.push('/student-login')
       } else {
         toast("Something went wrong");
       }

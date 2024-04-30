@@ -5,16 +5,13 @@ import * as Yup from "yup";
 import toast from "react-hot-toast";
 import Link from "next/link";
 import { useRouter } from 'next/navigation';
-import { useContext, useState } from "react";
-const studentlogin = () => {
-  // const addUserSchema = Yup.object().shape({});
-  const { setCurrentStudent, setStudentLoggedIn } = useState();
-  const router = useRouter();
+import useStudentContext from "@/app/context/StudentContext";
 
-  const addUserForm = useFormik({
+const studentlogin = () => {
+  const { setCurrentStudent, setStudentLoggedIn} = useStudentContext();
+  const router = useRouter();
+  const loginForm = useFormik({
     initialValues: {
-      fname: "",
-      lname: "",
       email: "",
       password: "",
     },
@@ -22,7 +19,7 @@ const studentlogin = () => {
     onSubmit: async (values, action) => {
       // values.image = selFile;
       console.log(values);
-      const res = await fetch("http://localhost:5000/student/add", {
+      const res = await fetch("http://localhost:5000/student/authenticate", {
         method: "POST",
         body: JSON.stringify(values),
         headers: { "Content-Type": "application/json" },
@@ -30,10 +27,18 @@ const studentlogin = () => {
       console.log(res.status);
       action.resetForm();
       if (res.status === 200) {
-        toast.success("login successfully");
-      } else {
-        toast.success("Something went wrong");
+        toast.success("Studentlogin successfully");
+        res.json().then((data) => {
+          console.log(data);
+          sessionStorage.setItem("student", JSON.stringify(data));
+          setStudentLoggedIn(true);
+          setCurrentStudent(data);
+          router.push("/lectures");
+        });
+      } else if (res.status === 401){
+        toast.error("Something went wrong");
       }
+      
     },
     // validationSchema: addUserSchema,
   });
@@ -48,7 +53,7 @@ const studentlogin = () => {
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   {/* component */}
   <div className="h-screen bg-gradient-to-br from-pink-600 to-cyan-300 flex justify-center items-center w-full">
-    <form method="POST" action="#">
+    <form method="POST" action="#" onSubmit={loginForm.handleSubmit}>
       <div className="bg-white px-10 py-8 rounded-xl w-screen shadow-xl max-w-sm">
         <div className="space-y-4">
           <h1 className="text-center text-2xl font-semibold text-gray-600">
@@ -74,7 +79,9 @@ const studentlogin = () => {
               className="pl-2 outline-none border-none w-full"
               type="email"
               name="email"
-              defaultValue=""
+              values={loginForm.values.email}
+              onChange={loginForm.handleChange}
+  
               placeholder="Email"
               required=""
             />
@@ -96,9 +103,11 @@ const studentlogin = () => {
               className="pl-2 outline-none border-none w-full"
               type="password"
               name="password"
-              id=""
+              id="password"
               placeholder="Password"
               required=""
+              values={loginForm.values.password}
+              onChange={loginForm.handleChange}
             />
           </div>
         </div>
