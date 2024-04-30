@@ -5,10 +5,10 @@ import * as Yup from "yup";
 import toast from "react-hot-toast";
 import Link from "next/link";
 import { useRouter } from 'next/navigation';
-import { useContext } from "react";
+import { useContext, useState } from "react";
 const studentlogin = () => {
   // const addUserSchema = Yup.object().shape({});
-  const { setCurrentStudent, setStudentLoggedIn } = use();
+  const { setCurrentStudent, setStudentLoggedIn } = useState();
   const router = useRouter();
 
   const addUserForm = useFormik({

@@ -38,7 +38,7 @@ const router = useRouter();
 
     if (res.status === 200) {
     toast("Updated successfully")
-   router.push('/Teacher/manage-Lecture')
+   router.push('/Teacher/manage-lecture')
     }
   };
 
