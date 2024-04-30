@@ -37,8 +37,8 @@ const Viewclass = () => {
                 </div>
               </div>
               <div>
-        <p className="text-center text-2xl font-semibold">Students</p>
-        </div>
+                <p className="text-center text-2xl font-semibold">Students</p>
+              </div>
             </div>
           </div>
         ) : (
@@ -48,7 +48,7 @@ const Viewclass = () => {
         )
       }
 
-    
+
     </>
 
 
