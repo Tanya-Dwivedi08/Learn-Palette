@@ -88,17 +88,15 @@ router.get("/getbyid/:id", (req,res) => {
     });
 })
 
-router.put('/update', (req, res) => {
-   Model.findByIdAndUpdate(req.param.id, req.body)
-   .then((result) => {
-    res.status(200).json(result);
+router.put("/update/:id", (req,res) => {
+    Model.findByIdAndUpdate(req.params.id, req.body,{new:true})             //new:true is for data update
+    .then((result) => {
+      res.json(result)
+    }).catch((err) => {
+      console.error(err)
+      res.status(500).json(err)
+    });
     })
-   .catch((err) => {
-    console.log(err);
-    res.status(500).json(err);
-   });
-});
-
 // export default async function handler(req, res) {
 //   if (req.method !== 'POST') {
 //     return res.status(405).json({ message: 'Method not allowed' });

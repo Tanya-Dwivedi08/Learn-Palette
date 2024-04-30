@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 
 const Managelecture = () => {
@@ -54,12 +55,11 @@ const Managelecture = () => {
                 <td className="px-6 py-4">{lecture.thumbnail}</td>
                 {/* <td className="px-6 py-4">{lecture.createdAt}</td> */}
                 <td className="px-6 py-4">
-                    <a
-                        href="#"
+                    <Link href={`/Teacher/updateLecture/${lecture._id}`}
                         className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
                     >
                         Edit
-                    </a>
+                    </Link>
                 </td>
                 <td className="px-6 py-4">
                     <button
