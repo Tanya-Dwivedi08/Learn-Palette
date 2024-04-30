@@ -1,16 +1,27 @@
 'use client'
+import ScreenRecorder from '@/app/(main)/screenrecorder/page';
 import React, { useState, useRef, useEffect } from 'react';
-import ColorPicker from 'react-color'; // Assuming you've installed react-color
+import ColorPicker from 'react-color';
+// import KeyboardTextArea from '../KeyboardTextArea'; // Assuming you've installed react-color
+// import React, { useState, useRef } from 'react';
+// import Whiteboard from 'react-whiteboard';
 
 function Whiteboard() {
   const canvasRef = useRef(null);
-  const [drawingData, setDrawingData] = useState([]);
+  const [IsdrawingData, setIsDrawingData] = useState([]);
   const [color, setColor] = useState('black');
   const [lineWidth, setLineWidth] = useState(3);
   const [lines, setLines] = useState([]); // Array to store drawing data
 
+  // useEffect(() => {
+  //   const ctx = canvasRef.current.getContext('2d');
+  //   ctx.
+  // }, 
+  // [])
+  
+
   const handleMouseDown = (e) => {
-    setIsDrawing(true);
+    setIsDrawingData(true);
     const ctx = canvasRef.current.getContext('2d');
     ctx.beginPath();
     ctx.lineWidth = lineWidth;
@@ -19,7 +30,7 @@ function Whiteboard() {
   };
 
   const handleMouseMove = (e) => {
-    if (isDrawing) {
+    if (IsdrawingData) {
       const ctx = canvasRef.current.getContext('2d');
       ctx.lineTo(e.nativeEvent.offsetX, e.nativeEvent.offsetY);
       ctx.stroke();
@@ -27,7 +38,7 @@ function Whiteboard() {
   };
 
   const handleMouseUp = () => {
-    setIsDrawing(false);
+    setIsDrawingData(false);
     const ctx = canvasRef.current.getContext('2d');
     ctx.closePath();
 
@@ -45,7 +56,7 @@ function Whiteboard() {
     // Implement undo logic (e.g., remove the last line from the lines array)
     const newLines = [...lines];
     newLines.pop();
-    setLines(newLines);
+    setLines[(newLines)];
     redrawLines(); // Call redrawLines to reflect the change on canvas
   };
 
@@ -75,7 +86,7 @@ function Whiteboard() {
     try {
       const response = await fetch('http://localhost:5000/lecture/save-canvas', {
         method: 'POST',
-        body: JSON.stringify({ drawingData }),
+        body: JSON.stringify({ IsdrawingData }),
       });
   
       if (response.ok) {
@@ -91,7 +102,9 @@ function Whiteboard() {
 
   return (
     <div>
-      <canvas ref={canvasRef} width={1200} height={800} onMouseDown={handleMouseDown} onMouseMove={handleMouseMove} onMouseUp={handleMouseUp} />
+      <div className="bg-blue-200 px-3 py-1 mb-5">
+      <ScreenRecorder  /></div>
+      {/* <KeyboardTextArea /> */}
       <button onClick={clearCanvas}>Clear Canvas</button>
       <button onClick={undo} disabled={lines.length === 0}>Undo</button>
       <button onClick={saveDrawing}>Save Canvas</button>
@@ -99,6 +112,8 @@ function Whiteboard() {
       {/* <button onClick={redo} disabled=Implement redo disabled logic>Redo</button> */}
       <ColorPicker color={color} onChange={handleColorChange} />
       <input type="range" min="1" max="10" value={lineWidth} onChange={(e) => setLineWidth(e.target.value)} />
+      <canvas ref={canvasRef} width={1200} height={600} onMouseDown={handleMouseDown} onMouseMove={handleMouseMove} onMouseUp={handleMouseUp} className='border-black border-2 border-black-500/100'/>
+
     </div>
   );
 }

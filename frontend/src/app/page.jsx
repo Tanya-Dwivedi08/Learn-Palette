@@ -39,7 +39,7 @@ const  Home = () => {
                     href="#"
                     className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
                   >
-                    <span>Product</span>
+                    <span>Home</span>
                   </a>
                 </li>
                 <li>
@@ -47,7 +47,15 @@ const  Home = () => {
                     href="#"
                     className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
                   >
-                    <span>Resources</span>
+                    <span>Features</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
+                  >
+                    <span>Pricing</span>
                   </a>
                 </li>
                 <li>
@@ -63,26 +71,19 @@ const  Home = () => {
                     href="#"
                     className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
                   >
-                    <span>plan&pricing</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
-                  >
                     <span>support</span>
                   </a>
                 </li>
               </ul>
             </div>
             <div className="w-full space-y-2 gap-2 pt-6 pb-4 lg:pb-0 border-t border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] items-center flex flex-col lg:flex-row lg:space-y-0 lg:w-fit lg:border-l lg:border-t-0 lg:pt-0 lg:pl-2">
-              <Link href="studentlogin" className="w-full h-9 lg:w-fit group flex items-center rounded-[--btn-border-radius] disabled:border *:select-none [&>*:not(.sr-only)]:relative *:disabled:opacity-20 *:disabled:text-gray-950 disabled:border-gray-200 disabled:bg-gray-100 dark:disabled:border dark:disabled:border-gray-800 disabled:dark:bg-gray-900 dark:*:disabled:!text-white text-gray-800 hover:bg-gray-100 active:bg-gray-200/75 dark:text-gray-300 dark:hover:bg-gray-500/10 dark:active:bg-gray-500/15 lg:text-sm lg:h-8 px-3.5 justify-center">
+
+            <Link href="/teacher-login" className="w-full h-9 lg:w-fit group flex items-center relative border rounded-[--btn-border-radius] *:select-none [&>*:not(.sr-only)]:relative before:rounded-[calc(var(--btn-border-radius)-1px)] before:absolute before:inset-0 before:border before:bg-gradient-to-b *:disabled:opacity-20 disabled:text-gray-950/40 disabled:border-gray-200 disabled:bg-gray-100 disabled:*:text-gray-300 disabled:before:border-transparent disabled:before:bg-gray-100 disabled:before:from-transparent dark:border-0 dark:before:border-0 dark:before:border-t dark:before:shadow-inner dark:disabled:border dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 disabled:dark:*:text-gray-700 dark:disabled:before:bg-gray-900 dark:disabled:before:from-gray-900 dark:disabled:before:shadow-none dar k:*:disabled:!text-white text-white border-gray-950 bg-gray-600 before:border-gray-600 before:from-gray-800 hover:bg-gray-900 active:bg-gray-950 dark:text-gray-950 dark:before:border-gray-200 dark:before:from-gray-200 dark:bg-white dark:before:shadow-white/10 dark:hover:bg-gray-100 dark:active:bg-gray-300 dark:active:before:from-gray-200 lg:text-sm lg:h-8 px-3 justify-center">
+                <span>Teacher</span>
+              </Link>
+             <Link href="/student-login" className="w-full h-9 lg:w-fit group flex items-center relative border rounded-[--btn-border-radius] *:select-none [&>*:not(.sr-only)]:relative before:rounded-[calc(var(--btn-border-radius)-1px)] before:absolute before:inset-0 before:border before:bg-gradient-to-b *:disabled:opacity-20 disabled:text-gray-950/40 disabled:border-gray-200 disabled:bg-gray-100 disabled:*:text-gray-300 disabled:before:border-transparent disabled:before:bg-gray-100 disabled:before:from-transparent dark:border-0 dark:before:border-0 dark:before:border-t dark:before:shadow-inner dark:disabled:border dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 disabled:dark:*:text-gray-700 dark:disabled:before:bg-gray-900 dark:disabled:before:from-gray-900 dark:disabled:before:shadow-none dar k:*:disabled:!text-white text-white border-gray-950 bg-gray-600 before:border-gray-600 before:from-gray-800 hover:bg-gray-900 active:bg-gray-950 dark:text-gray-950 dark:before:border-gray-200 dark:before:from-gray-200 dark:bg-white dark:before:shadow-white/10 dark:hover:bg-gray-100 dark:active:bg-gray-300 dark:active:before:from-gray-200 lg:text-sm lg:h-8 px-3 justify-center">
                 <span>Student</span>
               </Link>
-              <Link href="" className="w-full h-9 lg:w-fit group flex items-center relative border rounded-[--btn-border-radius] *:select-none [&>*:not(.sr-only)]:relative before:rounded-[calc(var(--btn-border-radius)-1px)] before:absolute before:inset-0 before:border before:bg-gradient-to-b *:disabled:opacity-20 disabled:text-gray-950/40 disabled:border-gray-200 disabled:bg-gray-100 disabled:*:text-gray-300 disabled:before:border-transparent disabled:before:bg-gray-100 disabled:before:from-transparent dark:border-0 dark:before:border-0 dark:before:border-t dark:before:shadow-inner dark:disabled:border dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 disabled:dark:*:text-gray-700 dark:disabled:before:bg-gray-900 dark:disabled:before:from-gray-900 dark:disabled:before:shadow-none dark:*:disabled:!text-white text-white border-gray-950 bg-gray-600 before:border-gray-600 before:from-gray-800 hover:bg-gray-900 active:bg-gray-950 dark:text-gray-950 dark:before:border-gray-200 dark:before:from-gray-200 dark:bg-white dark:before:shadow-white/10 dark:hover:bg-gray-100 dark:active:bg-gray-300 dark:active:before:from-gray-200 lg:text-sm lg:h-8 px-3 justify-center">
-                <span>Teacher</span>
-              <Link/>
             </div>
           </div>
         </div>
@@ -108,7 +109,7 @@ const  Home = () => {
                   <svg
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="size-4 text-gray-950 dark:text-white -translate-x-2 transition duration-300 group-hover:translate-x-px"
+                    className="size-4 text-gray-950 dark:text-blue-translate-x-2 transition duration-300 group-hover:translate-x-px"
                     fill="none"
                     viewBox="0 0 20 20"
                     stroke="currentColor"
@@ -139,7 +140,7 @@ const  Home = () => {
     Revolutionizing Collaboration:
     </p>
   
-  <p className="text-lg font-normal text-fuchsia-50 lg:text-xl dark:text-fuchsia-100">
+  <p className="text-lg font-normal text-grey-50 lg:text-xl dark:text-white-100">
   "The Virtual WhiteBoard Experiences."
   </p>
 </>
@@ -175,7 +176,7 @@ const  Home = () => {
                   <span className="text-nowrap">Start Learning</span>
                 </a>
               </div>
-              <button className="hidden *:select-none *:disabled:opacity-20 dark:*:disabled:!text-white dark:hover:bg-gray-500/15 group h-9 items-center justify-center gap-1.5 rounded-[--btn-border-radius] bg-gray-100 px-3 text-base text-gray-800 hover:bg-gray-200/75 active:bg-gray-100 disabled:border disabled:border-gray-200 disabled:bg-gray-100 disabled:text-gray-950 dark:bg-gray-500/10 dark:text-gray-300 dark:active:bg-gray-500/10 dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 [&>*:not(.sr-only)]:relative">
+              <button className="hidden *:select-none *:disabled:opacity-20 dark:*:disabled:!text-black dark:hover:bg-gray-500/15 group h-9 items-center justify-center gap-1.5 rounded-[--btn-border-radius] bg--100 px-3 text-base text-gray-800 hover:bg-gray-200/75 active:bg-gray-100 disabled:border disabled:border-gray-200 disabled:bg-gray-100 disabled:text-gray-950 dark:bg-gray-500/10 dark:text-gray-300 dark:active:bg-gray-500/10 dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 [&>*:not(.sr-only)]:relative">
                 <span className="text-sm">Learn more</span>
                 <svg
                   className="-mr-1"

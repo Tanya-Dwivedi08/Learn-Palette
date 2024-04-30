@@ -3,128 +3,64 @@ import React from 'react'
 const navbar = () => {
   return (
     <div>
-     <div className="bg-gray-900">
-  <div className="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
-    <div className="relative flex items-center justify-between">
-      <a
-        href="/"
-        aria-label="Learn Palette"
-        title="Learn Palette"
-        className="inline-flex items-center"
-      >
-        <svg
-          className="w-8 text-teal-accent-400"
-          viewBox="24 24 24 24"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          strokeLinecap="round"
-          strokeMiterlimit={10}
-          stroke="currentColor"
-          fill="none"
-        >
-          {/* <rect x={3} y={1} width={7} height={12} />
-          <rect x={3} y={17} width={7} height={6} />
-          <rect x={14} y={1} width={7} height={6} />
-          <rect x={14} y={11} width={7} height={12} /> */}
-        </svg>
-        <span className=" text-xl font-bold tracking-wide text-gray-100 uppercase">
-          Learn Palette
-        </span>
-      </a>
-      <ul className="flex items-center hidden space-x-8 lg:flex">
-        <li>
-          <a
-            href="/"
-            aria-label="Home Page"
-            title="Home Page"
-            className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-          >
-           Home
-          </a>
-        </li>
-        <li>
-          <a
-            href="/"
-            aria-label="Our product"
-            title="Feature"
-            className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-          >
-            Features
-          </a>
-        </li>
-        <li>
-          <a
-            href="/"
-            aria-label="Product pricing"
-            title="Product pricing"
-            className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-          >
-            Pricing
-          </a>
-        </li>
-        <li>
-          <a
-            href="/"
-            aria-label="Solutions"
-            title="Solutions"
-            className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-          >
-            Solutions
-          </a>
-        </li>
-        <li>
-          <a
-            href="/"
-            aria-label="our support"
-            title="our support"
-            className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
-          >
-            Support
-          </a>
-        </li>
-      </ul>
-      <ul className="flex items-center hidden space-x-8 lg:flex">
-        <li>
-          <a
-            href="/"
-            className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-            aria-label="Sign up"
-            title="Sign up"
-          >
-            Sign up
-          </a>
-        </li>
-      </ul>
-      {/* Mobile menu */}
-      <div className="lg:hidden">
-        <button
-          aria-label="Open Menu"
-          title="Open Menu"
-          className="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline"
-        >
-          <svg className="w-5 text-gray-600" viewBox="0 0 24 24">
-            <path
-              fill="currentColor"
-              d="M23,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,13,23,13z"
-            />
-            <path
-              fill="currentColor"
-              d="M23,6H1C0.4,6,0,5.6,0,5s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,6,23,6z"
-            />
-            <path
-              fill="currentColor"
-              d="M23,20H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,20,23,20z"
-            />
-          </svg>
-        </button>
-        
-      </div>
-    </div>
-  </div>
-</div>
+     <div className="w-full h-0 lg:w-fit flex-wrap justify-end items-center space-y-8 lg:space-y-0 lg:flex lg:h-fit md:flex-nowrap">
+            <div className="mt-6 text-gray-600 dark:text-gray-300 md:-ml-4 lg:pr-4 lg:mt-0">
+              <ul className="space-y-6 tracking-wide text-base lg:text-sm lg:flex lg:space-y-0">
+                <li>
+                  <a
+                    href="#"
+                    className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
+                  >
+                    <span>Home</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
+                  >
+                    <span>Features</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
+                  >
+                    <span>Pricing</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
+                  >
+                    <span>Solutions</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
+                  >
+                    <span>support</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="w-full space-y-2 gap-2 pt-6 pb-4 lg:pb-0 border-t border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] items-center flex flex-col lg:flex-row lg:space-y-0 lg:w-fit lg:border-l lg:border-t-0 lg:pt-0 lg:pl-2">
 
-
-    </div>
+            <Link href="Teacher/teacher-login" className="w-full h-9 lg:w-fit group flex items-center relative border rounded-[--btn-border-radius] *:select-none [&>*:not(.sr-only)]:relative before:rounded-[calc(var(--btn-border-radius)-1px)] before:absolute before:inset-0 before:border before:bg-gradient-to-b *:disabled:opacity-20 disabled:text-gray-950/40 disabled:border-gray-200 disabled:bg-gray-100 disabled:*:text-gray-300 disabled:before:border-transparent disabled:before:bg-gray-100 disabled:before:from-transparent dark:border-0 dark:before:border-0 dark:before:border-t dark:before:shadow-inner dark:disabled:border dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 disabled:dark:*:text-gray-700 dark:disabled:before:bg-gray-900 dark:disabled:before:from-gray-900 dark:disabled:before:shadow-none dar k:*:disabled:!text-white text-white border-gray-950 bg-gray-600 before:border-gray-600 before:from-gray-800 hover:bg-gray-900 active:bg-gray-950 dark:text-gray-950 dark:before:border-gray-200 dark:before:from-gray-200 dark:bg-white dark:before:shadow-white/10 dark:hover:bg-gray-100 dark:active:bg-gray-300 dark:active:before:from-gray-200 lg:text-sm lg:h-8 px-3 justify-center">
+                <span>Teacher</span>
+              </Link>
+             <Link href="/student-login" className="w-full h-9 lg:w-fit group flex items-center relative border rounded-[--btn-border-radius] *:select-none [&>*:not(.sr-only)]:relative before:rounded-[calc(var(--btn-border-radius)-1px)] before:absolute before:inset-0 before:border before:bg-gradient-to-b *:disabled:opacity-20 disabled:text-gray-950/40 disabled:border-gray-200 disabled:bg-gray-100 disabled:*:text-gray-300 disabled:before:border-transparent disabled:before:bg-gray-100 disabled:before:from-transparent dark:border-0 dark:before:border-0 dark:before:border-t dark:before:shadow-inner dark:disabled:border dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 disabled:dark:*:text-gray-700 dark:disabled:before:bg-gray-900 dark:disabled:before:from-gray-900 dark:disabled:before:shadow-none dar k:*:disabled:!text-white text-white border-gray-950 bg-gray-600 before:border-gray-600 before:from-gray-800 hover:bg-gray-900 active:bg-gray-950 dark:text-gray-950 dark:before:border-gray-200 dark:before:from-gray-200 dark:bg-white dark:before:shadow-white/10 dark:hover:bg-gray-100 dark:active:bg-gray-300 dark:active:before:from-gray-200 lg:text-sm lg:h-8 px-3 justify-center">
+                <span>Student</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+     
+   
   )
 }
 

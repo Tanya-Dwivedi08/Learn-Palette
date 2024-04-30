@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const Model = require('../Models/lectureModel');
-// import fs from 'fs/promises'; // For Node.js file system access
+const { log } = require('console');
+const fs = require('fs').promises;
 
 router.post('/add', (req, res) => {
     console.log(req.body);
@@ -55,6 +56,16 @@ router.get('/getall', (req, res) => {
     });
 });
 
+router.get('/getbyid/:id', (req,res) => {
+    Model.findById(req.params.id) 
+    .then((result) => {
+        res.status(200).json(result)
+    }).catch((err) => {
+        console.log(err);
+        res.status(500).json(err)
+    });
+})
+
 // : denote url parameter
 
 router.delete('/delete/:id', (req, res) => {
@@ -88,7 +99,6 @@ router.put('/update', (req, res) => {
    });
 });
 
-
 // export default async function handler(req, res) {
 //   if (req.method !== 'POST') {
 //     return res.status(405).json({ message: 'Method not allowed' });
@@ -108,4 +118,5 @@ router.put('/update', (req, res) => {
 //   }
 // }
 
+// module.exports = handler;
 module.exports = router;

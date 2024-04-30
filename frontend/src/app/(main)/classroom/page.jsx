@@ -1,3 +1,4 @@
+
 'use client'
 import React, { useEffect, useState } from 'react'
 
@@ -64,7 +65,6 @@ useEffect(() => {
 
     return (
      <div>{displayclasss()}</div>
-  )
-}
-
-export default classroom
+    )
+  }
+export default classroom;
