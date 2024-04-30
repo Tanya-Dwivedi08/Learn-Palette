@@ -33,7 +33,7 @@ const studentlogin = () => {
           sessionStorage.setItem("student", JSON.stringify(data));
           setStudentLoggedIn(true);
           setCurrentStudent(data);
-          router.push("/Student/create-classroom");
+          router.push("/lectures");
         });
       } else if (res.status === 401){
         toast.error("Something went wrong");
