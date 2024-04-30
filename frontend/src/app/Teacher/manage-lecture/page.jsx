@@ -1,13 +1,19 @@
 'use client';
+import useTeacherContext from '@/app/context/TeacherContext';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 
 const Managelecture = () => {
 
     const [lectureList, setlectureList] = useState([]);
-
+    const { currentTeacher } = useTeacherContext();
     const fetchlecturesData = () => {
-        fetch('http://localhost:5000/lecture/getall')
+        fetch('http://localhost:5000/lecture/getall', {
+            headers: {
+                "Content-Type": "application/json",
+                "x-auth-token": currentTeacher.token,
+            },
+        })
             .then((response) => {
                 return response.json();
             })
@@ -20,22 +26,22 @@ const Managelecture = () => {
             });
     }
 
-    
+
     useEffect(() => {
         fetchlecturesData();
     }, [])
 
-    
+
 
 
     const deleteFunc = async (id) => {
         console.log(id);
-         const res = await fetch ('http://localhost:5000/lecture/delete/' + id ,{
+        const res = await fetch('http://localhost:5000/lecture/delete/' + id, {
             method: "DELETE"
-         })
-         if (res.status ===200){
+        })
+        if (res.status === 200) {
             fetchlecturesData();
-         }
+        }
     }
 
 
@@ -43,7 +49,7 @@ const Managelecture = () => {
         return lectureList.map(lecture => (
             <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
                 <td className="px-6 py-4">{lecture._id}</td>
-              
+
                 <td
                     scope="row"
                     className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
@@ -65,7 +71,7 @@ const Managelecture = () => {
                     <button
                         href="#"
                         className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                        onClick={() => {deleteFunc(lecture._id)}}
+                        onClick={() => { deleteFunc(lecture._id) }}
                     >
                         Delete
                     </button>
@@ -81,7 +87,7 @@ const Managelecture = () => {
                     <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
                             <th scope="col" className="px-6 py-3">
-                              Lecture ID
+                                Lecture ID
                             </th>
                             <th scope="col" className="px-6 py-3">
                                 Subject
@@ -101,7 +107,7 @@ const Managelecture = () => {
                             <th scope="col" className="px-6 py-3">
                                 update
                             </th>
-                            
+
                             <th scope="col" className="px-6 py-3">
                                 Delete
                             </th>

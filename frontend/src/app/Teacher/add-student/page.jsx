@@ -3,10 +3,13 @@ import React from 'react'
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import toast from 'react-hot-toast';
+import useTeacherContext from '@/app/context/TeacherContext';
 
 
 
 const student = () => {
+
+  const {currentTeacher  } = useTeacherContext();
   const studentValidationSchema = Yup.object().shape({
     email: Yup.string().email('Email is invalid').required('Email is required'),
     fname: Yup.string().required('Name is required'),
@@ -32,7 +35,8 @@ const student = () => {
       const res = fetch("http://localhost:5000/student/add", {
         method: "POST",
         body: JSON.stringify(values),
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json" ,
+        "x-auth-token": currentTeacher.token,},
       })
         .then((response) => {
           console.log(response.status);

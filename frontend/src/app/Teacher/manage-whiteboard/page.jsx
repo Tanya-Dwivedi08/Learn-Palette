@@ -1,12 +1,18 @@
 'use client';
+import useTeacherContext from '@/app/context/TeacherContext';
 import React, { useEffect, useState } from 'react'
 
 const Managewhiteboard = () => {
 
     const [whiteboardList, setwhiteboardList] = useState([]);
-
+const {currentTeacher} =useTeacherContext();
     const fetchwhiteboardsData = () => {
-        fetch('http://localhost:5000/whiteboard/getall')
+        fetch('http://localhost:5000/whiteboard/getall',{
+            headers: {
+                "Content-Type": "application/json",
+                "x-auth-token": currentTeacher.token,
+              },
+            })
             .then((response) => {
                 return response.json();
             })
