@@ -15,9 +15,9 @@ const Signup = () => {
       subject: "",
       email: "",
       password: "",
+    
     },
-
-    onSubmit: async (values, action) => {
+onSubmit: async (values, action) => {
       // values.image = selFile;
       console.log(values);
       const res = await fetch("http://localhost:5000/teacher/add", {

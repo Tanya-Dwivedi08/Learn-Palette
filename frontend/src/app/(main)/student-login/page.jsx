@@ -3,29 +3,18 @@ import { useFormik } from "formik";
 // import toast from "react-hot-toast";
 import * as Yup from "yup";
 import toast from "react-hot-toast";
-
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useRouter } from 'next/navigation';
 import useStudentContext from "@/app/context/StudentContext";
 
 const studentlogin = () => {
   const { setCurrentStudent, setStudentLoggedIn} = useStudentContext();
-
-const Studentlogin = () => {
-  // const addUserSchema = Yup.object().shape({});
-
-  
   const router = useRouter();
   const loginForm = useFormik({
-  const loginForm = useFormik({
     initialValues: {
-      fname:"",
-      lname:"",
       email: "",
       password: "",
     },
-
 
     onSubmit: async (values, action) => {
       // values.image = selFile;
@@ -48,21 +37,11 @@ const Studentlogin = () => {
         });
       } else if (res.status === 401){
         toast.error("Something went wrong");
-        toast.success("studentlogin successfully");
-        res.json().then((data) => {
-          console.log(data);
-         
-          router.push("/classroom");
-        });
-      } else if (res.status === 401){
-        toast.error("Something went wrong");
       }
-      
       
     },
     // validationSchema: addUserSchema,
   });
-     
 
   return (
     <div>
@@ -169,9 +148,9 @@ const Studentlogin = () => {
       </div>
       <div className="pt-6 text-base font-semibold leading-7">
         <p className="font-sans text-black-500 text-md hover:text-red-800">
-          <Link Link href="/" className="absolute">
+          <a href="/" className="absolute">
             ← Home
-          </Link>
+          </a>
         </p>
       </div>
     </form>
@@ -182,5 +161,4 @@ const Studentlogin = () => {
   );
 };
 
-
-export default Studentlogin;
+export default studentlogin;

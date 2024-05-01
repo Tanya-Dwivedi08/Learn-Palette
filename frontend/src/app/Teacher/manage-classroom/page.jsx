@@ -11,7 +11,7 @@ const Manageclassroom = () => {
     const [classroomList, setclassroomList] = useState([]);
     const router = useRouter();
 
-    const fetchclassroomsData = () => {
+    const fetchclassroomData = () => {
         fetch('http://localhost:5000/class/getall',{
             headers: {
                 "Content-Type": "application/json",
@@ -32,7 +32,7 @@ const Manageclassroom = () => {
     }
  
    useEffect(() => {
-        fetchclassroomsData();
+        fetchclassroomData();
     }, [])
 
     const deleteFunc = async (id) => {
@@ -41,11 +41,11 @@ const Manageclassroom = () => {
             method: "DELETE"
          })
          if (res.status ===200){
-            fetchclassroomsData();
+            fetchclassroomData();
          }
     }
 
-    const displayclassrooms = () => {
+    const displayclassroom = () => {
         return classroomList.map(classroom => (
             <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
             <td
@@ -116,7 +116,7 @@ const Manageclassroom = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {displayclassrooms()}
+                        {displayclassroom()}
                     </tbody>
                 </table>
             </div>
