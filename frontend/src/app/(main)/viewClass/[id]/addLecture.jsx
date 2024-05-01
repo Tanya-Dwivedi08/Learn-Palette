@@ -1,17 +1,21 @@
 'use client';
 import { useFormik } from 'formik'
-import React from 'react'
+import React, { useState } from 'react'
+import toast from "react-hot-toast";
+import { useRouter } from 'next/navigation';
+import useTeacherContext from '@/app/context/TeacherContext';
+
 
 const AddLecture = ({close}) => {
 
+    const [currentTeacher, setCurrentTeacher] = useState(JSON.parse(sessionStorage.getItem('teacher')));
+
     const competitionForm = useFormik({
         initialValues: {
-            topic: '',
+            subject: '',
             description: '',
-            image: '',
-            startDate: new Date(),
-            endDate: new Date(),
-            prize: ''
+            topic: '',
+            thumbnail:'',
         },
         onSubmit: (values) => {
             console.log(values);
@@ -20,14 +24,21 @@ const AddLecture = ({close}) => {
                 method: 'POST',
                 body: JSON.stringify(values),
                 headers: {
-                    'Content-Type' : 'application/json'
+                    'Content-Type' : 'application/json',
+                    'x-auth-token' : currentTeacher.token
                 }
             })
+
             .then((response) => {
                 console.log(response.status);
                 if(response.status === 200){
+                    toast("Submit Successfully")
+                    
                     close();
+                }else{
+                    toast("Something went wrong")
                 }
+
             }).catch((err) => {
                 console.log(err);
             });
@@ -44,7 +55,7 @@ const AddLecture = ({close}) => {
         }).then((res) => {
           if (res.status === 200) {
             console.log("file uploaded");
-            competitionForm.values.image = file.name;
+            competitionForm.values.thumbnail = file.name;
           }
         });
       };
@@ -52,7 +63,7 @@ const AddLecture = ({close}) => {
     return (
         <div>
             <div
-                id="updatePlModal"
+                id="updatelectureModal"
                 tabIndex={-1}
                 aria-hidden="true"
                 className="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full"
@@ -63,7 +74,7 @@ const AddLecture = ({close}) => {
                         {/* Modal header */}
                         <div className="flex justify-between items-center pb-4 mb-4 rounded-t border-b sm:mb-5 dark:border-gray-600">
                             <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                                Add Competition
+                                Add Lecture
                             </h3>
                             <button
                                 type="button"
@@ -113,82 +124,20 @@ const AddLecture = ({close}) => {
                                         htmlFor="brand"
                                         className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                                     >
-                                        Start Date
-                                    </label>
-                                    <input
-                                        type="date"
-                                        name="startDate"
-                                        onChange={competitionForm.handleChange}
-                                        value={competitionForm.values.startDate}
-                                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-
-                                    />
-                                </div>
-                                <div>
-                                    <label
-                                        htmlFor="brand"
-                                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                                    >
-                                        End Date
-                                    </label>
-                                    <input
-                                        type="date"
-                                        name="endDate"
-                                        onChange={competitionForm.handleChange}
-                                        value={competitionForm.values.endDate}
-                                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-
-                                    />
-                                </div>
-                                <div>
-                                    <label
-                                        htmlFor="price"
-                                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                                    >
-                                        Prize
+                                        Subject
                                     </label>
                                     <input
                                         type="text"
-                                        name="prize"
+                                        name="subject"
                                         onChange={competitionForm.handleChange}
-                                        value={competitionForm.values.prize}
+                                        value={competitionForm.values.subject}
                                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
 
                                     />
-                                    <div>
-                                        <label
-                                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                                            htmlFor="file_input"
-                                        >
-                                            Upload file
-                                        </label>
-                                        <input
-                                            className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                            id="file_input"
-                                            type="file"
-                                            onChange={uploadFile}
-                                        />
-                                    </div>
-
                                 </div>
-                                <div>
-                                    <label
-                                        htmlFor="category"
-                                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                                    >
-                                        Category
-                                    </label>
-                                    <select
-                                        id="category"
-                                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                    >
-                                        <option selected="">Electronics</option>
-                                        <option value="TV">TV/Monitors</option>
-                                        <option value="PC">PC</option>
-                                        <option value="GA">Gaming/Console</option>
-                                        <option value="PH">Phones</option>
-                                    </select>
-                                </div>
+                              
+                               
+                             
                                 <div className="sm:col-span-2">
                                     <label
                                         htmlFor="description"
@@ -211,7 +160,7 @@ const AddLecture = ({close}) => {
                                     type="submit"
                                     className="bg-blue-800 text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                                 >
-                                    Submit Topic
+                                    Submit Lecture
                                 </button>
                                 <button
                                     type="button"

@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.19",
+    "@tabler/icons-react": "^3.3.0",
     "bootstrap": "^5.3.3",
     "env": "^0.0.2",
     "formik": "^2.4.5",

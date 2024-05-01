@@ -3,16 +3,18 @@ import useTeacherContext from '@/app/context/TeacherContext';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react'
+import { Dialog } from '@headlessui/react';
+import { IconPlus } from '@tabler/icons-react';
+import AddLecture from './addLecture'
 
 const Viewclass = () => {
   const { id } = useParams();
-
-  const { currentTeacher } = useTeacherContext()
-
+  const [lectureList, setlectureList] = useState([])
+  const [isOpen, setIsOpen] = useState(false);
   const [classList, setclassList] = useState([]);
   const fetchclassData = async () => {
     const res = await fetch('http://localhost:5000/class/getbyid/' + id);
-    
+
     console.log(res.status);
     if (res.status === 200) {
       const data = await res.json();
@@ -25,8 +27,66 @@ const Viewclass = () => {
     fetchclassData();
   }, []);
 
+  const fetchLectureData = () => {
+    fetch('http://localhost:5000/lecture/getall')
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        setLectureList(data);
+      })
+      .catch(err => console.log(err));
+  }
+
+  useEffect(() => {
+    fetchLectureData();
+  }, [])
+
+  const deleteLecture = (id) => {
+    fetch('http://localhost:5000/lecture/delete/' + id, {
+      method: 'DELETE'
+    })
+      .then(response => {
+        if (response.status === 200) {
+          fetchLectureData();
+          toast.success('Lecture deleted successfully');
+        }
+      })
+      .catch(err => {
+        console.log(err);
+        toast.error('Lecture not deleted');
+      });
+  }
+  const displayLectures = () => {
+    return lectureList.map((lec) => (
+      <p className="">{lec.subject}</p>
+    ))
+  }
+
   return (
     <>
+      <Dialog open={isOpen} onClose={() => setIsOpen(false)}>
+        <Dialog.Panel>
+          <Dialog.Title>Deactivate account</Dialog.Title>
+          <Dialog.Description>
+            This will permanently deactivate your account
+          </Dialog.Description>
+
+
+          <AddLecture close={() => setIsOpen(false)} />
+
+          {/* <button onClick={() => setIsOpen(false)}>Deactivate</button>
+        <button onClick={() => setIsOpen(false)}>Cancel</button> */}
+        </Dialog.Panel>
+      </Dialog>
+
+      <button
+        type="button"
+        onClick={e => setIsOpen(true)}
+        className="mt-16 py-3 mx-2 mb-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+      >
+        <IconPlus /> Add Lecture
+      </button>
+
       {
         classList !== null ? (
 
@@ -42,10 +102,10 @@ const Viewclass = () => {
                   <p className="">{classList.createdAt}</p>
                 </div>
                 <Link href={`/viewLecture/${classList._id}`} type='button' className='bg-green-600 mt-3 text-white px-4 py-2 mb-3 rounded-xl'> Lectures</Link>
-                
+
               </div>
               <div>
-                <p className="text-center text-2xl font-semibold"></p>
+                <p className="text-center text-2xl font-semibold"> {displayLectures()}</p>
               </div>
             </div>
           </div>
