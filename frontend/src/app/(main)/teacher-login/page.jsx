@@ -140,7 +140,7 @@ const teacherlogin = () => {
             </div>
             <div className="mt-4 text-sm flex justify-between items-center container-mr">
               <p className="mr-3 md:mr-0 ">If you don't have an account..</p>
-              <Link href="/Teacher/teacher-signup" className="hover:border register text-white bg-[#002D74] hover:border-gray-400 rounded-xl py-2 px-5 hover:scale-110 hover:bg-[#002c7424] font-semibold duration-300">
+              <Link href="/teacher-signup" className="hover:border register text-white bg-[#002D74] hover:border-gray-400 rounded-xl py-2 px-5 hover:scale-110 hover:bg-[#002c7424] font-semibold duration-300">
                 Register
               </Link>
             </div>
@@ -148,7 +148,7 @@ const teacherlogin = () => {
           <div className="md:block hidden w-1/2">
             <img
               className="rounded-2xl max-h-[1600px]"
-              src="https://images.unsplash.com/photo-1552010099-5dc86fcfaa38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxmcmVzaHxlbnwwfDF8fHwxNzEyMTU4MDk0fDA&ixlib=rb-4.0.3&q=80&w=1080"
+              src="https://cdni.iconscout.com/illustration/premium/thumb/login-3305943-2757111.png?f=webp"
               alt="login form image"
             />
           </div>

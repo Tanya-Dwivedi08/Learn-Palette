@@ -15,9 +15,9 @@ const Signup = () => {
       subject: "",
       email: "",
       password: "",
+    
     },
-
-    onSubmit: async (values, action) => {
+onSubmit: async (values, action) => {
       // values.image = selFile;
       console.log(values);
       const res = await fetch("http://localhost:5000/teacher/add", {
@@ -40,17 +40,17 @@ const Signup = () => {
   return (
     <>
       <div
-        className="container-fluid flex items-center justify-center bg-[#F5F5F5]"
+        className="container-fluid flex items-center justify-center bg-[#89c8d9]"
         style={{ height: "100vh" }}
       >
         <div className=" w-3/4 --tw-shadow-color: #000;  ">
           <div className="grid grid-cols-2 h-3/4">
-            <div className="w-full h-auto">
+            <div className=" rounded-2xl w-full h-full">
               <img
-              src="https://img.freepik.com/premium-vector/illustration-vector-graphic-cartoon-character-online-registration_516790-1808.jpg"
+              src="https://img.freepik.com/premium-vector/illustration-vector-graphic-cartoon-character-online-registration_516790-1807.jpg"
                 // src="https://www.pngplay.com/wp-content/uploads/6/E-Commerce-Shopping-PNG-Clipart-Background.png"
                 alt=""
-                className="px-5 py-4 "
+                className="px-5 py-6 "
               />
             </div>
             <div>
