@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react'
 const Managewhiteboard = () => {
 
     const [whiteboardList, setwhiteboardList] = useState([]);
-const {currentTeacher} =useTeacherContext();
+    const [currentTeacher, setCurrentTeacher] = useState(JSON.parse(sessionStorage.getItem('teacher')));
     const fetchwhiteboardsData = () => {
         fetch('http://localhost:5000/whiteboard/getall',{
             headers: {

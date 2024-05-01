@@ -5,7 +5,8 @@ import React, { useEffect, useState } from 'react'
 const Managestudent = () => {
 
     const [studentList, setStudentList] = useState([]);
-const { currentTeacher} = useTeacherContext();
+    const [currentTeacher, setCurrentTeacher] = useState(JSON.parse(sessionStorage.getItem('teacher')));
+    
     const fetchStudentsData = () => {
         fetch('http://localhost:5000/student/getall',{
             headers: {

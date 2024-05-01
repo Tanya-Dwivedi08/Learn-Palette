@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react'
 const Managevideo = () => {
 
     const [videoList, setvideoList] = useState([]);
-const {currentTeacher} = useTeacherContext();
+    const [currentTeacher, setCurrentTeacher] = useState(JSON.parse(sessionStorage.getItem('teacher')));
     const fetchvideosData = () => {
         fetch('http://localhost:5000/video/getall',{
             headers: {

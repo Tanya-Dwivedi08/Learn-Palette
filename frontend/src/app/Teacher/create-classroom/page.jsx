@@ -213,7 +213,7 @@ const router = useRouter();
                           <circle cx="8.5" cy={7} r={4} />
                           <path d="M20 8v6M23 11h-6" />
                         </svg>
-                        <span className="ml-">Sign In</span>
+                        <span className="ml-">Create </span>
                       </button>
 
                     </div>
