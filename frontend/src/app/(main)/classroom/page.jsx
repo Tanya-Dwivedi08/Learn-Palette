@@ -18,10 +18,10 @@ useEffect(() => {
 
   const displayclasss = () => {
      return classData.map((classroom) => (
-        <div className='grid grid-cols-3 mb-3'>
-        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div className='grid grid-cols-2 rows-5  mt-6 ml-3 mr-4'>
+        <div className="max-w-sm my-9 mx-2 ms-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
           
-            <div className="p-5">
+            <div className="p-7 ">
                 <a href="#">
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                        {classroom.name}
@@ -32,7 +32,7 @@ useEffect(() => {
                 </p>
                 <a
                     href={`/viewClass/${classroom._id}`}
-                    className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    className="inline-flex items-center px-2 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                 >
                     View Classroom
                     <svg
