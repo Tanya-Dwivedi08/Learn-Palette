@@ -200,7 +200,7 @@ const router = useRouter();
 
                         />
                       </div>
-                      <button type="submit" className="mt-5 mb-5 tracking-wide font-semibold bg-green-400 text-white-500 w-full py-4 rounded-lg hover:bg-green-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
+                      <button  type="submit"   className="mt-5 mb-5 tracking-wide font-semibold bg-green-400 text-white-500 w-full py-4 rounded-lg hover:bg-green-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
                         <svg
                           className="w-6 h-6 -ml-2"
                           fill="none"

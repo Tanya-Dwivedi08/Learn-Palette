@@ -1,12 +1,18 @@
 'use client';
+import useTeacherContext from '@/app/context/TeacherContext';
 import React, { useEffect, useState } from 'react'
 
 const Managestudent = () => {
 
     const [studentList, setStudentList] = useState([]);
-
+const { currentTeacher} = useTeacherContext();
     const fetchStudentsData = () => {
-        fetch('http://localhost:5000/student/getall')
+        fetch('http://localhost:5000/student/getall',{
+            headers: {
+                "Content-Type": "application/json",
+                "x-auth-token": currentTeacher.token,
+              },
+            })
             .then((response) => {
                 return response.json();
             })

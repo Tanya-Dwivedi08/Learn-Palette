@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const Model = require('../Models/studentModel');
+const jwt = require('jsonwebtoken');
+require('dotenv').config();
 
 router.post('/add', (req, res) => {
     console.log(req.body);
@@ -18,13 +20,13 @@ router.post("/authenticate", (req, res) => {
         // for generation JWT required 4 things 1 payload 2
         .then((result) => {
             if (result) {
-                const { _id, name, email } = result;
-                const payload = { _id, name, email };
+                const { _id, name, email,password } = result;
+                const payload = { _id, name, email,password };
                 jwt.sign
                 {
                     payload,
                         process.env.JWT_SECRET,
-                        { expiry: '2 days' },
+                        { expiry: '30 days' },
                         (err, token) => {
                             if (err) {
                                 res.status(500).json({ message: 'error creating token' })
