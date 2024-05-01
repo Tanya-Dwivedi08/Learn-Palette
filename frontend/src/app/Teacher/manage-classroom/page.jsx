@@ -1,4 +1,5 @@
 'use client'
+import useTeacherContext from '@/app/context/TeacherContext';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
@@ -6,12 +7,18 @@ import React, { useEffect, useState } from 'react'
 
 const Manageclassroom = () => {
 
-  
+  const {currentTeacher} = useTeacherContext();
     const [classroomList, setclassroomList] = useState([]);
     const router = useRouter();
 
     const fetchclassroomsData = () => {
-        fetch('http://localhost:5000/class/getall')
+        fetch('http://localhost:5000/class/getall',{
+            headers: {
+                "Content-Type": "application/json",
+                "x-auth-token": currentTeacher.token,
+              },
+    })
+
             .then((response) => {
                 return response.json();
             })

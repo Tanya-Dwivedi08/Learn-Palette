@@ -1,11 +1,11 @@
 "use client";
 import { useFormik } from "formik";
-// import toast from "react-hot-toast";
-import * as Yup from "yup";
-import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
+import * as Yup from "yup";
 
 const Signup = () => {
+  const router = useRouter()
   const addUserSchema = Yup.object().shape({});
 
   const addUserForm = useFormik({
@@ -28,10 +28,10 @@ const Signup = () => {
       console.log(res.status);
       action.resetForm();
       if (res.status === 200) {
-        toast.success("SignUp successfully");
+        toast("SignUp successfully");
         router.push('/student-login')
       } else {
-        toast.success("Something went wrong");
+        toast("Something went wrong");
       }
     },
     validationSchema: addUserSchema,
@@ -40,7 +40,7 @@ const Signup = () => {
   return (
     <>
       <div
-        className="container-fluid flex items-center justify-center bg-[#fac8c8]"
+        className="container-fluid flex items-center justify-center bg-[#F5F5F5]"
         style={{ height: "100vh" }}
       >
         <div className=" w-3/4 --tw-shadow-color: #000;  ">

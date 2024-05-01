@@ -1,18 +1,21 @@
 'use client'
+import useTeacherContext from "@/app/context/TeacherContext";
 import { Formik } from "formik";
 import { useParams, useRouter } from "next/navigation";
 import  { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
 const Updateclassroom = () => {
+  
   const { id } = useParams();
+  const {currentTeacher} = useTeacherContext();
   const [classroomData, setclassroomData] = useState(null);
   const [selFile, setSelFile] = useState("");
 const router = useRouter();
 
 
   const fetchclassroomData = async () => {
-    const res = await fetch("http://localhost:5000/class/getbyid/" + id);
+    const res = await fetch("http://localhost:5000/class/getbyid/" + id )
     const data = await res.json();
 
     console.log(data);
@@ -30,7 +33,9 @@ const router = useRouter();
       method: 'PUT',
       body: JSON.stringify(values),
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+              "x-auth-token": currentTeacher.token,
+          
       }
     });
 

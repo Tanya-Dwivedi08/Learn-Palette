@@ -1,12 +1,18 @@
 'use client';
+import useTeacherContext from '@/app/context/TeacherContext';
 import React, { useEffect, useState } from 'react'
 
 const Managevideo = () => {
 
     const [videoList, setvideoList] = useState([]);
-
+const {currentTeacher} = useTeacherContext();
     const fetchvideosData = () => {
-        fetch('http://localhost:5000/video/getall')
+        fetch('http://localhost:5000/video/getall',{
+            headers: {
+                "Content-Type": "application/json",
+                "x-auth-token": currentTeacher.token,
+              },
+            })
             .then((response) => {
                 return response.json();
             })
