@@ -45,7 +45,7 @@ const Viewclass = () => {
                 
               </div>
               <div>
-                <p className="text-center text-2xl font-semibold">Students</p>
+                <p className="text-center text-2xl font-semibold"></p>
               </div>
             </div>
           </div>

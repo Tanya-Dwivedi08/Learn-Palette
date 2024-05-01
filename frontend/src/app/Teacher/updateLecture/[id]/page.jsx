@@ -6,7 +6,7 @@ import  { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
 const UpdateLecture = () => {
-  const {currentTeacher} = useTeacherContext();
+  const [currentTeacher, setCurrentTeacher] = useState(JSON.parse(sessionStorage.getItem('teacher')));
   const { id } = useParams();
   const [LectureData, setLectureData] = useState(null);
   const [selFile, setSelFile] = useState("");

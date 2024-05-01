@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react'
 const Managelecture = () => {
 
     const [lectureList, setlectureList] = useState([]);
-    const { currentTeacher } = useTeacherContext();
+    const [currentTeacher, setCurrentTeacher] = useState(JSON.parse(sessionStorage.getItem('teacher')));
     const fetchlecturesData = () => {
         fetch('http://localhost:5000/lecture/getall', {
             headers: {

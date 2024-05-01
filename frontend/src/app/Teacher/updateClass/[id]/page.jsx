@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 const Updateclassroom = () => {
   
   const { id } = useParams();
-  const {currentTeacher} = useTeacherContext();
+  const [currentTeacher, setCurrentTeacher] = useState(JSON.parse(sessionStorage.getItem('teacher')));
   const [classroomData, setclassroomData] = useState(null);
   const [selFile, setSelFile] = useState("");
 const router = useRouter();

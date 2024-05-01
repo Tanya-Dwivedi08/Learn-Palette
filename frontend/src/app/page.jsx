@@ -39,7 +39,7 @@ const  Home = () => {
                     href="#"
                     className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
                   >
-                    <span>Home</span>
+                    <span></span>
                   </a>
                 </li>
                 <li>
