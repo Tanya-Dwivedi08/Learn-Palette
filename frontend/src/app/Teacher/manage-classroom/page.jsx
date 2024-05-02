@@ -1,5 +1,4 @@
 'use client'
-import useTeacherContext from '@/app/context/TeacherContext';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
@@ -61,6 +60,14 @@ const Manageclassroom = () => {
                 <td className="px-6 py-4">{classroom.createAT}</td>
                 <td className="px-6 py-4">
                     <Link
+                        href={`/Teacher/view-classroom/${classroom._id}`}
+                        className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                    >
+                        View Classroom
+                    </Link>
+                </td>
+                <td className="px-6 py-4">
+                    <Link
                         href={`/Teacher/updateClass/${classroom._id}`}
                         className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
                     >
@@ -83,6 +90,7 @@ const Manageclassroom = () => {
     return (
 
         <div>
+
             <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
                 <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                     <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
