@@ -1,8 +1,9 @@
-const { ObjectId } = require('mongodb');
-const { Schema, model } = require('../connection');
+
+const { Schema, model, Types } = require('../connection');
 
 const mySchema = new Schema({
-    teacher: { type: Schema.Types.ObjectId, ref: 'teacher' },
+    teacher: { type: Types.ObjectId, ref: 'teacher' },
+    classroom: { type: Types.ObjectId, ref: 'class' },
     subject: String,
     description: String,
     topic: String,

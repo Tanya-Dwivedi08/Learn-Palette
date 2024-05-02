@@ -3,9 +3,7 @@ import useTeacherContext from '@/app/context/TeacherContext';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react'
-import { Dialog } from '@headlessui/react';
 import { IconPlus } from '@tabler/icons-react';
-import AddLecture from './addLecture'
 
 const Viewclass = () => {
   const { id } = useParams();
@@ -64,20 +62,7 @@ const Viewclass = () => {
 
   return (
     <>
-      <Dialog open={isOpen} onClose={() => setIsOpen(false)}>
-        <Dialog.Panel>
-          <Dialog.Title>Deactivate account</Dialog.Title>
-          <Dialog.Description>
-            This will permanently deactivate your account
-          </Dialog.Description>
-
-
-          <AddLecture close={() => setIsOpen(false)} />
-
-          {/* <button onClick={() => setIsOpen(false)}>Deactivate</button>
-        <button onClick={() => setIsOpen(false)}>Cancel</button> */}
-        </Dialog.Panel>
-      </Dialog>
+      
 
       <button
         type="button"

@@ -4,9 +4,10 @@ import React, { useState } from 'react'
 import toast from "react-hot-toast";
 import { useRouter } from 'next/navigation';
 import useTeacherContext from '@/app/context/TeacherContext';
+import classroom from '@/app/(main)/classroom/page';
 
 
-const AddLecture = ({close}) => {
+const AddLecture = ({close, classId}) => {
 
     const [currentTeacher, setCurrentTeacher] = useState(JSON.parse(sessionStorage.getItem('teacher')));
 
@@ -16,6 +17,7 @@ const AddLecture = ({close}) => {
             description: '',
             topic: '',
             thumbnail:'',
+            classroom: classId
         },
         onSubmit: (values) => {
             console.log(values);
