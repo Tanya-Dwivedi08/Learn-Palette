@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const navbar = () => {
@@ -27,7 +28,7 @@ const navbar = () => {
                     href="#"
                     className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
                   >
-                    <span>Pricing</span>
+                    <span>About us</span>
                   </a>
                 </li>
                 <li>
