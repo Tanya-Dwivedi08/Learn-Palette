@@ -45,6 +45,7 @@ const Viewlectures = () => {
             <div className="row pt-24">
             </div>
           </div>
+          
         ) : (
           <div>
             Loading
