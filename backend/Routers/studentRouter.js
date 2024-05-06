@@ -67,6 +67,17 @@ router.get('/getbyid/:id', (req, res) => {
             res.status(500).json(err);
         });
 });
+router.get("/getbymail/:email", (req,res) => {
+    console.log(req.params.email)
+    Model.find({ email: req.params.email })
+    .then((result) => {
+      res.json(result)
+    })
+    .catch((err) => {
+      console.error(err)
+      res.status(500).json(err)
+     });
+  });
 router.put('/update/:id', (req, res) => {
     Model.findByIdAndUpdate(req.params.id, req.body,{new:true})
         .then((result) => {

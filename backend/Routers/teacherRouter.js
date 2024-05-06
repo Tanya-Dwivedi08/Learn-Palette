@@ -72,6 +72,17 @@ router.delete('/delete/:id', (req, res) => {
             res.status(500).json(err);
         });
 });
+router.get("/getbymail/:email", (req,res) => {
+    console.log(req.params.email)
+    Model.find({ email: req.params.email })
+    .then((result) => {
+      res.json(result)
+    })
+    .catch((err) => {
+      console.error(err)
+      res.status(500).json(err)
+     });
+  });
 
 router.put('/update', (req, res) => {
     Model.findByIdAndUpdate(req.param.id, req.body)

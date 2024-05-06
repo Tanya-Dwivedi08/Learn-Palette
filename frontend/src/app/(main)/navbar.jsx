@@ -5,7 +5,7 @@ const navbar = () => {
   return (
     <div>
         <header>
-    <nav className="fixed overflow-hidden z-20 w-full bg-white/80 dark:bg-gray-950/0 dark:shadow-md rounded-b-lg dark:shadow-gray-950/10 border-b border-[--ui-light-border-color] border-x dark:border-[--ui-dark-border-color] backdrop-blur-2xl">
+    <nav className=" overflow-hidden z-20 w-full bg-white/80 dark:bg-gray-950/0 dark:shadow-md rounded-b-lg dark:shadow-gray-950/10 border-b border-[--ui-light-border-color] border-x dark:border-[--ui-dark-border-color] backdrop-blur-2xl">
       <div className="px-6 m-auto max-w-6xl 2xl:px-0">
         <div className="flex flex-wrap items-center justify-between py-2 sm:py-4">
           <div className="w-full items-center flex justify-between lg:w-auto">

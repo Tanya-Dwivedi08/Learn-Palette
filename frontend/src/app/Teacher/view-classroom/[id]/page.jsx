@@ -115,7 +115,7 @@ const ViewClassroom = () => {
                                         className="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent text-gray-800 hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-neutral-800"
                                         href="#"
                                     >
-                                        <svg
+                                        {/* <svg
                                             className="flex-shrink-0 size-4"
                                             width={19}
                                             height={18}
@@ -143,8 +143,8 @@ const ViewClassroom = () => {
                                                 d="M15.875 9C15.875 10.656 14.531 12 12.875 12C11.219 12 9.87501 10.656 9.87501 9C9.87501 7.344 11.219 6 12.875 6C14.531 6 15.875 7.344 15.875 9Z"
                                                 fill="#1ABCFE"
                                             />
-                                        </svg>
-                                        Preline Figma
+                                        </svg> */}
+                                       
                                     </a>
                                 </div>
                                 {/* End Buttons */}

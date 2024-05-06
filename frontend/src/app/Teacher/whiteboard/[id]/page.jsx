@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import rough from "roughjs/bundled/rough.esm";
 import {
     createElement,
@@ -10,8 +10,15 @@ import {
     getElementAtPosition,
 } from "@/components/element";
 import Swatch from "@/components/Swatch";
+import { useParams } from "next/navigation";
+import toast from "react-hot-toast";
 
 function Whiteboard() {
+
+    const { id } = useParams();
+
+    const canvasRef = useRef();
+
     const [points, setPoints] = useState([]);
     const [path, setPath] = useState([]);
     const [isDrawing, setIsDrawing] = useState(false);
@@ -309,8 +316,68 @@ function Whiteboard() {
         setAction("none");
     };
 
+    const fetchCanvas = () => {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/lecture/getbyid/${id}`)
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                if (data.canvas) {
+                    setCanvasDataUrl(data.canvas);
+                }
+            });
+    }
+
+    useEffect(() => {
+      fetchCanvas();
+    }, [])
+    
+
+    const getCanvasDataURL = () => {
+        const canvas = canvasRef.current;
+        if (canvas) {
+            const dataURL = canvas.toDataURL();
+            //   console.log(dataURL);
+            return dataURL;
+        }
+    };
+
+    const storeCanvas = () => {
+        fetch(`${process.env.NEXT_PUBLIC_API_URL}/lecture/update/${id}`, {
+            method: 'PUT',
+            body: JSON.stringify({
+                canvas: getCanvasDataURL()
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then((response) => {
+                console.log(response.status);
+                if(response.status === 200){
+                    toast.success('Canvas saved successfully');
+                }
+                return response.json();
+            }).catch((err) => {
+                console.log(err);
+            });
+    }
+
+    const setCanvasDataUrl = (dataUrl) => {
+        const canvas = canvasRef.current;
+        if (canvas) {
+            const context = canvas.getContext('2d');
+            const img = new Image();
+            img.onload = function () {
+                context.drawImage(img, 0, 0);
+            };
+            img.src = dataUrl;
+        }
+    };
+
     return (
         <div>
+            <button onClick={storeCanvas}>Save</button>
             <Swatch
                 toolType={toolType}
                 setToolType={setToolType}
@@ -323,6 +390,7 @@ function Whiteboard() {
                 setShapeWidth={setShapeWidth}
             />
             <canvas
+                ref={canvasRef}
                 id="canvas"
                 className="App"
                 width={window.innerWidth}

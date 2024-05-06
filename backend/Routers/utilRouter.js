@@ -1,23 +1,76 @@
 const multer = require('multer');
 const express = require('express');
 const router = express.Router();
+const nodemailer = require('nodemailer');
+require('dotenv').config();
 
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, './static/uploads')
+const generatedOTP = {};
+
+// initialize multer
+const fileStorage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, './static/uploads');
     },
-    filename: function (req, file, cb) {
-        const uniquePrefix = Date.now() + '-' + Math.round(Math.random() * 1E9)
-        cb(null, uniquePrefix + '-' + file.originalname)
-        req.savedFile = uniquePrefix + '-' + file.originalname;
+    filename: (req, file, cb) => {
+        cb(null, file.originalname);
+    }
+});
+
+const uploader = multer({storage : fileStorage});
+
+
+// initialize nodemailer
+const mailConfig = {
+    service : 'gmail',
+    auth: {
+        user: process.env.EMAIL_ID,
+        pass: process.env.EMAIL_PASSWORD,
+    }
+};
+const transporter = nodemailer.createTransport(mailConfig);
+
+const generateOTP = () => {
+    const otp = Math.floor(Math.random() * 1000000);
+    console.log(otp);
+    return otp;
+}
+
+router.post('/uploadfile', uploader.single('myfile'), (req, res) => {
+    res.json({status : 'success'});
+})
+
+router.post('/sendotp', (req, res) => {
+    const otp = generateOTP();
+    generatedOTP[req.body.email] = otp;
+    console.log(generatedOTP);
+    transporter.sendMail({
+        from : process.env.EMAIL_ID,
+        to : req.body.email,
+        subject : 'OTP for Password Reset',
+        html:` <p> OTP for password reset is <b>${otp}</b> </p>`
+    })
+    .then((info) => {
+        return res.status(201).json(
+            {
+                msg: "OTP Sent",
+                info: info.messageId,
+                preview: nodemailer.getTestMessageUrl(info)
+            }
+        )
+    }).catch((err) => {
+        console.log(err);
+        return res.status(500).json({ msg: err });
+    });
+})
+
+
+router.get('/verifyotp/:email/:otp', (req, res) => {
+    const oldOTP = generatedOTP[req.params.email];
+    if(oldOTP == req.params.otp){t54
+        return res.status(200).json({msg : 'OTP Verified'});
+    }else{
+        return res.status(401).json({msg : 'OTP Not Verified'});
     }
 })
 
-const uploader = multer({storage});
-
-router.post('/uploadfile', uploader.single('myfile'), (req, res) => {
-    console.log(req.savedFile);
-    res.status(200).json({message: 'file uploaded successfully', savedFile : req.savedFile });
-})
-
-module.exports = router;
+module.exports = router
