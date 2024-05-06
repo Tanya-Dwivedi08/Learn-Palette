@@ -6,10 +6,12 @@ import { useEffect, useState } from 'react'
 import { IconPlus } from '@tabler/icons-react';
 
 const Viewclass = () => {
+
   const { id } = useParams();
-  const [lectureList, setlectureList] = useState([])
+  const [lectureList, setLectureList] = useState([])
   const [isOpen, setIsOpen] = useState(false);
   const [classList, setclassList] = useState([]);
+
   const fetchclassData = async () => {
     const res = await fetch('http://localhost:5000/class/getbyid/' + id);
 
@@ -26,7 +28,7 @@ const Viewclass = () => {
   }, []);
 
   const fetchLectureData = () => {
-    fetch('http://localhost:5000/lecture/getall')
+    fetch('http://localhost:5000/lecture/getbyclass/' + id)
       .then(response => response.json())
       .then(data => {
         console.log(data);
@@ -39,30 +41,18 @@ const Viewclass = () => {
     fetchLectureData();
   }, [])
 
-  const deleteLecture = (id) => {
-    fetch('http://localhost:5000/lecture/delete/' + id, {
-      method: 'DELETE'
-    })
-      .then(response => {
-        if (response.status === 200) {
-          fetchLectureData();
-          toast.success('Lecture deleted successfully');
-        }
-      })
-      .catch(err => {
-        console.log(err);
-        toast.error('Lecture not deleted');
-      });
-  }
   const displayLectures = () => {
     return lectureList.map((lec) => (
-      <p className="">{lec.subject}</p>
+      <div className="flex">
+        <p className="">{lec.subject}</p>
+        <Link href={'/viewLecture/'+lec._id} className="p-4 bg-blue-600 text-white my-3">View</Link>
+      </div>
     ))
   }
 
   return (
     <>
-      
+
 
       <button
         type="button"

@@ -22,29 +22,29 @@ const classroom = () => {
         return classData.map((classroom) => (
 
             <div className="flex flex-1 flex-col md:flex-row lg:flex-row mx-auto p-4  lg:mx-2 md:mx-2 justify-between">
-  {/*Top user 1*/}
-  <div className="rounded rounded-t-lg overflow-hidden shadow max-w-m my-4 mt-3">
-    <img src="https://www.learncube.com/images/blog_images/virtual_classroom_api.jpg" alt="" className="w-full" />
-    <div className="flex justify-center -mt-10">
-      <img
-        src="https://i.imgur.com/8Km9tLL.jpg"
-        alt=""
-        className="rounded-full border-solid border-white border-2 -mt-3"
-      />
-    </div>
-    <div className="text-center px-3 pb-6 pt-2">
-      <h3 className="text-black text-sm bold font-sans">{classroom.name}</h3>
-      <p className="mt-2 font-sans font-light text-grey-700">
-  {classroom.description}
-      </p>
-    </div>
-    <div className="flex justify-center pb-3 text-grey-dark">
-    <Link  href={`/Teacher/view-classroom/${classroom._id}`}><button className="bg-purple-900 text-white px-3 py-1 rounded">View class</button>
-    </Link>  </div>
-  </div>
-</div>
+                {/*Top user 1*/}
+                <div className="rounded rounded-t-lg overflow-hidden shadow max-w-m my-4 mt-3">
+                    <img src="https://www.learncube.com/images/blog_images/virtual_classroom_api.jpg" alt="" className="w-full" />
+                    <div className="flex justify-center -mt-10">
+                        <img
+                            src="https://i.imgur.com/8Km9tLL.jpg"
+                            alt=""
+                            className="rounded-full border-solid border-white border-2 -mt-3"
+                        />
+                    </div>
+                    <div className="text-center px-3 pb-6 pt-2">
+                        <h3 className="text-black text-sm bold font-sans">{classroom.name}</h3>
+                        <p className="mt-2 font-sans font-light text-grey-700">
+                            {classroom.description}
+                        </p>
+                    </div>
+                    <div className="flex justify-center pb-3 text-grey-dark">
+                        <Link href={`/viewClass/${classroom._id}`}><button className="bg-purple-900 text-white px-3 py-1 rounded">View class</button>
+                        </Link>  </div>
+                </div>
+            </div>
 
-            
+
             // <div className='grid grid-cols-2 rows-5  mt-6 ml-3 mr-4'>
             //     <div className="max-w-sm my-9 mx-2 ms-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 
@@ -61,7 +61,7 @@ const classroom = () => {
             //                
             //                 className="inline-flex items-center px-2 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
             //             >
-                            
+
             //                 View Classroom
             //                 <svg
             //                     className="rtl:rotate-180 w-3.5 h-3.5 ms-2"

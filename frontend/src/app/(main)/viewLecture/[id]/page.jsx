@@ -62,10 +62,11 @@ const Viewlectures = () => {
 
                           </div>
                           <div classname="">
-                            <div classname="relative h-80 w-full overflow-hidden rounded-lg bg-white sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75 sm:h-64">
+                            <div classname="bg-white relative h-80 w-full overflow-hidden rounded-lg sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75 sm:h-64">
+                              <p>WhiteBoard</p>
                               <img
-                                // src="https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg"
-                                src="https://png.pngtree.com/png-vector/20220302/ourmid/pngtree-whiteboard-png-image_4474605.png"
+                                src={lecturesList.canvas}
+                                style={{backgroundColor: '#fff'}}
                                 alt="Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant."
                                 classname="h-full w-full object-cover object-center"
                               />
@@ -83,7 +84,7 @@ const Viewlectures = () => {
                 <h1 className=' fw-semibold fs-2 mt-3 mb-3' style={{ fontFamily: "serif" }}>{lecturesList.subject}</h1>
                 <p className='text-red-800 fs-5 fw-bold' style={{ fontFamily: "cursive" }}>{lecturesList.description}</p>
                 <p className='text-secondary mt-4 mb-4 fs-5' style={{ fontFamily: "serif" }}>{lecturesList.topic}</p>
-             </div>
+              </div>
             </div>
             <div className="row pt-24">
             </div>
