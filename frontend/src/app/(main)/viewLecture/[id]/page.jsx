@@ -33,7 +33,7 @@ const Viewlectures = () => {
 
                 <img src={'http://localhost:5000/' + lecturesList.image} onClick={window.scrollTo(0, 0)} alt="" className="  img-fluid  w-100  " />
               </div>
-              <Link href="/user/whiteboard" className="w-full h-9 lg:w-fit group flex mb-3 items-center relative border rounded-[--btn-border-radius] *:select-none [&>*:not(.sr-only)]:relative before:rounded-[calc(var(--btn-border-radius)-1px)] before:absolute before:inset-0 before:border before:bg-gradient-to-b *:disabled:opacity-20 disabled:text-gray-950/40 disabled:border-gray-200 disabled:bg-gray-100 disabled:*:text-gray-300 disabled:before:border-transparent disabled:before:bg-gray-100 disabled:before:from-transparent dark:border-0 dark:before:border-0 dark:before:border-t dark:before:shadow-inner dark:disabled:border dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 disabled:dark:*:text-gray-700 dark:disabled:before:bg-gray-900 dark:disabled:before:from-gray-900 dark:disabled:before:shadow-none dar k:*:disabled:!text-white text-white border-gray-950 bg-gray-600 before:border-gray-600 before:from-gray-800 hover:bg-gray-900 active:bg-gray-950 dark:text-gray-950 dark:before:border-gray-200 dark:before:from-gray-200 dark:bg-white dark:before:shadow-white/10 dark:hover:bg-gray-100 dark:active:bg-gray-300 dark:active:before:from-gray-200 lg:text-sm lg:h-8 px-3 justify-center">
+              <Link href="/Teacher/whiteboard\[id]" className="w-full h-9 lg:w-fit group flex mb-3 items-center relative border rounded-[--btn-border-radius] *:select-none [&>*:not(.sr-only)]:relative before:rounded-[calc(var(--btn-border-radius)-1px)] before:absolute before:inset-0 before:border before:bg-gradient-to-b *:disabled:opacity-20 disabled:text-gray-950/40 disabled:border-gray-200 disabled:bg-gray-100 disabled:*:text-gray-300 disabled:before:border-transparent disabled:before:bg-gray-100 disabled:before:from-transparent dark:border-0 dark:before:border-0 dark:before:border-t dark:before:shadow-inner dark:disabled:border dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 disabled:dark:*:text-gray-700 dark:disabled:before:bg-gray-900 dark:disabled:before:from-gray-900 dark:disabled:before:shadow-none dar k:*:disabled:!text-white text-white border-gray-950 bg-gray-600 before:border-gray-600 before:from-gray-800 hover:bg-gray-900 active:bg-gray-950 dark:text-gray-950 dark:before:border-gray-200 dark:before:from-gray-200 dark:bg-white dark:before:shadow-white/10 dark:hover:bg-gray-100 dark:active:bg-gray-300 dark:active:before:from-gray-200 lg:text-sm lg:h-8 px-3 justify-center">
                 <span>whiteboard</span>
               </Link>
               <>
@@ -62,11 +62,10 @@ const Viewlectures = () => {
 
                           </div>
                           <div classname="">
-                            <div classname="bg-white relative h-80 w-full overflow-hidden rounded-lg sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75 sm:h-64">
-                              <p>WhiteBoard</p>
+                            <div classname="relative h-80 w-full overflow-hidden rounded-lg bg-white sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75 sm:h-64">
                               <img
-                                src={lecturesList.canvas}
-                                style={{backgroundColor: '#fff'}}
+                                // src="https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg"
+                                src="https://png.pngtree.com/png-vector/20220302/ourmid/pngtree-whiteboard-png-image_4474605.png"
                                 alt="Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant."
                                 classname="h-full w-full object-cover object-center"
                               />
@@ -84,7 +83,7 @@ const Viewlectures = () => {
                 <h1 className=' fw-semibold fs-2 mt-3 mb-3' style={{ fontFamily: "serif" }}>{lecturesList.subject}</h1>
                 <p className='text-red-800 fs-5 fw-bold' style={{ fontFamily: "cursive" }}>{lecturesList.description}</p>
                 <p className='text-secondary mt-4 mb-4 fs-5' style={{ fontFamily: "serif" }}>{lecturesList.topic}</p>
-              </div>
+             </div>
             </div>
             <div className="row pt-24">
             </div>
