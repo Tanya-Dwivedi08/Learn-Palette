@@ -89,9 +89,9 @@ const feedback = () => {
                       <div className="relative w-full mb-3">
                         <label
                           className="block uppercase text-gray-700 text-xs font-bold mb-2"
-                          htmlFor="message"
+                          htmlFor="Message"
                         >
-                          Message
+                         Suggestion
                         </label>
                         <textarea
                           maxLength={300}
