@@ -75,7 +75,7 @@ const AdminDashboard = () => {
             <li className="flex-1 md:flex-none md:mr-3">
               <Link
                 className="inline-block py-2 px-4 text-white no-underline"
-                href="/student-signup"
+                href="/teacher-signup"
               >
                Signup
               </Link>
@@ -83,7 +83,7 @@ const AdminDashboard = () => {
             <li className="flex-1 md:flex-none md:mr-3">
               <Link
                 className="inline-block text-gray-400 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
-                href="/studentlogin"
+                href="/teacher-login"
               >
               Login
               </Link>
@@ -164,7 +164,7 @@ const AdminDashboard = () => {
               </li>
               <li className="mr-3 flex-1">
                 <Link
-                  href="/user/manage-classroom"
+                  href="/Teacher/manage-classroom"
                   className="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-purple-500"
                 >
                   <i className="fa fa-envelope pr-0 md:pr-3" />
@@ -175,7 +175,7 @@ const AdminDashboard = () => {
               </li>
               <li className="mr-3 flex-1">
                 <Link
-                  href="/user/manage-lecture"
+                  href="/Teacher/manage-lecture"
                   className="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-blue-600"
                 >
                   <i className="fas fa-chart-area pr-0 md:pr-3 text-blue-600" />
@@ -186,7 +186,7 @@ const AdminDashboard = () => {
               </li>
               <li className="mr-3 flex-1">
                 <Link
-                  href="/user/manage-student"
+                  href="/Teacher/manage-student"
                   className="block py-1 md:py-3 pl-0 md:pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-red-500"
                 >
                   <i className="fa fa-wallet pr-0 md:pr-3" />
@@ -195,7 +195,7 @@ const AdminDashboard = () => {
                   </span>
                 </Link>
                 <Link
-                  href="/user/manage-videos"
+                  href="/Teacher/manage-videos"
                   className="block py-1 md:py-3 pl-0 md:pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-red-500"
                 >
                   <i className="fa fa-wallet pr-0 md:pr-3" />
@@ -204,7 +204,7 @@ const AdminDashboard = () => {
                   </span>
                 </Link>
                 <Link
-                  href="/user/manage-whiteboard"
+                  href="/Teacher/manage-whiteboard"
                   className="block py-1 md:py-3 pl-0 md:pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-red-500"
                 >
                   <i className="fa fa-wallet pr-0 md:pr-3" />

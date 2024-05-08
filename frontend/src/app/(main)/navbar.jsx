@@ -45,7 +45,7 @@ const navbar = () => {
                     href="#"
                     className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
                   >
-                    <span>Features</span>
+                    <span>About</span>
                   </a>
                 </li>
                 <li>
@@ -53,7 +53,7 @@ const navbar = () => {
                     href="#"
                     className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
                   >
-                    <span>Pricing</span>
+                    <span>contact</span>
                   </a>
                 </li>
                 <li>
@@ -61,17 +61,10 @@ const navbar = () => {
                     href="#"
                     className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
                   >
-                    <span>Solutions</span>
+                    <span>feedback</span>
                   </a>
                 </li>
-                <li>
-                  <a
-                    href="#"
-                    className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
-                  >
-                    <span>support</span>
-                  </a>
-                </li>
+                
               </ul>
             </div>
             <div className="w-full space-y-2 gap-2 pt-6 pb-4 lg:pb-0 border-t border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] items-center flex flex-col lg:flex-row lg:space-y-0 lg:w-fit lg:border-l lg:border-t-0 lg:pt-0 lg:pl-2">

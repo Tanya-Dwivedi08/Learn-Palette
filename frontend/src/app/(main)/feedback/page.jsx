@@ -76,6 +76,7 @@ const feedback = () => {
                           type="email"
                           name="email"
                           id="email"
+                          required=''
                           onChange={feedbackform.handleChange}
                         value={feedbackform.values.email}
 
@@ -95,16 +96,17 @@ const feedback = () => {
                         </label>
                         <textarea
                           maxLength={300}
-                          name="feedback"
-                          id="feedback"
+                          name="suggestion"
+                          id="suggestion"
                           rows={4}
                           cols={80}
+                          required=''
                           className="border-0 px-3 py-3 bg-gray-300 placeholder-black text-gray-800 rounded text-sm shadow focus:outline-none w-full"
                           placeholder="message"
                          
                           defaultValue={""}
                           onChange={feedbackform.handleChange}
-                        value={feedbackform.values.message}
+                        value={feedbackform.values.suggestion}
 
                         />
                       </div>
