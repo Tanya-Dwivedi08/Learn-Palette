@@ -47,7 +47,7 @@ onSubmit: async (values, action) => {
           <div className="grid grid-cols-2 h-3/4">
             <div className=" rounded-2xl w-full h-full">
               <img
-              src="https://img.freepik.com/premium-vector/illustration-vector-graphic-cartoon-character-online-registration_516790-1807.jpg"
+              src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/authentication/illustration.svg"
                 // src="https://www.pngplay.com/wp-content/uploads/6/E-Commerce-Shopping-PNG-Clipart-Background.png"
                 alt=""
                 className="px-5 py-6 "

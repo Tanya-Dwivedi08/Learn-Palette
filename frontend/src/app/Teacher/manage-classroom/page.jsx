@@ -40,7 +40,7 @@ const Manageclassroom = () => {
             method: "DELETE"
         })
         if (res.status === 200) {
-            fetchclassroomData();
+            fetchclassroomsData();
         }
     }
 
@@ -53,11 +53,10 @@ const Manageclassroom = () => {
                 >
                     {classroom.name}
                 </td>
-                <td className="px-6 py-4">{classroom.subject}</td>
+                
+                
                 <td className="px-6 py-4">{classroom.description}</td>
                 <td className="px-6 py-4">{classroom.topic}</td>
-                <td className="px-6 py-4">{classroom.thumbnail}</td>
-                <td className="px-6 py-4">{classroom.createAT}</td>
                 <td className="px-6 py-4">
                     <Link
                         href={`/Teacher/view-classroom/${classroom._id}`}
@@ -91,8 +90,8 @@ const Manageclassroom = () => {
 
         <div>
 
-            <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-                <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+            <div className="relative overflow-x-auto shadow-md sm:rounded-lg p-4 lg:mx-2 md:mx-2">
+                <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 shadow max-w-L my-6 mt-6">
                     <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
                             <th scope="col" className="px-6 py-3">
@@ -104,15 +103,8 @@ const Manageclassroom = () => {
                             <th scope="col" className="px-6 py-3">
                                 Description
                             </th>
-                            <th scope="col" className="px-6 py-3">
-                                topic
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                                Thumbnail
-                            </th>
-
-                            <th scope="col" className="px-6 py-3">
-                                CreatedAt
+                            <th scope='col' className='px-6 py-3'>
+                                View Classroom
                             </th>
                             <th scope="col" className="px-6 py-3">
                                 update
