@@ -20,8 +20,8 @@ router.post("/authenticate", (req, res) => {
         // for generation JWT required 4 things 1 payload 2
         .then((result) => {
             if (result) {
-                const { _id, name, email,password } = result;
-                const payload = { _id, name, email,password };
+                const { _id, fname,lname ,email,password } = result;
+                const payload = { _id, fname, lname, email,password };
                 jwt.sign
                 {
                     payload,

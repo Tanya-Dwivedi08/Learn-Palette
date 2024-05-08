@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation';
 import useStudentContext from "@/app/context/StudentContext";
 
 const studentlogin = () => {
-  const { setCurrentStudent, setStudentLoggedIn} = useStudentContext();
+  const { setCurrentStudent , setStudentLoggedIn} = useStudentContext();
   const router = useRouter();
   const loginForm = useFormik({
     initialValues: {
@@ -27,7 +27,7 @@ const studentlogin = () => {
       console.log(res.status);
       action.resetForm();
       if (res.status === 200) {
-        toast.success("Studentlogin successfully");
+        toast.success("Student login successfully");
         res.json().then((data) => {
           console.log(data);
           sessionStorage.setItem("student", JSON.stringify(data));
@@ -40,7 +40,6 @@ const studentlogin = () => {
       }
       
     },
-    // validationSchema: addUserSchema,
   });
 
   return (
