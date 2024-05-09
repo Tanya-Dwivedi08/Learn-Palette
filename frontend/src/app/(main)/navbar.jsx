@@ -34,7 +34,7 @@ const navbar = () => {
               <ul className="space-y-6 tracking-wide text-base lg:text-sm lg:flex lg:space-y-0">
                 <li>
                   <a
-                    href="#"
+                    href="/"
                     className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
                   >
                     <span>Home</span>
@@ -42,36 +42,36 @@ const navbar = () => {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="/contact"
                     className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
                   >
-                    <span>Features</span>
+                    <span>Contact</span>
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="/about"
                     className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
                   >
-                    <span>Pricing</span>
+                    <span>About</span>
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="/feedback"
                     className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
                   >
-                    <span>Solutions</span>
+                    <span>Feedback</span>
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a
                     href="#"
                     className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
                   >
                     <span>support</span>
                   </a>
-                </li>
+                </li> */}
               </ul>
             </div>
             <div className="w-full space-y-2 gap-2 pt-6 pb-4 lg:pb-0 border-t border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] items-center flex flex-col lg:flex-row lg:space-y-0 lg:w-fit lg:border-l lg:border-t-0 lg:pt-0 lg:pl-2">
