@@ -42,7 +42,7 @@ const navbar = () => {
                 </li>
                 <li>
                   <a
-                    href="/contact"
+                    href="/about"
                     className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
                   >
                     <span>About</span>
@@ -50,7 +50,7 @@ const navbar = () => {
                 </li>
                 <li>
                   <a
-                    href="/about"
+                    href="/contact"
                     className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
                   >
                     <span>contact</span>

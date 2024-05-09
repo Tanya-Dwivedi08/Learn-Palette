@@ -28,10 +28,10 @@ const Signup = () => {
       console.log(res.status);
       action.resetForm();
       if (res.status === 200) {
-        toast("SignUp successfully");
-        router.push('/student-login')
+        toast.success("SignUp successfully");
+        router.push('/studentlogin')
       } else {
-        toast("Something went wrong");
+        toast.error("Something went wrong");
       }
     },
     validationSchema: addUserSchema,

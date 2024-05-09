@@ -9,8 +9,8 @@ const studentlogin = () => {
 
   const addUserForm = useFormik({
     initialValues: {
-      fname: "",
-      lname: "",
+      // fname: "",
+      // lname: "",
       email: "",
       password: "",
     },
@@ -18,7 +18,7 @@ const studentlogin = () => {
     onSubmit: async (values, action) => {
       // values.image = selFile;
       console.log(values);
-      const res = await fetch("http://localhost:5000/student/add", {
+      const res = await fetch("http://localhost:5000/student/authenticate", {
         method: "POST",
         body: JSON.stringify(values),
         headers: { "Content-Type": "application/json" },
@@ -27,6 +27,13 @@ const studentlogin = () => {
       action.resetForm();
       if (res.status === 200) {
         toast.success("login successfully");
+        res.json().then((data) =>{
+          console.log(data);
+          sessionStorage.setItem("student", JSON.stringify(data));
+          setStudentLoggedIn(true);
+          setCurrentStudent(data);
+          router.push("/Teacher/view-classroom");
+        })
       } else {
         toast.success("Something went wrong");
       }

@@ -5,8 +5,7 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 const verifyToken = require('./verifyToken');
 
-router.post('/add', verifyToken, (req, res) => {
-    req.body.student = req.user._id;
+router.post('/add', (req, res) => {
     console.log(req.body);
     new Model(req.body).save()
         .then((result) => {
