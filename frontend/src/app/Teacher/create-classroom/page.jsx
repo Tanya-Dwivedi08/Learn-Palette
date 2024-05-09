@@ -176,7 +176,7 @@ const createclass = () => {
 
                     />
                   </div>
-                  <button type="submit" className="mt-5 mb-5 tracking-wide font-semibold bg-purple-400 text-black-500 w-full py-4 rounded-lg hover:bg-purple -700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
+                  <button type="submit" className="mt-5 mb-5 tracking-wide font-semibold bg-pink-400 text-black-500 w-full py-4 rounded-lg hover:bg-purple -700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
                     <svg
                       className="w-6 h-6 -ml-2"
                       fill="none"
@@ -189,13 +189,14 @@ const createclass = () => {
                       <circle cx="8.5" cy={7} r={4} />
                       <path d="M20 8v6M23 11h-6" />
                     </svg>
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-red-500">Create </span>
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600">Create </span>
                   </button>
 
                 </div>
               </form>
            </div>
             {/*Right Col*/}
+           
             <div className="w-full xl:w-3/5 p-12 overflow-hidden">
               <img
                 className="mx-auto w-full md:w-4/5 transform -rotate-6 transition hover:scale-105 duration-700 ease-in-out hover:rotate-6"

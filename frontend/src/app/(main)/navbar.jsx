@@ -45,11 +45,7 @@ const navbar = () => {
                     href="/contact"
                     className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
                   >
-<<<<<<< HEAD
                     <span>About</span>
-=======
-                    <span>Contact</span>
->>>>>>> d1b9883d2d7e36745e6006e914817a272e444802
                   </a>
                 </li>
                 <li>
@@ -57,11 +53,7 @@ const navbar = () => {
                     href="/about"
                     className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
                   >
-<<<<<<< HEAD
                     <span>contact</span>
-=======
-                    <span>About</span>
->>>>>>> d1b9883d2d7e36745e6006e914817a272e444802
                   </a>
                 </li>
                 <li>
@@ -69,24 +61,10 @@ const navbar = () => {
                     href="/feedback"
                     className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
                   >
-<<<<<<< HEAD
                     <span>feedback</span>
                   </a>
                 </li>
                 
-=======
-                    <span>Feedback</span>
-                  </a>
-                </li>
-                {/* <li>
-                  <a
-                    href="#"
-                    className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
-                  >
-                    <span>support</span>
-                  </a>
-                </li> */}
->>>>>>> d1b9883d2d7e36745e6006e914817a272e444802
               </ul>
             </div>
             <div className="w-full space-y-2 gap-2 pt-6 pb-4 lg:pb-0 border-t border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] items-center flex flex-col lg:flex-row lg:space-y-0 lg:w-fit lg:border-l lg:border-t-0 lg:pt-0 lg:pl-2">
