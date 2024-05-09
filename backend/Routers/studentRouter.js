@@ -3,7 +3,6 @@ const router = express.Router();
 const Model = require('../Models/studentModel');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
-const verifyToken = require('./verifyToken');
 
 router.post('/add', (req, res) => {
     console.log(req.body);
@@ -79,7 +78,6 @@ router.get("/getbymail/:email", (req,res) => {
       res.status(500).json(err)
      });
   });
-  
 router.put('/update/:id', (req, res) => {
     Model.findByIdAndUpdate(req.params.id, req.body,{new:true})
         .then((result) => {
@@ -94,17 +92,6 @@ router.put('/update/:id', (req, res) => {
 // getall
 router.get('/getall', (req, res) => {
     Model.find()
-        .then((result) => {
-            res.status(200).json(result);
-        })
-        .catch((err) => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
-// getbystudent
-router.get('/getbystudent', verifyToken, (req, res) => {
-    Model.find({ student: req.user._id })
         .then((result) => {
             res.status(200).json(result);
         })

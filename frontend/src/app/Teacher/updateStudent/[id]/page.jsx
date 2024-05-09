@@ -1,5 +1,5 @@
-'use client'
-import useStudentContext from "@/app/context/StudentContext";
+'use client';
+import{useStudentContext} from '@/app/context/StudentContext';
 import { Formik } from "formik";
 import { useParams, useRouter } from "next/navigation";
 import  { useEffect, useState } from "react";
