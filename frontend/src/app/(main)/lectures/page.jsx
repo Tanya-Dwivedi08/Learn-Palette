@@ -33,9 +33,9 @@ useEffect(() => {
           <div className="px-3 pt-4 pb-6 text-center">
             <h2 className="text-xl font-semibold">{lec.subject}</h2>
             <div className="mt-1 text-xs text-gray-400">{lec.createdAt}</div>
-            <div className="mt-2 text-sm">
-             {lec.topic}
-            </div>
+            <div className="mt-2 text-sm"> {lec.topic} </div>
+            
+            
           </div>
           <div className="text-center"> 
           <a
@@ -79,7 +79,7 @@ useEffect(() => {
     //         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
     //             {lec.description}
     //         </p>
-    //         
+            
     //     </div>
     // </div>
      ))

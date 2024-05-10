@@ -29,7 +29,7 @@ const Signup = () => {
       action.resetForm();
       if (res.status === 200) {
         toast.success("SignUp successfully");
-        router.push('/studentlogin')
+        router.push('/student-login')
       } else {
         toast.error("Something went wrong");
       }
