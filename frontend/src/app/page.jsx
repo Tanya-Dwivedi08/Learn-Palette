@@ -44,26 +44,27 @@ const  Home = () => {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="/about"
                     className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
                   >
-                    <span>Features</span>
+                    <span>About</span>
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#"
-                    className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
+                    href="/contact"
+
+                  className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
                   >
-                    <span>Pricing</span>
+                    <span>Contact</span>
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="/feedback"
                     className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
                   >
-                    <span>Solutions</span>
+                    <span>feedback</span>
                   </a>
                 </li>
                 <li>
@@ -96,7 +97,7 @@ const  Home = () => {
         <div className="mx-auto px-6 max-w-7xl md:px-12">
           <div className="text-center  sm:mx-auto sm:w-10/12 lg:mr-auto lg:mt-0 lg:w-4/5">
             <a
-              href="https://beta.tailus.io/demo"
+              href="/about"
               className="border mb-4 w-fit mx-auto flex justify-between items-center transition duration-200 rounded-[--annonce-border-radius] border-[--ui-light-border-color] hover:border-[--ui-light-border-hover-color] dark:border-[--ui-dark-border-color] dark:hover:border-[--ui-dark-border-hover-color] p-1 group gap-2"
             >
               <span className="block text-sm px-2 py-0.5  rounded-[calc(var(--annonce-border-radius)-0.375rem)] text-white bg-primary-600">
@@ -154,7 +155,7 @@ const  Home = () => {
             <div className="mt-8 flex flex-col items-center justify-center gap-4">
               <div className="p-1 rounded-[calc(var(--btn-border-radius)+4px)] bg-gray-950/5 border dark:border-white/10 dark:bg-white/5">
                 <a
-                  href="/docs/installation"
+                  href="\student-login" 
                   className="*:select-none dark:shadow-primary-500/10 *:disabled:opacity-20 disabled:*:text-gray-300 disabled:dark:*:text-gray-700 dark:*:disabled:!text-white group relative z-[1] flex h-11 items-center justify-center gap-1.5 rounded-[--btn-border-radius] border border-primary-600 bg-primary-500 px-4 text-base text-white shadow-md shadow-primary-200 before:absolute before:inset-0 before:rounded-[calc(var(--btn-border-radius)-1px)] before:border before:border-primary-500 before:bg-gradient-to-b before:from-primary-600 hover:bg-primary-600 active:bg-primary-700 disabled:border-gray-200 disabled:bg-gray-100 disabled:text-gray-950/40 disabled:before:border-transparent disabled:before:bg-gray-100 disabled:before:from-transparent dark:border-0 dark:bg-primary-600 dark:before:border-0 dark:before:border-t dark:before:border-primary-400 dark:before:shadow-inner dark:before:shadow-white/10 dark:hover:bg-primary-700 dark:active:bg-primary-800 dark:active:before:from-primary-700 dark:disabled:border dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 dark:disabled:before:bg-gray-900 dark:disabled:before:from-gray-900 dark:disabled:before:shadow-none [&>*:not(.sr-only)]:relative"
                 >
                   <svg
@@ -169,272 +170,31 @@ const  Home = () => {
                       fill="currentColor"
                     />
                     <path
-                      d="M11.875 17.5C11.875 17.6658 11.8092 17.8247 11.6919 17.9419C11.5747 18.0591 11.4158 18.125 11.25 18.125H8.75C8.58424 18.125 8.42527 18.0591 8.30806 17.9419C8.19085 17.8247 8.125 17.6658 8.125 17.5C8.125 17.3342 8.19085 17.1753 8.30806 17.0581C8.42527 16.9408 8.58424 16.875 8.75 16.875H11.25C11.4158 16.875 11.5747 16.9408 11.6919 17.0581C11.8092 17.1753 11.875 17.3342 11.875 17.5ZM10 8.75C10.1854 8.75 10.3667 8.69501 10.5208 8.592C10.675 8.48899 10.7952 8.34257 10.8661 8.17126C10.9371 7.99996 10.9557 7.81146 10.9195 7.6296C10.8833 7.44774 10.794 7.2807 10.6629 7.14959C10.5318 7.01847 10.3648 6.92919 10.1829 6.89301C10.001 6.85684 9.81254 6.8754 9.64123 6.94636C9.46993 7.01732 9.32351 7.13748 9.2205 7.29165C9.11748 7.44582 9.0625 7.62708 9.0625 7.8125C9.0625 8.06114 9.16127 8.2996 9.33709 8.47541C9.5129 8.65123 9.75136 8.75 10 8.75ZM17.4703 12.1742L16.5047 16.5203C16.4589 16.7267 16.3615 16.9181 16.2216 17.0766C16.0817 17.2351 15.9039 17.3555 15.7048 17.4266C15.5057 17.4977 15.2918 17.5172 15.0832 17.4831C14.8745 17.4491 14.6779 17.3627 14.5117 17.232L12.3836 15.625H7.61797L5.48828 17.232C5.3221 17.3627 5.12549 17.4491 4.91684 17.4831C4.70819 17.5172 4.49431 17.4977 4.29522 17.4266C4.09613 17.3555 3.91832 17.2351 3.77842 17.0766C3.63853 16.9181 3.54112 16.7267 3.49531 16.5203L2.52969 12.1742C2.48873 11.9877 2.4908 11.7943 2.53574 11.6087C2.58068 11.4231 2.66731 11.2502 2.78906 11.1031L5.02031 8.42656C5.0952 7.44292 5.32102 6.47666 5.68984 5.56172C6.69766 3.03515 8.50234 1.45 9.23437 0.885935C9.45348 0.716157 9.72281 0.624023 10 0.624023C10.2772 0.624023 10.5465 0.716157 10.7656 0.885935C11.4953 1.45 13.3023 3.03515 14.3102 5.56172C14.679 6.47666 14.9048 7.44292 14.9797 8.42656L17.2109 11.1031C17.3327 11.2502 17.4193 11.4231 17.4643 11.6087C17.5092 11.7943 17.5113 11.9877 17.4703 12.1742ZM7.76797 14.375H12.232C13.882 11.4422 14.1906 8.63437 13.1492 6.025C12.2305 3.72187 10.507 2.26562 10 1.875C9.49141 2.26562 7.76797 3.72187 6.84922 6.025C5.80937 8.63437 6.11797 11.4422 7.76797 14.375ZM6.59609 14.832C5.75495 13.3034 5.24453 11.801 5.06484 10.325L3.75 11.9031L4.71562 16.25L4.72969 16.2398L6.59609 14.832ZM16.25 11.9031L14.9352 10.325C14.757 11.7979 14.2477 13.3003 13.407 14.832L15.2703 16.2383L15.2844 16.2484L16.25 11.9031Z"
+                      d="M11.875 17.5C11.875 17.6658 11.8092 17.8247 11.6919 17.9419C11.5747 18.0591 11.4158 18.125 11.25 18.125H8.75C8.58424 18.125 8.42527 18.0591 8.30806 17.9419C8.19085 17.8247 8.125 17.6658 8.125 17.5C8.125 17.3342 8.19085 17.1753 8.30806 17.0581C8.42527 16.9408 8.58424 16.875 8.75 16.875H11.25C11.4158 16.875 11.5747 16.9408 11.6919 17.0581C11.8092 17.1753 11.875 17.3342 11.875 17.5ZM10 8.75C10.1854 8.75 10.3667 8.69501 10.5208 8.592C10.675 8.48899 10.7952 8.34257 10.8661 8.17126C10.9371 7.99996 10.9557 7.81146 10.9195 7.6296C10.8833 7.44774 10.794 7.2807 10.6629 7.14959C10.5318 7.01847 10.3648 6.92919 10.1829 6.89301C10.001 6.85684 9.81254 6.8754 9.64123 6.94636C9.46993 7.01732 9.32351 7.13748 9.2205 7.29165C9.11748 7.44582 9.0625 7.62708 9.0625 7.8125C9.0625 8.06114 9.16127 8.2996 9.33709 8.47541C9.5129 8.65123 9.75136 8.75 10 8.75ZM17.4703 12.1742L16.5047 16.5203C16.4589 16.7267 16.3615 16.9181 16.2216 17.0766C16.0817 17.2351 15.9039 17.3555 15.7048 17.4266C15.5057 17.4977 15.2918 17.5172 15.0832 17.4831C14.8745 17.4491 14.6779 17.3627 14.5117 17.232L12.3836 15.625H7.61797L5.48828 17.232C5.3221 17.3627 5.12549 17.4491 4.91684 17.4831C4.70819 17.5172 4.49431 17.4977 4.29522 17.4266C4.09613 17.3555 3.91832 17.2351 3.77842 17.0766C3.63853 16.9181 3.54112 16.7267 3.49531 16.5203L2.52969 12.1742C2.48873 11.9877 2.4908 11.7943 2.53574 11.6087C2.58068 11.4231 2.66731 11.2502 2.78906 11.1031L5.02031 8.42656C5.0952 7.44292 5.32102 6.47666 5.68984 5.56172C6.69766 3.03515 8.50234 1.45 9.23437 0.885935C9.45348 0.716157 9.72281 0.624023 10 0.624023C10.2772 0.624023 10.5465 0.716157 10.7656 0.885935C11.4953 1.45 13.3023 3.03515 14.3102 5.56172C14.679 6.47666 14.9048 7.44292 14.9797 8.42656L17.2109 11.1031C17.3327 11.2502 17.4193 11.4231 17.4643 11.6087C17.5092 11.7943 17.5113 11.9877 17.4703 12.1742ZM7.76797 14.375H12.232C13.882 11.4422 14.1906 8.63437 13.1492 6.025C12.2305 3.72187 10.507 2.26562 10 1.875C9.49141 2.26562 7.76797 3.72187 6.84922 6.025C5.80-937 8.63437 6.11797 11.4422 7.76797 14.375ZM6.59609 14.832C5.75495 13.3034 5.24453 11.801 5.06484 10.325L3.75 11.9031L4.71562 16.25L4.72969 16.2398L6.59609 14.832ZM16.25 11.9031L14.9352 10.325C14.757 11.7979 14.2477 13.3003 13.407 14.832L15.2703 16.2383L15.2844 16.2484L16.25 11.9031Z"
                       fill="currentColor"
                     />
                   </svg>
                   <span className="text-nowrap">Start Learning</span>
                 </a>
               </div>
-              <button className="hidden *:select-none *:disabled:opacity-20 dark:*:disabled:!text-black dark:hover:bg-gray-500/15 group h-9 items-center justify-center gap-1.5 rounded-[--btn-border-radius] bg--100 px-3 text-base text-gray-800 hover:bg-gray-200/75 active:bg-gray-100 disabled:border disabled:border-gray-200 disabled:bg-gray-100 disabled:text-gray-950 dark:bg-gray-500/10 dark:text-gray-300 dark:active:bg-gray-500/10 dark:disabled:border-gray-800/50 disabled:dark:bg-gray-900 [&>*:not(.sr-only)]:relative">
-                <span className="text-sm">Learn more</span>
-                <svg
-                  className="-mr-1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  viewBox="0 0 48 48"
-                >
-                  <path
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={4}
-                    d="m19 12l12 12l-12 12"
-                  />
-                </svg>
-              </button>
+              
             </div>
           </div>
           <div className="-mx-6 relative mt-8 sm:mt-12 max-w-xl sm:mx-auto">
             <div className="absolute inset-0 -top-8 left-1/2 -z-20 h-56 w-full -translate-x-1/2 dark:opacity-10 [background-image:linear-gradient(to_bottom,transparent_98%,theme(colors.gray.200/75%)_98%),linear-gradient(to_right,transparent_94%,_theme(colors.gray.200/75%)_94%)] [background-size:16px_35px] [mask:radial-gradient(black,transparent_95%)]" />
             <div className="absolute top-12 inset-x-0 w-2/3 h-1/3 -z-[1] rounded-full bg-primary-300 dark:bg-white/10 mx-auto blur-3xl" />
             <div className="swiper proofSlides pb-6">
-              <div className="swiper-wrapper">
-                <div className="px-6 pt-2 pb-12 swiper-slide">
-                  <div className="bg-white shadow-xl shadow-gray-950/5 p-[--card-padding] rounded-[--card-border-radius] border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] dark:bg-[--card-dark-bg] relative border-[length:var(--border-width)] [--anchor:100] [--border-radius:calc(var(--radius)*1px)] [--border-width:calc(var(--border)*1px)] [--border:1] [--glow:60] [--hue:179] [--lightness:55%] dark:[--lightness:14%] [--opacity:1] [--radius:24] [--saturation:78%] dark:[--saturation:97%] [--speed:2]">
-                    <div>
-                      <svg
-                        className="h-12 w-fit mx-auto dark:hidden"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={512}
-                        height={209}
-                        viewBox="0 0 512 209"
-                        fill="none"
-                      >
-                        <g clipPath="url(#clip0_235_8)">
-                          <path
-                            d="M117.436 207.036V154.604L118.529 153.51H129.452L130.545 154.604V207.036L129.452 208.13H118.529L117.436 207.036Z"
-                            fill="#05BDBA"
-                          />
-                          <path
-                            d="M117.436 53.5225V1.09339L118.529 0H129.452L130.545 1.09339V53.5225L129.452 54.6159H118.529L117.436 53.5225Z"
-                            fill="#05BDBA"
-                          />
-                          <path
-                            d="M69.9539 169.238H68.4094L60.6869 161.512V159.967L78.7201 141.938L86.8976 141.942L87.9948 143.031V151.209L69.9539 169.238Z"
-                            fill="#05BDBA"
-                          />
-                          <path
-                            d="M69.9462 38.8917H68.4017L60.6792 46.6181V48.1626L78.7124 66.192L86.8899 66.1882L87.9871 65.0986V56.9212L69.9462 38.8917Z"
-                            fill="#05BDBA"
-                          />
-                          <path
-                            d="M1.09339 97.5104H75.3711L76.4645 98.6038V109.526L75.3711 110.62H1.09339L0 109.526V98.6038L1.09339 97.5104Z"
-                            fill="#05BDBA"
-                          />
-                          <path
-                            d="M440.999 97.5104H510.91L512.004 98.6038V109.526L510.91 110.62H436.633L435.539 109.526L439.905 98.6038L440.999 97.5104Z"
-                            fill="#05BDBA"
-                          />
-                          <path
-                            d="M212.056 108.727L210.963 109.821H177.079L175.986 110.914C175.986 113.101 178.173 119.657 186.916 119.657C190.196 119.657 193.472 118.564 194.566 116.377L195.659 115.284H208.776L209.869 116.377C208.776 122.934 203.313 132.774 186.916 132.774C168.336 132.774 159.589 119.657 159.589 104.357C159.589 89.0576 168.332 75.9408 185.822 75.9408C203.313 75.9408 212.056 89.0576 212.056 104.357V108.731V108.727ZM195.659 97.7971C195.659 96.7037 194.566 89.0538 185.822 89.0538C177.079 89.0538 175.986 96.7037 175.986 97.7971L177.079 98.8905H194.566L195.659 97.7971Z"
-                            fill="#014847"
-                          />
-                          <path
-                            d="M242.66 115.284C242.66 117.47 243.753 118.564 245.94 118.564H255.776L256.87 119.657V130.587L255.776 131.681H245.94C236.103 131.681 227.36 127.307 227.36 115.284V91.2368L226.266 90.1434H218.617L217.523 89.05V78.1199L218.617 77.0265H226.266L227.36 75.9332V66.0965L228.453 65.0031H241.57L242.663 66.0965V75.9332L243.757 77.0265H255.78L256.874 78.1199V89.05L255.78 90.1434H243.757L242.663 91.2368V115.284H242.66Z"
-                            fill="#014847"
-                          />
-                          <path
-                            d="M283.1 131.681H269.983L268.889 130.587V56.2636L269.983 55.1702H283.1L284.193 56.2636V130.587L283.1 131.681Z"
-                            fill="#014847"
-                          />
-                          <path
-                            d="M312.61 68.2871H299.493L298.399 67.1937V56.2636L299.493 55.1702H312.61L313.703 56.2636V67.1937L312.61 68.2871ZM312.61 131.681H299.493L298.399 130.587V78.1237L299.493 77.0304H312.61L313.703 78.1237V130.587L312.61 131.681Z"
-                            fill="#014847"
-                          />
-                          <path
-                            d="M363.98 56.2636V67.1937L362.886 68.2871H353.05C350.863 68.2871 349.769 69.3805 349.769 71.5672V75.9408L350.863 77.0342H361.793L362.886 78.1276V89.0576L361.793 90.151H350.863L349.769 91.2444V130.591L348.676 131.684H335.559L334.466 130.591V91.2444L333.372 90.151H325.723L324.629 89.0576V78.1276L325.723 77.0342H333.372L334.466 75.9408V71.5672C334.466 59.5438 343.209 55.1702 353.046 55.1702H362.882L363.976 56.2636H363.98Z"
-                            fill="#014847"
-                          />
-                          <path
-                            d="M404.42 132.774C400.046 143.704 395.677 150.261 380.373 150.261H374.906L373.813 149.167V138.237L374.906 137.144H380.373C385.836 137.144 386.929 136.05 388.023 132.77V131.677L370.536 89.05V78.1199L371.63 77.0265H381.466L382.56 78.1199L395.677 115.284H396.77L409.887 78.1199L410.98 77.0265H420.817L421.91 78.1199V89.05L404.424 132.77L404.42 132.774Z"
-                            fill="#014847"
-                          />
-                          <path
-                            d="M135.454 131.681L134.361 130.587L134.368 98.9172C134.368 93.4541 132.22 89.2182 125.625 89.0806C122.234 88.9926 118.354 89.0729 114.209 89.2488L113.59 89.8834L113.598 130.587L112.504 131.681H99.3913L98.2979 130.587V77.5388L99.3913 76.4454L128.901 76.1778C143.685 76.1778 149.668 86.3356 149.668 97.8009V130.587L148.575 131.681H135.454Z"
-                            fill="#014847"
-                          />
-                        </g>
-                        <defs>
-                          <clipPath id="clip0_235_8">
-                            <rect width={512} height="208.126" fill="white" />
-                          </clipPath>
-                        </defs>
-                      </svg>
-                      <svg
-                        className="h-12 w-fit mx-auto hidden dark:block"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={512}
-                        height={209}
-                        viewBox="0 0 512 209"
-                        fill="none"
-                      >
-                        <g clipPath="url(#clip0_235_26)">
-                          <path
-                            d="M117.436 207.036V154.604L118.529 153.51H129.452L130.545 154.604V207.036L129.452 208.13H118.529L117.436 207.036Z"
-                            fill="#32E6E2"
-                          />
-                          <path
-                            d="M117.436 53.5225V1.09339L118.529 0H129.452L130.545 1.09339V53.5225L129.452 54.6159H118.529L117.436 53.5225Z"
-                            fill="#32E6E2"
-                          />
-                          <path
-                            d="M69.9539 169.238H68.4094L60.6869 161.512V159.967L78.7201 141.938L86.8976 141.942L87.9948 143.031V151.209L69.9539 169.238Z"
-                            fill="#32E6E2"
-                          />
-                          <path
-                            d="M69.9462 38.8917H68.4017L60.6792 46.6181V48.1626L78.7124 66.192L86.8899 66.1882L87.9871 65.0986V56.9212L69.9462 38.8917Z"
-                            fill="#32E6E2"
-                          />
-                          <path
-                            d="M1.09339 97.5104H75.3711L76.4645 98.6038V109.526L75.3711 110.62H1.09339L0 109.526V98.6038L1.09339 97.5104Z"
-                            fill="#32E6E2"
-                          />
-                          <path
-                            d="M440.999 97.5104H510.91L512.004 98.6038V109.526L510.91 110.62H436.633L435.539 109.526L439.905 98.6038L440.999 97.5104Z"
-                            fill="#32E6E2"
-                          />
-                          <path
-                            d="M212.056 108.727L210.963 109.821H177.079L175.986 110.914C175.986 113.101 178.173 119.657 186.916 119.657C190.196 119.657 193.472 118.564 194.566 116.377L195.659 115.284H208.776L209.869 116.377C208.776 122.934 203.313 132.774 186.916 132.774C168.336 132.774 159.589 119.657 159.589 104.357C159.589 89.0576 168.332 75.9408 185.822 75.9408C203.313 75.9408 212.056 89.0576 212.056 104.357V108.731V108.727ZM195.659 97.7971C195.659 96.7037 194.566 89.0538 185.822 89.0538C177.079 89.0538 175.986 96.7037 175.986 97.7971L177.079 98.8905H194.566L195.659 97.7971Z"
-                            fill="white"
-                          />
-                          <path
-                            d="M242.66 115.284C242.66 117.47 243.753 118.564 245.94 118.564H255.776L256.87 119.657V130.587L255.776 131.681H245.94C236.103 131.681 227.36 127.307 227.36 115.284V91.2368L226.266 90.1434H218.617L217.523 89.05V78.1199L218.617 77.0265H226.266L227.36 75.9332V66.0965L228.453 65.0031H241.57L242.663 66.0965V75.9332L243.757 77.0265H255.78L256.874 78.1199V89.05L255.78 90.1434H243.757L242.663 91.2368V115.284H242.66Z"
-                            fill="white"
-                          />
-                          <path
-                            d="M283.1 131.681H269.983L268.889 130.587V56.2636L269.983 55.1702H283.1L284.193 56.2636V130.587L283.1 131.681Z"
-                            fill="white"
-                          />
-                          <path
-                            d="M312.61 68.2871H299.493L298.399 67.1937V56.2636L299.493 55.1702H312.61L313.703 56.2636V67.1937L312.61 68.2871ZM312.61 131.681H299.493L298.399 130.587V78.1237L299.493 77.0304H312.61L313.703 78.1237V130.587L312.61 131.681Z"
-                            fill="white"
-                          />
-                          <path
-                            d="M363.98 56.2636V67.1937L362.886 68.2871H353.05C350.863 68.2871 349.769 69.3805 349.769 71.5672V75.9408L350.863 77.0342H361.793L362.886 78.1276V89.0576L361.793 90.151H350.863L349.769 91.2444V130.591L348.676 131.684H335.559L334.466 130.591V91.2444L333.372 90.151H325.723L324.629 89.0576V78.1276L325.723 77.0342H333.372L334.466 75.9408V71.5672C334.466 59.5438 343.209 55.1702 353.046 55.1702H362.882L363.976 56.2636H363.98Z"
-                            fill="white"
-                          />
-                          <path
-                            d="M404.42 132.774C400.046 143.704 395.677 150.261 380.373 150.261H374.906L373.813 149.167V138.237L374.906 137.144H380.373C385.836 137.144 386.929 136.05 388.023 132.77V131.677L370.536 89.05V78.1199L371.63 77.0265H381.466L382.56 78.1199L395.677 115.284H396.77L409.887 78.1199L410.98 77.0265H420.817L421.91 78.1199V89.05L404.424 132.77L404.42 132.774Z"
-                            fill="white"
-                          />
-                          <path
-                            d="M135.454 131.681L134.361 130.587L134.368 98.9172C134.368 93.4541 132.22 89.2182 125.625 89.0806C122.234 88.9926 118.354 89.0729 114.209 89.2488L113.59 89.8834L113.598 130.587L112.504 131.681H99.3913L98.2979 130.587V77.5388L99.3913 76.4454L128.901 76.1778C143.685 76.1778 149.668 86.3356 149.668 97.8009V130.587L148.575 131.681H135.454Z"
-                            fill="white"
-                          />
-                        </g>
-                        <defs>
-                          <clipPath id="clip0_235_26">
-                            <rect width={512} height="208.126" fill="white" />
-                          </clipPath>
-                        </defs>
-                      </svg>
-                      <p className="mt-6 text-lg text-gray-950 dark:text-white text-center">
-                        
-                      </p>
-                    </div>
-                    <span className="glow absolute inset-[calc(var(--border-width)*-1)] rounded-[--card-border-radius] border-[length:var(--border-width)] border-transparent ![mask-clip:padding-box,_border-box] ![mask-composite:intersect] [mask:linear-gradient(transparent,transparent),linear-gradient(white,white)]">
-                      <span className="absolute inline-block aspect-square h-20 bg-[radial-gradient(circle_at_right,hsl(0_0%_100%/0),transparent_50%),radial-gradient(circle_at_right,hsl(var(--hue)_var(--saturation)_var(--lightness,50%)/1)_50%,transparent)] dark:bg-[radial-gradient(circle_at_right,hsl(0_0%_100%/0.75),transparent_50%),radial-gradient(circle_at_right,hsl(var(--hue)_var(--saturation)_var(--lightness,50%)/1)_50%,transparent)] opacity-[var(--opacity)] [animation:loop_5s_infinite_linear] [offset-anchor:calc(var(--anchor)*1%)_50%] [offset-path:rect(0_100%_100%_0_round_calc(var(--glow)*1px))]" />
-                    </span>
-                  </div>
-                </div>
-                <div className="px-6 pt-2 pb-12 swiper-slide">
-                  <div className="bg-white shadow-xl shadow-gray-950/5 p-[--card-padding] rounded-[--card-border-radius] border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] dark:bg-[--card-dark-bg] relative border-[length:var(--border-width)] [--anchor:100] [--border-radius:calc(var(--radius)*1px)] [--border-width:calc(var(--border)*1px)] [--border:1] [--glow:60] [--hue:295] [--lightness:63%] [--opacity:1] [--radius:24] [--saturation:100%] [--speed:2]">
-                    <div>
-                      <svg
-                        className="h-12 w-fit mx-auto text-black dark:text-white"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width={460}
-                        height={160}
-                        viewBox="0 0 460 160"
-                        fill="none"
-                      >
-                        <path
-                          d="M65.7846 121.175C61.2669 117.045 59.9481 108.368 61.8303 102.082C65.0939 106.045 69.6158 107.301 74.2997 108.009C81.5305 109.103 88.6318 108.694 95.349 105.389C96.1174 105.011 96.8275 104.507 97.6672 103.998C98.2974 105.826 98.4615 107.672 98.2413 109.551C97.706 114.127 95.4288 117.662 91.8069 120.341C90.3586 121.413 88.8261 122.371 87.3303 123.382C82.7349 126.487 81.4917 130.129 83.2184 135.427C83.2594 135.556 83.2961 135.685 83.389 136C81.0427 134.95 79.3289 133.421 78.023 131.411C76.6438 129.289 75.9876 126.942 75.9531 124.403C75.9358 123.167 75.9358 121.92 75.7696 120.702C75.3638 117.732 73.9694 116.402 71.3426 116.325C68.6467 116.247 66.5141 117.913 65.9486 120.538C65.9054 120.739 65.8428 120.938 65.7803 121.172L65.7846 121.175Z"
-                          fill="currentColor"
-                        />
-                        <path
-                          d="M65.7846 121.175C61.2669 117.045 59.9481 108.368 61.8303 102.082C65.0939 106.045 69.6158 107.301 74.2997 108.009C81.5305 109.103 88.6318 108.694 95.349 105.389C96.1174 105.011 96.8275 104.507 97.6672 103.998C98.2974 105.826 98.4615 107.672 98.2413 109.551C97.706 114.127 95.4288 117.662 91.8069 120.341C90.3586 121.413 88.8261 122.371 87.3303 123.382C82.7349 126.487 81.4917 130.129 83.2184 135.427C83.2594 135.556 83.2961 135.685 83.389 136C81.0427 134.95 79.3289 133.421 78.023 131.411C76.6438 129.289 75.9876 126.942 75.9531 124.403C75.9358 123.167 75.9358 121.92 75.7696 120.702C75.3638 117.732 73.9694 116.402 71.3426 116.325C68.6467 116.247 66.5141 117.913 65.9486 120.538C65.9054 120.739 65.8428 120.938 65.7803 121.172L65.7846 121.175Z"
-                          fill="url(#paint0_linear_1_33)"
-                        />
-                        <path
-                          d="M40 101.034C40 101.034 53.3775 94.5177 66.7924 94.5177L76.9068 63.2155C77.2855 61.7017 78.3911 60.6729 79.6393 60.6729C80.8875 60.6729 81.9932 61.7017 82.3719 63.2155L92.4862 94.5177C108.374 94.5177 119.279 101.034 119.279 101.034C119.279 101.034 96.5558 39.133 96.5114 39.0088C95.8592 37.1787 94.7583 36 93.274 36H66.007C64.5227 36 63.4662 37.1787 62.7696 39.0088C62.7205 39.1307 40 101.034 40 101.034Z"
-                          fill="currentColor"
-                        />
-                        <path
-                          d="M181.043 81.1227C181.043 86.6079 174.22 89.8838 164.773 89.8838C158.624 89.8838 156.45 88.3601 156.45 85.1604C156.45 81.8083 159.149 80.2085 165.297 80.2085C170.846 80.2085 175.569 80.2846 181.043 80.9703V81.1227ZM181.118 74.3423C177.744 73.5805 172.645 73.1234 166.572 73.1234C148.877 73.1234 140.555 77.3135 140.555 87.065C140.555 97.1975 146.253 101.083 159.449 101.083C170.621 101.083 178.193 98.2641 180.968 91.3313H181.417C181.342 93.0074 181.268 94.6834 181.268 95.9785C181.268 99.5592 181.867 99.8639 184.791 99.8639H198.587C197.837 97.7308 197.388 91.7122 197.388 86.5317C197.388 80.9703 197.612 76.7802 197.612 71.1426C197.612 59.6388 190.715 52.3251 169.121 52.3251C159.824 52.3251 149.477 53.925 141.605 56.2867C142.354 59.4102 143.404 65.7335 143.929 69.8474C150.752 66.6477 160.424 65.2764 167.922 65.2764C178.268 65.2764 181.118 67.6381 181.118 72.4377V74.3423Z"
-                          fill="currentColor"
-                        />
-                        <path
-                          d="M218.971 84.3224C217.097 84.5509 214.547 84.5509 211.923 84.5509C209.149 84.5509 206.6 84.4748 204.875 84.2462C204.875 84.8557 204.8 85.5413 204.8 86.1508C204.8 95.6738 211.024 101.235 232.917 101.235C253.535 101.235 260.208 95.75 260.208 86.0746C260.208 76.9325 255.785 72.4377 236.216 71.4473C220.995 70.7616 219.646 69.0856 219.646 67.181C219.646 64.9717 221.595 63.8289 231.792 63.8289C242.364 63.8289 245.213 65.2764 245.213 68.3238V69.0094C246.713 68.9332 249.412 68.8571 252.186 68.8571C254.81 68.8571 257.659 68.9332 259.309 69.0856C259.309 68.3999 259.384 67.7905 259.384 67.2572C259.384 56.0581 250.086 52.4013 232.092 52.4013C211.848 52.4013 205.025 57.3533 205.025 67.0286C205.025 75.7136 210.499 81.1227 229.918 81.9607C244.238 82.4178 245.813 84.0177 245.813 86.227C245.813 88.5887 243.489 89.6553 233.442 89.6553C221.895 89.6553 218.971 88.0554 218.971 84.7795V84.3224Z"
-                          fill="currentColor"
-                        />
-                        <path
-                          d="M284.955 44.1734C279.482 49.2778 269.66 54.3821 264.187 55.7534C264.262 58.5722 264.262 63.7527 264.262 66.5715L269.285 66.6477C269.21 72.0568 269.135 78.6086 269.135 82.9511C269.135 93.0835 274.458 100.702 291.028 100.702C298.001 100.702 302.65 99.9401 308.423 98.7212C307.823 94.9881 307.148 89.2743 306.923 84.9319C303.475 86.0746 299.126 86.6841 294.327 86.6841C287.654 86.6841 284.955 84.8557 284.955 79.599C284.955 75.028 284.955 70.7616 285.03 66.8001C293.578 66.8763 302.125 67.0286 307.148 67.181C307.073 63.2194 307.223 57.5056 307.448 53.6964C300.176 53.8488 292.003 53.925 285.255 53.925C285.33 50.5729 285.405 47.3732 285.48 44.1734H284.955Z"
-                          fill="currentColor"
-                        />
-                        <path
-                          d="M329.736 64.286C329.811 60.3244 329.886 56.9724 329.961 53.6964H314.89C315.115 60.2483 315.115 66.9525 315.115 76.7802C315.115 86.6079 315.04 93.3883 314.89 99.8639H332.135C331.835 95.2929 331.76 87.5983 331.76 81.0465C331.76 70.6855 335.959 67.7143 345.481 67.7143C349.905 67.7143 353.054 68.2476 355.828 69.238C355.903 65.3526 356.653 57.8104 357.102 54.4583C354.253 53.6203 351.104 53.087 347.28 53.087C339.108 53.0108 333.11 56.3629 330.336 64.3622L329.736 64.286Z"
-                          fill="currentColor"
-                        />
-                        <path
-                          d="M404.808 76.4754C404.808 84.7795 398.81 88.6649 389.363 88.6649C379.991 88.6649 373.993 85.008 373.993 76.4754C373.993 67.9428 380.066 64.7431 389.363 64.7431C398.735 64.7431 404.808 68.1714 404.808 76.4754ZM420.478 76.0945C420.478 59.5626 407.582 52.1728 389.363 52.1728C371.069 52.1728 358.623 59.5626 358.623 76.0945C358.623 92.5503 370.244 101.388 389.288 101.388C408.482 101.388 420.478 92.5503 420.478 76.0945Z"
-                          fill="currentColor"
-                        />
-                        <defs>
-                          <linearGradient
-                            id="paint0_linear_1_33"
-                            x1="61.0003"
-                            y1={136}
-                            x2="104.622"
-                            y2="115.39"
-                            gradientUnits="userSpaceOnUse"
-                          >
-                            <stop stopColor="#D83333" />
-                            <stop offset={1} stopColor="#F041FF" />
-                          </linearGradient>
-                        </defs>
-                      </svg>
-                      <p className="mt-6 text-lg text-gray-950 dark:text-white text-center">
-                        
-                      </p>
-                    </div>
-                    <span className="glow absolute inset-[calc(var(--border-width)*-1)] rounded-[--card-border-radius] border-[length:var(--border-width)] border-transparent ![mask-clip:padding-box,_border-box] ![mask-composite:intersect] [mask:linear-gradient(transparent,transparent),linear-gradient(white,white)]">
-                      <span className="absolute inline-block aspect-square h-20 bg-[radial-gradient(circle_at_right,hsl(0_0%_100%/0),transparent_50%),radial-gradient(circle_at_right,hsl(var(--hue)_var(--saturation)_var(--lightness,50%)/1)_50%,transparent)] dark:bg-[radial-gradient(circle_at_right,hsl(0_0%_100%/0.75),transparent_50%),radial-gradient(circle_at_right,hsl(var(--hue)_var(--saturation)_var(--lightness,50%)/1)_50%,transparent)] opacity-[var(--opacity)] [animation:loop_5s_infinite_linear] [offset-anchor:calc(var(--anchor)*1%)_50%] [offset-path:rect(0_100%_100%_0_round_calc(var(--glow)*1px))]" />
-                    </span>
-                  </div>
-                </div>
-                <div className="px-6 pt-2 pb-12 swiper-slide">
-                  <div className="bg-white shadow-xl shadow-accent-950/5 p-[--card-padding] rounded-[--card-border-radius] border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] dark:bg-[--card-dark-bg] relative border-[length:var(--border-width)] [--anchor:100] [--border-radius:calc(var(--radius)*1px)] [--border-width:calc(var(--border)*1px)] [--border:1] [--glow:60] [--hue:240] [--lightness:67%] [--opacity:1] [--radius:24] [--saturation:84%] [--speed:2]">
-                    <div>
-                      <div className="h-12 w-fit mx-auto">
-                       
-                      </div>
-                      <p className="mt-6 text-lg text-gray-950 dark:text-white text-center">
-                        30% Increase in revenue
-                      </p>
-                    </div>
-                    <span className="glow absolute inset-[calc(var(--border-width)*-1)] rounded-[--card-border-radius] border-[length:var(--border-width)] border-transparent ![mask-clip:padding-box,_border-box] ![mask-composite:intersect] [mask:linear-gradient(transparent,transparent),linear-gradient(white,white)]">
-                      <span className="absolute inline-block aspect-square h-20 bg-[radial-gradient(circle_at_right,hsl(0_0%_100%/0),transparent_50%),radial-gradient(circle_at_right,hsl(var(--hue)_var(--saturation)_var(--lightness,50%)/1)_50%,transparent)] dark:bg-[radial-gradient(circle_at_right,hsl(0_0%_100%/0.75),transparent_50%),radial-gradient(circle_at_right,hsl(var(--hue)_var(--saturation)_var(--lightness,50%)/1)_50%,transparent)] opacity-[var(--opacity)] [animation:loop_5s_infinite_linear] [offset-anchor:calc(var(--anchor)*1%)_50%] [offset-path:rect(0_100%_100%_0_round_calc(var(--glow)*1px))]" />
-                    </span>
-                  </div>
-                </div>
-              </div>
+           
               <div className="swiper-pagination -mb-3 *:!rounded-lg *:!w-14 *:!h-0.5" />
             </div>
           </div>
+        </div>
+        <div className="md:block hidden w-1/2">
+          <img
+            className="rounded-m min-w-[900px] block mx-auto"
+            src="https://emilysatresources.weebly.com/uploads/3/9/0/3/39031951/header_images/1411920106.jpg"
+            alt="whiteboard"
+          />
         </div>
       </div>
     </section>
@@ -447,7 +207,7 @@ const  Home = () => {
                 <div className="size-fit m-auto relative">
                   <div className="relative h-24 w-56 flex items-center">
                     <svg
-                      className="absolute inset-0 size-full text-gray-400 dark:text-gray-600"
+                      className="absolute inset-0 size-full text-gray-400 dark:text-gray-600 pt-1/2"
                       viewBox="0 0 254 104"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -457,13 +217,15 @@ const  Home = () => {
                         fill="currentColor"
                       />
                     </svg>
-                    <span className="w-fit block mx-auto text-5xl font-semibold text-transparent bg-clip-text bg-gradient-to-br from-primary-300 to-accent-600 dark:from-primary-400 dark:to-accent-400">
-                      100%
+                    <span className="w-fit block mx-auto text-3xl font-semibold text-transparent bg-clip-text bg-gradient-to-br from-primary-300 to-accent-400 dark:from-primary-300 dark:to-accent-300">
+                     
                     </span>
                   </div>
-                  <h2 className="mt-6 text-center font-semibold text-gray-950 dark:text-white text-3xl">
+                  <h2 className="mt-6 text-center font-semibold text-gray-950 dark:text-white text-xl">
                     Customizable
                   </h2>
+                  
+                 
                 </div>
               </div>
               <div className="col-span-full sm:col-span-3 lg:col-span-2 overflow-hidden relative p-[--card-padding] rounded-[--card-border-radius] bg-white border border-[--ui-light-border-color] dark:border-[--ui-dark-border-color] dark:bg-[--card-dark-bg]">
@@ -530,8 +292,7 @@ const  Home = () => {
                       Secure by default
                     </h2>
                     <p className="dark:text-gray-300 text-gray-700">
-                      Provident fugit and vero voluptate. magnam magni doloribus
-                      dolores voluptates a sapiente nisi.
+                      We take security seriously. With end-to-end encryption, your data is safe and user-friendliness are evaluated based on the following criteria: simplicity, consistency, and flexibility.
                     </p>
                   </div>
                 </div>
@@ -624,11 +385,10 @@ const  Home = () => {
                   </div>
                   <div className="mt-14 text-center relative z-10 space-y-2">
                     <h2 className="text-lg font-medium text-gray-800 transition group-hover:text-secondary-950 dark:text-white">
-                      Faster than light
+                     Import and export system
                     </h2>
                     <p className="dark:text-gray-300 text-gray-700">
-                      Provident fugit vero voluptate. magnam magni doloribus
-                      dolores voluptates inventore nisi.
+                      We provide a simple and easy way to import and export your data. You can easily import your data from other platforms and export your data to other platforms.
                     </p>
                   </div>
                 </div>
@@ -654,11 +414,10 @@ const  Home = () => {
                     </div>
                     <div className="space-y-2">
                       <h2 className="text-lg font-medium text-gray-800 transition group-hover:text-secondary-950 dark:text-white">
-                        Faster than light
+                        Tool selection system
                       </h2>
                       <p className="dark:text-gray-300 text-gray-700">
-                        Provident fugit vero voluptate. Voluptates a sapiente
-                        inventore nisi.
+                        We provide a tool selection system that allows you to easily select the tools you need for your work. You can easily select the tools you need and use them in your work.
                       </p>
                     </div>
                   </div>
@@ -738,19 +497,18 @@ const  Home = () => {
                     </div>
                     <div className="space-y-2">
                       <h2 className="text-lg font-medium text-gray-800 transition group-hover:text-secondary-950 dark:text-white">
-                        Keep your loved ones safe
+                        Real-time collaboration
                       </h2>
                       <p className="dark:text-gray-300 text-gray-700">
-                        Voluptate. magnam magni doloribus dolores voluptates a
-                        sapiente inventore nisi.
-                      </p>
+                        We provide a real-time collaboration system that allows you to collaborate with your team in real-time. You can easily collaborate with your team and work together on your projects.
+                        </p>
                     </div>
                   </div>
                   <div className="mt-6 relative sm:-mr-[--card-padding] sm:-my-[--card-padding] before:absolute before:w-px before:inset-0 before:mx-auto before:bg-[--ui-light-border-color] dark:before:bg-[--ui-dark-border-color]">
                     <div className="relative space-y-6 py-6 flex flex-col justify-center h-full">
                       <div className="flex items-center justify-end gap-2 w-[calc(50%+0.875rem)] relative">
                         <span className="h-fit text-xs block px-2 py-1 shadow-sm border rounded-md dark:bg-gray-800 dark:border-white/5 dark:text-white">
-                          Glodie
+                          H.rai
                         </span>
                         <div className="size-7 ring-4 ring-white dark:ring-[--card-dark-bg]">
                           <img
@@ -769,12 +527,12 @@ const  Home = () => {
                           />
                         </div>
                         <span className="h-fit text-xs block px-2 py-1 shadow-sm border rounded-md dark:bg-gray-800 dark:border-white/5 dark:text-white">
-                          M. Irung
+                          Mr.Dixit
                         </span>
                       </div>
                       <div className="flex items-center justify-end gap-2 w-[calc(50%+0.875rem)] relative">
                         <span className="h-fit text-xs block px-2 py-1 shadow-sm border rounded-md dark:bg-gray-800 dark:border-white/5 dark:text-white">
-                          B. Ng
+                          B.Negi
                         </span>
                         <div className="size-7 ring-4 ring-white dark:ring-[--card-dark-bg]">
                           <img
@@ -801,7 +559,8 @@ const  Home = () => {
               Seamlessly integrates with <br /> your favorite frontend tools
             </h2>
             <p className="mt-6 text-gray-700 dark:text-gray-300">
-              Orrupti aut temporibus ariatur.
+              We provide a simple and easy way to integrate with your favorite frontend tools.
+              You can easily integrate with your favorite frontend tools and use them in your work.
             </p>
           </div>
           <div className="mt-12 relative w-fit h-fit sm:mx-auto sm:px-0 -mx-6 px-6 overflow-x-auto">
@@ -814,371 +573,29 @@ const  Home = () => {
                   height="1em"
                   viewBox="0 0 128 128"
                 >
-                  <defs>
-                    <linearGradient
-                      id="deviconAstro0"
-                      x1="882.997"
-                      x2="638.955"
-                      y1="27.113"
-                      y2="866.902"
-                      gradientTransform="scale(.1)"
-                      gradientUnits="userSpaceOnUse"
-                    >
-                      <stop offset={0} stopColor="currentColor" />
-                      <stop offset={1} stopColor="currentColor" />
-                    </linearGradient>
-                    <linearGradient
-                      id="deviconAstro1"
-                      x1="1001.68"
-                      x2="790.326"
-                      y1="652.45"
-                      y2="1094.91"
-                      gradientTransform="scale(.1)"
-                      gradientUnits="userSpaceOnUse"
-                    >
-                      <stop offset={0} stopColor="#ff1639" />
-                      <stop offset={1} stopColor="#ff1639" stopOpacity={0} />
-                    </linearGradient>
-                  </defs>
-                  <path
-                    fill="url(#deviconAstro0)"
-                    d="M81.504 9.465c.973 1.207 1.469 2.836 2.457 6.09l21.656 71.136a90.079 90.079 0 0 0-25.89-8.765L65.629 30.28a1.833 1.833 0 0 0-3.52.004L48.18 77.902a90.104 90.104 0 0 0-26.003 8.778l21.758-71.14c.996-3.25 1.492-4.876 2.464-6.083a8.023 8.023 0 0 1 3.243-2.398c1.433-.575 3.136-.575 6.535-.575H71.72c3.402 0 5.105 0 6.543.579a7.988 7.988 0 0 1 3.242 2.402Zm0 0"
-                  />
-                  <path
-                    fill="#ff5d01"
-                    d="M84.094 90.074c-3.57 3.055-10.696 5.137-18.903 5.137c-10.07 0-18.515-3.137-20.754-7.356c-.8 2.418-.98 5.184-.98 6.954c0 0-.527 8.675 5.508 14.71a5.671 5.671 0 0 1 5.672-5.671c5.37 0 5.367 4.683 5.363 8.488v.336c0 5.773 3.527 10.719 8.543 12.805a11.62 11.62 0 0 1-1.172-5.098c0-5.508 3.23-7.555 6.988-9.938c2.989-1.894 6.309-4 8.594-8.222a15.513 15.513 0 0 0 1.875-7.41a15.55 15.55 0 0 0-.734-4.735m0 0"
-                  />
-                  <path
-                    fill="url(#deviconAstro1)"
-                    d="M84.094 90.074c-3.57 3.055-10.696 5.137-18.903 5.137c-10.07 0-18.515-3.137-20.754-7.356c-.8 2.418-.98 5.184-.98 6.954c0 0-.527 8.675 5.508 14.71a5.671 5.671 0 0 1 5.672-5.671c5.37 0 5.367 4.683 5.363 8.488v.336c0 5.773 3.527 10.719 8.543 12.805a11.62 11.62 0 0 1-1.172-5.098c0-5.508 3.23-7.555 6.988-9.938c2.989-1.894 6.309-4 8.594-8.222a15.513 15.513 0 0 0 1.875-7.41a15.55 15.55 0 0 0-.734-4.735m0 0"
-                  />
+                  
+                  
                 </svg>
               </div>
-              <div className="border flex relative *:relative *:size-7 *:m-auto size-20 mx-auto rounded-[--card-border-radius] dark:bg-gray-900 dark:border-white/15 before:rounded-[calc(var(--card-border-radius)-1px)] before:absolute before:inset-0 before:border-t before:border-white before:from-gray-100 dark:before:border-white/20 before:bg-gradient-to-b dark:before:from-white/10 dark:before:to-transparent before:shadow dark:before:shadow-gray-950">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="0.84em"
-                  height="1em"
-                  viewBox="0 0 256 308"
-                >
-                  <path
-                    fill="#ff3e00"
-                    d="M239.682 40.707C211.113-.182 154.69-12.301 113.895 13.69L42.247 59.356a82.198 82.198 0 0 0-37.135 55.056a86.566 86.566 0 0 0 8.536 55.576a82.425 82.425 0 0 0-12.296 30.719a87.596 87.596 0 0 0 14.964 66.244c28.574 40.893 84.997 53.007 125.787 27.016l71.648-45.664a82.182 82.182 0 0 0 37.135-55.057a86.601 86.601 0 0 0-8.53-55.577a82.409 82.409 0 0 0 12.29-30.718a87.573 87.573 0 0 0-14.963-66.244"
-                  />
-                  <path
-                    fill="#fff"
-                    d="M106.889 270.841c-23.102 6.007-47.497-3.036-61.103-22.648a52.685 52.685 0 0 1-9.003-39.85a49.978 49.978 0 0 1 1.713-6.693l1.35-4.115l3.671 2.697a92.447 92.447 0 0 0 28.036 14.007l2.663.808l-.245 2.659a16.067 16.067 0 0 0 2.89 10.656a17.143 17.143 0 0 0 18.397 6.828a15.786 15.786 0 0 0 4.403-1.935l71.67-45.672a14.922 14.922 0 0 0 6.734-9.977a15.923 15.923 0 0 0-2.713-12.011a17.156 17.156 0 0 0-18.404-6.832a15.78 15.78 0 0 0-4.396 1.933l-27.35 17.434a52.298 52.298 0 0 1-14.553 6.391c-23.101 6.007-47.497-3.036-61.101-22.649a52.681 52.681 0 0 1-9.004-39.849a49.428 49.428 0 0 1 22.34-33.114l71.664-45.677a52.218 52.218 0 0 1 14.563-6.398c23.101-6.007 47.497 3.036 61.101 22.648a52.685 52.685 0 0 1 9.004 39.85a50.559 50.559 0 0 1-1.713 6.692l-1.35 4.116l-3.67-2.693a92.373 92.373 0 0 0-28.037-14.013l-2.664-.809l.246-2.658a16.099 16.099 0 0 0-2.89-10.656a17.143 17.143 0 0 0-18.398-6.828a15.786 15.786 0 0 0-4.402 1.935l-71.67 45.674a14.898 14.898 0 0 0-6.73 9.975a15.9 15.9 0 0 0 2.709 12.012a17.156 17.156 0 0 0 18.404 6.832a15.841 15.841 0 0 0 4.402-1.935l27.345-17.427a52.147 52.147 0 0 1 14.552-6.397c23.101-6.006 47.497 3.037 61.102 22.65a52.681 52.681 0 0 1 9.003 39.848a49.453 49.453 0 0 1-22.34 33.12l-71.664 45.673a52.218 52.218 0 0 1-14.563 6.398"
-                  />
-                </svg>
-              </div>
-              <div className="border flex relative *:relative *:size-7 *:m-auto size-20 mx-auto rounded-[--card-border-radius] dark:bg-gray-900 dark:border-white/15 before:rounded-[calc(var(--card-border-radius)-1px)] before:absolute before:inset-0 before:border-t before:border-white before:from-gray-100 dark:before:border-white/20 before:bg-gradient-to-b dark:before:from-white/10 dark:before:to-transparent before:shadow dark:before:shadow-gray-950">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1.53em"
-                  height="1em"
-                  viewBox="0 0 256 168"
-                >
-                  <path
-                    fill="#00dc82"
-                    d="M143.618 167.029h95.166c3.023 0 5.992-.771 8.61-2.237a16.963 16.963 0 0 0 6.302-6.115a16.324 16.324 0 0 0 2.304-8.352c0-2.932-.799-5.811-2.312-8.35L189.778 34.6a16.966 16.966 0 0 0-6.301-6.113a17.626 17.626 0 0 0-8.608-2.238c-3.023 0-5.991.772-8.609 2.238a16.964 16.964 0 0 0-6.3 6.113l-16.342 27.473l-31.95-53.724a16.973 16.973 0 0 0-6.304-6.112A17.638 17.638 0 0 0 96.754 0c-3.022 0-5.992.772-8.61 2.237a16.973 16.973 0 0 0-6.303 6.112L2.31 141.975a16.302 16.302 0 0 0-2.31 8.35c0 2.932.793 5.813 2.304 8.352a16.964 16.964 0 0 0 6.302 6.115a17.628 17.628 0 0 0 8.61 2.237h59.737c23.669 0 41.123-10.084 53.134-29.758l29.159-48.983l15.618-26.215l46.874 78.742h-62.492zm-67.64-26.24l-41.688-.01L96.782 35.796l31.181 52.492l-20.877 35.084c-7.976 12.765-17.037 17.416-31.107 17.416"
-                  />
-                </svg>
-              </div>
+             
+             
             </div>
             <div className="flex w-fit mx-auto gap-3">
-              <div className="border flex relative *:relative *:size-7 *:m-auto size-20 mx-auto rounded-[--card-border-radius] dark:bg-gray-900 dark:border-white/15 before:rounded-[calc(var(--card-border-radius)-1px)] before:absolute before:inset-0 before:border-t before:border-white before:from-gray-100 dark:before:border-white/20 before:bg-gradient-to-b dark:before:from-white/10 dark:before:to-transparent before:shadow dark:before:shadow-gray-950">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  viewBox="0 0 128 128"
-                >
-                  <path
-                    fill="#38bdf8"
-                    d="M64.004 25.602c-17.067 0-27.73 8.53-32 25.597c6.398-8.531 13.867-11.73 22.398-9.597c4.871 1.214 8.352 4.746 12.207 8.66C72.883 56.629 80.145 64 96.004 64c17.066 0 27.73-8.531 32-25.602c-6.399 8.536-13.867 11.735-22.399 9.602c-4.87-1.215-8.347-4.746-12.207-8.66c-6.27-6.367-13.53-13.738-29.394-13.738M32.004 64c-17.066 0-27.73 8.531-32 25.602C6.402 81.066 13.87 77.867 22.402 80c4.871 1.215 8.352 4.746 12.207 8.66c6.274 6.367 13.536 13.738 29.395 13.738c17.066 0 27.73-8.53 32-25.597c-6.399 8.531-13.867 11.73-22.399 9.597c-4.87-1.214-8.347-4.746-12.207-8.66C55.128 71.371 47.868 64 32.004 64m0 0"
-                  />
-                </svg>
-              </div>
-              <div className="border flex relative *:relative *:size-7 *:m-auto size-20 mx-auto rounded-[--card-border-radius] dark:bg-gray-900 dark:border-white/15 before:rounded-[calc(var(--card-border-radius)-1px)] before:absolute before:inset-0 before:border-t before:border-white before:from-gray-100 dark:before:border-white/20 before:bg-gradient-to-b dark:before:from-white/10 dark:before:to-transparent before:shadow dark:before:shadow-gray-950">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  viewBox="0 0 128 128"
-                >
-                  <path
-                    className="text-[#014847] dark:text-white"
-                    fill="currentColor"
-                    d="M80.46 82.605h-8.777l-.734-.733V61.326c0-3.656-1.436-6.489-5.844-6.588c-2.269-.06-4.864 0-7.638.11l-.416.425v26.589l-.733.733H47.54l-.733-.733V46.764l.733-.733h19.753c7.677 0 13.899 6.22 13.899 13.898v21.943z"
-                  />
-                  <path
-                    className="text-[#05bdba]"
-                    fill="currentColor"
-                    d="M58.942 119.902v-26.33l.733-.734h8.797l.733.733v26.331l-.733.733h-8.796zm0-84.838V8.734L59.675 8h8.797l.733.733v26.331l-.733.733h-8.796zm68.335 34.385H92.169l-.733-.733V59.92l.733-.733h35.108l.733.733v8.797zm-91.436 0H.733L0 68.716V59.92l.733-.733h35.108l.733.733v8.797zm-8.49-35.633v-1.209l6.034-6.033h1.208l9.223 9.223v6.39l-.852.852h-6.39zm7.242 68.235h-1.208l-6.033-6.033v-1.209l9.223-9.222h6.39l.851.851v6.39z"
-                  />
-                </svg>
-              </div>
-              <div className="border flex relative *:relative *:size-7 *:m-auto size-20 mx-auto rounded-[--card-border-radius] dark:bg-gray-900 dark:border-white/15 before:rounded-[calc(var(--card-border-radius)-1px)] before:absolute before:inset-0 before:border-t before:border-white before:from-gray-100 dark:before:border-white/20 before:bg-gradient-to-b dark:before:from-white/10 dark:before:to-transparent before:shadow dark:before:shadow-gray-950">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="0.98em"
-                  height="1em"
-                  viewBox="0 0 256 263"
-                >
-                  <defs>
-                    <linearGradient
-                      id="logosSupabaseIcon0"
-                      x1="20.862%"
-                      x2="63.426%"
-                      y1="20.687%"
-                      y2="44.071%"
-                    >
-                      <stop offset="0%" stopColor="#249361" />
-                      <stop offset="100%" stopColor="#3ecf8e" />
-                    </linearGradient>
-                    <linearGradient
-                      id="logosSupabaseIcon1"
-                      x1="1.991%"
-                      x2="21.403%"
-                      y1="-13.158%"
-                      y2="34.708%"
-                    >
-                      <stop offset="0%" />
-                      <stop offset="100%" stopOpacity={0} />
-                    </linearGradient>
-                  </defs>
-                  <path
-                    fill="url(#logosSupabaseIcon0)"
-                    d="M149.602 258.579c-6.718 8.46-20.338 3.824-20.5-6.977l-2.367-157.984h106.229c19.24 0 29.971 22.223 18.007 37.292z"
-                  />
-                  <path
-                    fill="url(#logosSupabaseIcon1)"
-                    fillOpacity="0.2"
-                    d="M149.602 258.579c-6.718 8.46-20.338 3.824-20.5-6.977l-2.367-157.984h106.229c19.24 0 29.971 22.223 18.007 37.292z"
-                  />
-                  <path
-                    fill="#3ecf8e"
-                    d="M106.399 4.37c6.717-8.461 20.338-3.826 20.5 6.976l1.037 157.984H23.037c-19.241 0-29.973-22.223-18.008-37.292z"
-                  />
-                </svg>
-              </div>
-              <div className="border flex relative *:relative *:size-7 *:m-auto size-20 mx-auto rounded-[--card-border-radius] dark:bg-gray-900 dark:border-white/15 before:rounded-[calc(var(--card-border-radius)-1px)] before:absolute before:inset-0 before:border-t before:border-white before:from-gray-100 dark:before:border-white/20 before:bg-gradient-to-b dark:before:from-white/10 dark:before:to-transparent before:shadow dark:before:shadow-gray-950">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="0.75em"
-                  height="1em"
-                  viewBox="0 0 384 512"
-                >
-                  <path
-                    fill="#635bff"
-                    d="M155.3 154.6c0-22.3 18.6-30.9 48.4-30.9c43.4 0 98.5 13.3 141.9 36.7V26.1C298.3 7.2 251.1 0 203.8 0C88.1 0 11 60.4 11 161.4c0 157.9 216.8 132.3 216.8 200.4c0 26.4-22.9 34.9-54.7 34.9c-47.2 0-108.2-19.5-156.1-45.5v128.5a396.09 396.09 0 0 0 156 32.4c118.6 0 200.3-51 200.3-153.6c0-170.2-218-139.7-218-203.9"
-                  />
-                </svg>
-              </div>
+              
+             
+         
+              
             </div>
             <div className="my-3 flex w-fit mx-auto gap-3">
               <div className="border flex relative *:relative *:size-7 *:m-auto size-20 mx-auto rounded-[--card-border-radius] dark:bg-gray-900 dark:border-white/15 before:rounded-[calc(var(--card-border-radius)-1px)] before:absolute before:inset-0 before:border-t before:border-white before:from-gray-100 dark:before:border-white/20 before:bg-gradient-to-b dark:before:from-white/10 dark:before:to-transparent before:shadow dark:before:shadow-gray-950">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="0.73em"
-                  height="1em"
-                  viewBox="0 0 256 351"
-                >
-                  <defs>
-                    <filter
-                      id="logosFirebase0"
-                      width="200%"
-                      height="200%"
-                      x="-50%"
-                      y="-50%"
-                      filterUnits="objectBoundingBox"
-                    >
-                      <feGaussianBlur
-                        in="SourceAlpha"
-                        result="shadowBlurInner1"
-                        stdDeviation="17.5"
-                      />
-                      <feOffset
-                        in="shadowBlurInner1"
-                        result="shadowOffsetInner1"
-                      />
-                      <feComposite
-                        in="shadowOffsetInner1"
-                        in2="SourceAlpha"
-                        k2={-1}
-                        k3={1}
-                        operator="arithmetic"
-                        result="shadowInnerInner1"
-                      />
-                      <feColorMatrix
-                        in="shadowInnerInner1"
-                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0"
-                      />
-                    </filter>
-                    <filter
-                      id="logosFirebase1"
-                      width="200%"
-                      height="200%"
-                      x="-50%"
-                      y="-50%"
-                      filterUnits="objectBoundingBox"
-                    >
-                      <feGaussianBlur
-                        in="SourceAlpha"
-                        result="shadowBlurInner1"
-                        stdDeviation="3.5"
-                      />
-                      <feOffset
-                        dx={1}
-                        dy={-9}
-                        in="shadowBlurInner1"
-                        result="shadowOffsetInner1"
-                      />
-                      <feComposite
-                        in="shadowOffsetInner1"
-                        in2="SourceAlpha"
-                        k2={-1}
-                        k3={1}
-                        operator="arithmetic"
-                        result="shadowInnerInner1"
-                      />
-                      <feColorMatrix
-                        in="shadowInnerInner1"
-                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.09 0"
-                      />
-                    </filter>
-                    <path
-                      id="logosFirebase2"
-                      d="m1.253 280.732l1.605-3.131l99.353-188.518l-44.15-83.475C54.392-1.283 45.074.474 43.87 8.188z"
-                    />
-                    <path
-                      id="logosFirebase3"
-                      d="m134.417 148.974l32.039-32.812l-32.039-61.007c-3.042-5.791-10.433-6.398-13.443-.59l-17.705 34.109l-.53 1.744z"
-                    />
-                  </defs>
-                  <path
-                    fill="#ffc24a"
-                    d="m0 282.998l2.123-2.972L102.527 89.512l.212-2.017L58.48 4.358C54.77-2.606 44.33-.845 43.114 6.951z"
-                  />
-                  <use
-                    fill="#ffa712"
-                    fillRule="evenodd"
-                    href="#logosFirebase2"
-                  />
-                  <use filter="url(#logosFirebase0)" href="#logosFirebase2" />
-                  <path
-                    fill="#f4bd62"
-                    d="m135.005 150.38l32.955-33.75l-32.965-62.93c-3.129-5.957-11.866-5.975-14.962 0L102.42 87.287v2.86z"
-                  />
-                  <use
-                    fill="#ffa50e"
-                    fillRule="evenodd"
-                    href="#logosFirebase3"
-                  />
-                  <use filter="url(#logosFirebase1)" href="#logosFirebase3" />
-                  <path
-                    fill="#f6820c"
-                    d="m0 282.998l.962-.968l3.496-1.42l128.477-128l1.628-4.431l-32.05-61.074z"
-                  />
-                  <path
-                    fill="#fde068"
-                    d="m139.121 347.551l116.275-64.847l-33.204-204.495c-1.039-6.398-8.888-8.927-13.468-4.34L0 282.998l115.608 64.548a24.126 24.126 0 0 0 23.513.005"
-                  />
-                  <path
-                    fill="#fcca3f"
-                    d="M254.354 282.16L221.402 79.218c-1.03-6.35-7.558-8.977-12.103-4.424L1.29 282.6l114.339 63.908a23.943 23.943 0 0 0 23.334.006z"
-                  />
-                  <path
-                    fill="#eeab37"
-                    d="M139.12 345.64a24.126 24.126 0 0 1-23.512-.005L.931 282.015l-.93.983l115.607 64.548a24.126 24.126 0 0 0 23.513.005l116.275-64.847l-.285-1.752z"
-                  />
-                </svg>
+              
               </div>
               <div className="border flex relative *:relative *:size-7 *:m-auto size-20 mx-auto rounded-[--card-border-radius] dark:bg-gray-900 dark:border-white/15 before:rounded-[calc(var(--card-border-radius)-1px)] before:absolute before:inset-0 before:border-t before:border-white before:from-gray-100 dark:before:border-white/20 before:bg-gradient-to-b dark:before:from-white/10 dark:before:to-transparent before:shadow dark:before:shadow-gray-950">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="0.88em"
-                  height="1em"
-                  viewBox="0 0 256 292"
-                >
-                  <path
-                    fill="#95bf46"
-                    d="M223.774 57.34c-.201-1.46-1.48-2.268-2.537-2.357a19614 19614 0 0 0-23.383-1.743s-15.507-15.395-17.209-17.099c-1.703-1.703-5.029-1.185-6.32-.805c-.19.056-3.388 1.043-8.678 2.68c-5.18-14.906-14.322-28.604-30.405-28.604c-.444 0-.901.018-1.358.044C129.31 3.407 123.644.779 118.75.779c-37.465 0-55.364 46.835-60.976 70.635c-14.558 4.511-24.9 7.718-26.221 8.133c-8.126 2.549-8.383 2.805-9.45 10.462C21.3 95.806.038 260.235.038 260.235l165.678 31.042l89.77-19.42S223.973 58.8 223.775 57.34M156.49 40.848l-14.019 4.339c.005-.988.01-1.96.01-3.023c0-9.264-1.286-16.723-3.349-22.636c8.287 1.04 13.806 10.469 17.358 21.32m-27.638-19.483c2.304 5.773 3.802 14.058 3.802 25.238c0 .572-.005 1.095-.01 1.624c-9.117 2.824-19.024 5.89-28.953 8.966c5.575-21.516 16.025-31.908 25.161-35.828m-11.131-10.537c1.617 0 3.246.549 4.805 1.622c-12.007 5.65-24.877 19.88-30.312 48.297l-22.886 7.088C75.694 46.16 90.81 10.828 117.72 10.828"
-                  />
-                  <path
-                    fill="#5e8e3e"
-                    d="M221.237 54.983a19614 19614 0 0 0-23.383-1.743s-15.507-15.395-17.209-17.099c-.637-.634-1.496-.959-2.394-1.099l-12.527 256.233l89.762-19.418S223.972 58.8 223.774 57.34c-.201-1.46-1.48-2.268-2.537-2.357"
-                  />
-                  <path
-                    fill="#fff"
-                    d="m135.242 104.585l-11.069 32.926s-9.698-5.176-21.586-5.176c-17.428 0-18.305 10.937-18.305 13.693c0 15.038 39.2 20.8 39.2 56.024c0 27.713-17.577 45.558-41.277 45.558c-28.44 0-42.984-17.7-42.984-17.7l7.615-25.16s14.95 12.835 27.565 12.835c8.243 0 11.596-6.49 11.596-11.232c0-19.616-32.16-20.491-32.16-52.724c0-27.129 19.472-53.382 58.778-53.382c15.145 0 22.627 4.338 22.627 4.338"
-                  />
-                </svg>
+                
               </div>
-              <div className="border flex relative *:relative *:size-7 *:m-auto size-20 mx-auto rounded-[--card-border-radius] dark:bg-gray-900 dark:border-white/15 before:rounded-[calc(var(--card-border-radius)-1px)] before:absolute before:inset-0 before:border-t before:border-white before:from-gray-100 dark:before:border-white/20 before:bg-gradient-to-b dark:before:from-white/10 dark:before:to-transparent before:shadow dark:before:shadow-gray-950">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  viewBox="0 0 128 128"
-                >
-                  <path
-                    fill="#0080ff"
-                    d="M64.142 102.96H39.24V78.522h24.903ZM39.24 122.131H20.373v-19.173H39.24Zm-18.866-19.173H4.53V87.167h15.843Zm43.394 24.814v-24.814c26.41 0 46.784-25.94 36.597-53.388c-3.775-10.15-11.694-18.42-22.26-22.181c-27.167-9.772-53.2 10.527-53.2 36.468H0c0-41.354 40.37-74.064 84.52-60.53c19.242 6.017 34.334 21.055 40.37 40.23c13.581 43.985-19.245 84.214-61.123 84.214Zm0 0"
-                  />
-                </svg>
-              </div>
-              <div className="border flex relative *:relative *:size-7 *:m-auto size-20 mx-auto rounded-[--card-border-radius] dark:bg-gray-900 dark:border-white/15 before:rounded-[calc(var(--card-border-radius)-1px)] before:absolute before:inset-0 before:border-t before:border-white before:from-gray-100 dark:before:border-white/20 before:bg-gradient-to-b dark:before:from-white/10 dark:before:to-transparent before:shadow dark:before:shadow-gray-950">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="1em"
-                  height="1em"
-                  viewBox="0 0 256 256"
-                >
-                  <path
-                    fill="#744c9e"
-                    d="M128 0C57.308 0 0 57.307 0 128s57.308 128 128 128c70.693 0 128-57.307 128-128S198.693 0 128 0M27.504 129.334l99.161 99.162c-54.45-.71-98.452-44.71-99.161-99.162m122.992 96.65l-120.48-120.48C40.234 60.824 80.223 27.487 128 27.487c33.397 0 62.985 16.293 81.263 41.36l-13.917 12.279C180.52 59.864 155.886 45.949 128 45.949c-35.505 0-65.74 22.552-77.169 54.113L155.94 205.169c25.525-9.243 45.156-30.79 51.73-57.477h-43.566V128h64.41c0 47.778-33.336 87.767-78.017 97.983"
-                  />
-                </svg>
-              </div>
-              <div className="border flex relative *:relative *:size-7 *:m-auto size-20 mx-auto rounded-[--card-border-radius] dark:bg-gray-900 dark:border-white/15 before:rounded-[calc(var(--card-border-radius)-1px)] before:absolute before:inset-0 before:border-t before:border-white before:from-gray-100 dark:before:border-white/20 before:bg-gradient-to-b dark:before:from-white/10 dark:before:to-transparent before:shadow dark:before:shadow-gray-950">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="0.81em"
-                  height="1em"
-                  viewBox="0 0 256 317"
-                >
-                  <defs>
-                    <linearGradient
-                      id="logosFlutter0"
-                      x1="3.952%"
-                      x2="75.897%"
-                      y1="26.993%"
-                      y2="52.919%"
-                    >
-                      <stop offset="0%" />
-                      <stop offset="100%" stopOpacity={0} />
-                    </linearGradient>
-                  </defs>
-                  <path
-                    fill="#47c5fb"
-                    d="M157.666.001L.001 157.666l48.8 48.8L255.268.001zm-1.099 145.396l-84.418 84.418l48.984 49.716l48.71-48.71l85.425-85.424z"
-                  />
-                  <path
-                    fill="#00569e"
-                    d="m121.133 279.531l37.082 37.082h97.052l-85.425-85.792z"
-                  />
-                  <path
-                    fill="#00b5f8"
-                    d="m71.6 230.364l48.801-48.801l49.441 49.258l-48.709 48.71z"
-                  />
-                  <path
-                    fill="url(#logosFlutter0)"
-                    fillOpacity="0.8"
-                    d="m121.133 279.531l40.56-13.459l4.029-31.131z"
-                  />
-                </svg>
-              </div>
+              
+              
+              
             </div>
             <div className="flex w-fit mx-auto gap-3">
               <div className="border flex relative *:relative *:size-7 *:m-auto size-20 mx-auto rounded-[--card-border-radius] dark:bg-gray-900 dark:border-white/15 before:rounded-[calc(var(--card-border-radius)-1px)] before:absolute before:inset-0 before:border-t before:border-white before:from-gray-100 dark:before:border-white/20 before:bg-gradient-to-b dark:before:from-white/10 dark:before:to-transparent before:shadow dark:before:shadow-gray-950">
@@ -1188,32 +605,7 @@ const  Home = () => {
                   height="1em"
                   viewBox="0 0 256 271"
                 >
-                  <defs>
-                    <linearGradient
-                      id="logosAngularIcon0"
-                      x1="25.071%"
-                      x2="96.132%"
-                      y1="90.929%"
-                      y2="55.184%"
-                    >
-                      <stop offset="0%" stopColor="#e40035" />
-                      <stop offset="24%" stopColor="#f60a48" />
-                      <stop offset="35.2%" stopColor="#f20755" />
-                      <stop offset="49.4%" stopColor="#dc087d" />
-                      <stop offset="74.5%" stopColor="#9717e7" />
-                      <stop offset="100%" stopColor="#6c00f5" />
-                    </linearGradient>
-                    <linearGradient
-                      id="logosAngularIcon1"
-                      x1="21.863%"
-                      x2="68.367%"
-                      y1="12.058%"
-                      y2="68.21%"
-                    >
-                      <stop offset="0%" stopColor="#ff31d9" />
-                      <stop offset="100%" stopColor="#ff5be1" stopOpacity={0} />
-                    </linearGradient>
-                  </defs>
+                  
                   <path
                     fill="url(#logosAngularIcon0)"
                     d="m256 45.179l-9.244 145.158L158.373 0zm-61.217 187.697l-66.782 38.105l-66.784-38.105L74.8 199.958h106.4zM128.001 72.249l34.994 85.076h-69.99zM9.149 190.337L0 45.179L97.627 0z"
