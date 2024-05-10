@@ -92,6 +92,12 @@ const Viewclass = () => {
                 </div>
             </div>
             {/* End Hero */}
+            {/* <div className="col-md-6">
+                <h1 className=' fw-semibold fs-2 mt-3 mb-3' style={{ fontFamily: "serif" }}>{classList.subject}</h1>
+                <p className='text-red-800 fs-5 fw-bold' style={{ fontFamily: "cursive" }}>{classList.description}</p>
+                <p className='text-secondary mt-4 mb-4 fs-5' style={{ fontFamily: "serif" }}>{classList.topic}</p>
+
+              </div> */}
         </>
     } else {
         return <div>Loading...</div>
