@@ -63,71 +63,120 @@ const router = useRouter();
 
   return (
     <div>
-      {LectureData && (
-      <Formik
-        initialValues={{
-        title: LectureData.title,
-        description: LectureData.description,
-        duration: LectureData.duration,
-        date: LectureData.date,
-        }}
-        onSubmit={submitForm}
-      >
-        {(formik) => (
-        <form onSubmit={formik.handleSubmit}>
-          <div>
-          <label htmlFor="title">Title</label>
-          <input
-            type="text"
-            id="title"
-            name="title"
-            onChange={formik.handleChange}
-            value={formik.values.title}
-          />
+      <div className="col-md-3 mx-auto pt-5">
+        <div className="card">
+          <div className="card-body">
+            <h3 className="text-center my-5"></h3>
+            {LectureData !== null ? (
+              <Formik initialValues={LectureData} onSubmit={submitForm}>
+                {(lectureData) => (
+                  <section className="bg-white dark:bg-gray-900">
+                  <div className="max-w-2xl px-4 py-8 mx-auto lg:py-16">
+                    <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">
+                      Update Services
+                    </h2>
+                    <form onSubmit={lectureData.handleSubmit}>
+                      <div className="grid gap-4 mb-4 sm:grid-cols-2 sm:gap-6 sm:mb-5">
+                        <div className="sm:col-span-2">
+                          <label
+                            htmlFor="subject"
+                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                          >
+                          subject
+                          </label>
+                          <input
+                            type="text"
+                            name="subject"
+                            id="subject"
+                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            value={lectureData.values.subject}
+                            onChange={lectureData.handleChange}
+                            placeholder="Type subject"
+                            required=""
+                          />
+                        </div>
+                        
+                        
+                        
+                        <div>
+                          <label
+                            htmlFor="Thumbnail"
+                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                          >
+                            Thumbnail
+                          </label>
+                          <input
+                            type="file"
+                            name="pimage"
+                            id="Thumbnail"
+                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            value={lectureData.values.Thumbnail}
+                            onChange={lectureData.handleChange}
+                            placeholder="Thumbnail"/>
+                             </div>
+                             <div className="w-full">
+                          <label
+                            htmlFor="Description"
+                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                          >
+                            Description
+                          </label>
+                          <input
+                            type="text"
+                            name="Description"
+                            id="Description"
+                            value={lectureData.values.Description}
+                            onChange={lectureData.handleChange}
+                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            
+                            placeholder=" Description"
+                            required=""
+                          />
+                        </div>
+                         </div>
+                         <div className="w-full">
+                          <label
+                            htmlFor="topic"
+                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                          >
+                           Topic
+                          </label>
+                          <input
+                            type="text"
+                            name="topic"
+                            id="topic"
+                            value={lectureData.values.topic}
+                            onChange={lectureData.handleChange}
+                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            
+                            placeholder="topic"
+                            required=""
+                          />
+                        </div>
+                         
+                      <div className="flex items-center space-x-4">
+                        <button
+                          type="submit"
+                          className="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        >
+                          Update lecture
+                        </button>
+                     
+                      </div>
+                    </form>
+                  </div>
+                  </section>
+                
+                )}
+              </Formik>
+            ) : (
+              <h1 className="text-center my-5">Loading ... </h1>
+            )}
           </div>
-          <div>
-          <label htmlFor="description">Description</label>
-          <textarea
-            id="description"
-            name="description"
-            onChange={formik.handleChange}
-            value={formik.values.description}
-          ></textarea>
-          </div>
-          <div>
-          <label htmlFor="duration">Duration</label>
-          <input
-            type="text"
-            id="duration"
-            name="duration"
-            onChange={formik.handleChange}
-            value={formik.values.duration}
-          />
-          </div>
-          <div>
-          <label htmlFor="date">Date</label>
-          <input
-            type="date"
-            id="date"
-            name="date"
-            onChange={formik.handleChange}
-            value={formik.values.date}
-          />
-          </div>
-          <div>
-          <label htmlFor="file">Select File</label>
-          <input
-            type="file"
-            id="file"
-            name="file"
-            onChange={uploadFile}
-          />
-          </div>
-          <button type="submit">Update Lecture</button>
-        </form>
-        )}
-      </Formik>
-      )}
+        </div>
+      </div>
     </div>
-    )};
-    export default UpdateLecture ;
+  );
+};
+  
+  export default UpdateLecture ;
