@@ -94,12 +94,18 @@ const studentlogin = () => {
                 <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829l-2.83-2.829zm4.95.708-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829zm3.171 6-12-12 .708-.708 12 12-.708.708z"></path>
               </svg>
             </div>
-            <button
+            {/* <button
               className="bg-[#89a8d9] text-white py-2 rounded-xl hover:scale-105 duration-300 hover:bg-[#afc3d6] font-medium"
               type="submit"
             >
               Login
-            </button>
+            </button> */}
+              <button
+                className="bg-[#002D74] text-white py-2 rounded-xl hover:scale-105 duration-300 hover:bg-[#206ab1] font-medium"
+                type="submit"
+              >
+                Login
+              </button>
           </form>
           <div className="mt-6  items-center text-gray-100">
             <hr className="border-gray-300" />
