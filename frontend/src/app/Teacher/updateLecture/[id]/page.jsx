@@ -63,91 +63,71 @@ const router = useRouter();
 
   return (
     <div>
-      <div className="col-md-3 mx-auto pt-5">
-        <div className="card">
-          <div className="card-body">
-            <h3 className="text-center my-5">Update Service</h3>
-            {LectureData !== null ? (
-              <Formik initialValues={LectureData} onSubmit={submitForm}>
-
-                {(LectureData) => (
-
-                  <form onSubmit={LectureData.handleSubmit}>
-                    <label> Name</label>
-
-                    <span
-                      style={{ color: "red", fontSize: 10, marginLeft: 10 }}
-                    >
-                      {LectureData.errors.teacher}
-                    </span>
-                    <input
-                      id="teacher"
-                      onChange={LectureData.handleChange}
-                      value={LectureData.values.teacher}
-                      type="text"
-                      className="form-control mb-4"
-                    />
-
-                    <label>subject</label>
-                    <span
-                      style={{ color: "red", fontSize: 10, marginLeft: 10 }}
-                    >
-                      {LectureData.errors.subject}
-                    </span>
-                    <input
-                      id="subject"
-                      onChange={LectureData.handleChange}
-                      value={LectureData.values.subject}
-                      type="text"
-                      className="form-control mb-4"
-                    />
-                      <label>Description</label>
-                    <span
-                      style={{ color: "red", fontSize: 10, marginLeft: 10 }}
-                    >
-                      {LectureData.errors.description}
-                    </span>
-                    <input
-                      id="description"
-                      onChange={LectureData.handleChange}
-                      value={LectureData.values.description}
-                      type="text"
-                      className="form-control mb-4"
-                    />
-
-                    <label>createAT</label>
-                    <input
-                      id="createAT"
-                      onChange={LectureData.handleChange}
-                      value={LectureData.values.createAT}
-                      type="text"
-                      className="form-control mb-4"
-                    />
-
-                    <label>Thumbnail</label>
-                    <input
-                      type="file"
-                      id="pimage"
-                      className="form-control mb-4"
-                      placeholder="Thumbnail"
-                      onChange={uploadFile} />
-
-                    
-
-                    <button type="submit" className="btn btn-primary w-100">
-                      Submit
-                    </button>
-                  </form>
-                )}
-              </Formik>
-            ) : (
-              <h1 className="text-center my-5">Loading ... </h1>
-            )}
+      {LectureData && (
+      <Formik
+        initialValues={{
+        title: LectureData.title,
+        description: LectureData.description,
+        duration: LectureData.duration,
+        date: LectureData.date,
+        }}
+        onSubmit={submitForm}
+      >
+        {(formik) => (
+        <form onSubmit={formik.handleSubmit}>
+          <div>
+          <label htmlFor="title">Title</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            onChange={formik.handleChange}
+            value={formik.values.title}
+          />
           </div>
-        </div>
-      </div>
+          <div>
+          <label htmlFor="description">Description</label>
+          <textarea
+            id="description"
+            name="description"
+            onChange={formik.handleChange}
+            value={formik.values.description}
+          ></textarea>
+          </div>
+          <div>
+          <label htmlFor="duration">Duration</label>
+          <input
+            type="text"
+            id="duration"
+            name="duration"
+            onChange={formik.handleChange}
+            value={formik.values.duration}
+          />
+          </div>
+          <div>
+          <label htmlFor="date">Date</label>
+          <input
+            type="date"
+            id="date"
+            name="date"
+            onChange={formik.handleChange}
+            value={formik.values.date}
+          />
+          </div>
+          <div>
+          <label htmlFor="file">Select File</label>
+          <input
+            type="file"
+            id="file"
+            name="file"
+            onChange={uploadFile}
+          />
+          </div>
+          <button type="submit">Update Lecture</button>
+        </form>
+        )}
+      </Formik>
+      )}
     </div>
-  );
-};
-
-export default UpdateLecture;
+    )};
+    export default UpdateLecture ;

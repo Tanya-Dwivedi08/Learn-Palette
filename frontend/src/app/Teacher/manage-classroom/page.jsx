@@ -53,10 +53,9 @@ const Manageclassroom = () => {
                 >
                     {classroom.name}
                 </td>
-                
-                
+         
                 <td className="px-6 py-4">{classroom.description}</td>
-                <td className="px-6 py-4">{classroom.topic}</td>
+            
                 <td className="px-6 py-4">
                     <Link
                         href={`/Teacher/view-classroom/${classroom._id}`}
@@ -97,9 +96,8 @@ const Manageclassroom = () => {
                             <th scope="col" className="px-6 py-3">
                                 Name
                             </th>
-                            <th scope="col" className="px-6 py-3">
-                                Subject
-                            </th>
+                            
+                
                             <th scope="col" className="px-6 py-3">
                                 Description
                             </th>
