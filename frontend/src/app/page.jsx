@@ -36,10 +36,10 @@ const  Home = () => {
               <ul className="space-y-6 tracking-wide text-base lg:text-sm lg:flex lg:space-y-0">
                 <li>
                   <a
-                    href="#"
+                    href="/"
                     className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
                   >
-                    <span></span>
+                    <span> Home</span>
                   </a>
                 </li>
                 <li>
@@ -192,8 +192,8 @@ const  Home = () => {
         <div className="md:block hidden w-1/2">
           <img
             className="rounded-m min-w-[900px] block mx-auto"
-            src="https://emilysatresources.weebly.com/uploads/3/9/0/3/39031951/header_images/1411920106.jpg"
-            alt="whiteboard"
+            src=""
+            alt=""
           />
         </div>
       </div>
