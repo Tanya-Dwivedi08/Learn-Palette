@@ -158,8 +158,10 @@ function Whiteboard() {
         if (toolType === "selection") {
             const element = getElementAtPosition(clientX, clientY, elements);
             if (element) {
-                const offsetX = clientX - element.x1;
-                const offsetY = clientY - element.y1;
+                // const offsetX = clientX - element.x1;
+                // const offsetY = clientY - element.y1;
+                const offsetX = clientX;
+                const offsetY = clientY;
                 setSelectedElement({ ...element, offsetX, offsetY });
                 if (element.position === "inside") {
                     setAction("moving");
@@ -329,9 +331,9 @@ function Whiteboard() {
     }
 
     useEffect(() => {
-      fetchCanvas();
+        fetchCanvas();
     }, [])
-    
+
 
     const getCanvasDataURL = () => {
         const canvas = canvasRef.current;
@@ -354,7 +356,7 @@ function Whiteboard() {
         })
             .then((response) => {
                 console.log(response.status);
-                if(response.status === 200){
+                if (response.status === 200) {
                     toast.success('Canvas saved successfully');
                 }
                 return response.json();
@@ -376,40 +378,48 @@ function Whiteboard() {
     };
 
     return (
-        <div>
+        <div className="bg-white">
+            <h1 className="text-4xl font-bold text-center">WhiteBoard</h1>
             <button onClick={storeCanvas}>Save</button>
-            <Swatch
-                toolType={toolType}
-                setToolType={setToolType}
-                width={width}
-                setWidth={setWidth}
-                setElements={setElements}
-                setColorWidth={setColorWidth}
-                setPath={setPath}
-                colorWidth={colorWidth}
-                setShapeWidth={setShapeWidth}
-            />
-            <canvas
-                ref={canvasRef}
-                id="canvas"
-                className="App"
-                width={window.innerWidth}
-                height={window.innerHeight}
-                onMouseDown={handleMouseDown}
-                onMouseMove={handleMouseMove}
-                onMouseUp={handleMouseUp}
-                onTouchStart={(e) => {
-                    var touch = e.touches[0];
-                    handleMouseDown({ clientX: touch.clientX, clientY: touch.clientY });
-                }}
-                onTouchMove={(e) => {
-                    var touch = e.touches[0];
-                    handleMouseMove({ clientX: touch.clientX, clientY: touch.clientY });
-                }}
-                onTouchEnd={handleMouseUp}
-            >
-                Canvas
-            </canvas>
+            <div className="grid grid-cols-12">
+                <div className="col-span-3">
+
+                    <Swatch
+                        toolType={toolType}
+                        setToolType={setToolType}
+                        width={width}
+                        setWidth={setWidth}
+                        setElements={setElements}
+                        setColorWidth={setColorWidth}
+                        setPath={setPath}
+                        colorWidth={colorWidth}
+                        setShapeWidth={setShapeWidth}
+                    />
+                </div>
+                <div className="col-span-9">
+                    <canvas
+                        ref={canvasRef}
+                        id="canvas"
+                        className="App"
+                        width={window.innerWidth}
+                        height={window.innerHeight}
+                        onMouseDown={handleMouseDown}
+                        onMouseMove={handleMouseMove}
+                        onMouseUp={handleMouseUp}
+                        onTouchStart={(e) => {
+                            var touch = e.touches[0];
+                            handleMouseDown({ clientX: touch.clientX, clientY: touch.clientY });
+                        }}
+                        onTouchMove={(e) => {
+                            var touch = e.touches[0];
+                            handleMouseMove({ clientX: touch.clientX, clientY: touch.clientY });
+                        }}
+                        onTouchEnd={handleMouseUp}
+                    >
+                        Canvas
+                    </canvas>
+                </div>
+            </div>
         </div>
     );
 }

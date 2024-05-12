@@ -61,16 +61,16 @@ export default function Swatch({
     <div>
       <div className="row">
         <div
-          className="col-md-1 icon-bar"
+          className="p-10 icon-bar"
           style={{
-            position: "absolute",
+            // position: "absolute",
             backgroundColor: "#f0f0f0",
-            height: `${window.innerHeight * 0.09 * 8}px`,
+            height: `${window.innerHeight}px`,
             width: `${window.innerWidth * 0.073 * 1.8}px`,
-            left: "2px",
-            top: `${
-              (window.innerHeight - window.innerHeight * 0.09 * 8) / 2
-            }px`,
+            // left: "50px",
+            // top: `${
+            //   (window.innerHeight - window.innerHeight * 0.09 * 8) / 2
+            // }px`,
             borderRadius: "10px",
           }}
         >
