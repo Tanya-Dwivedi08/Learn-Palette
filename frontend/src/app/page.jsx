@@ -1368,7 +1368,7 @@ const  Home = () => {
               Loved by the Community
             </h2>
             <p className="mt-6 text-gray-700 dark:text-gray-300">
-              Harum quae dolore orrupti aut temporibus ariatur.
+             Learn Palette is loved by the community. Here are some of the reviews
             </p>
           </div>
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -1387,14 +1387,14 @@ const  Home = () => {
                   </span>
                   <div className="w-[calc(100%-3.25rem)]">
                     <h3 className="font-medium text-gray-950 dark:text-white">
-                      Jonathan Yombo
+                      S. Thakur
                     </h3>
                     <span className="block text-sm tracking-wide text-gray-600 dark:text-gray-400">
-                      Software Ingeneer
+                      Teacher 
                     </span>
                     <blockquote className="mt-3">
                       <p className="text-gray-700 dark:text-gray-300">
-                        Tailus is really extraordinary and very practical, no
+                       Learn Palette is really extraordinary and very practical, no
                         need to break your head. A real gold mine.
                       </p>
                     </blockquote>
@@ -1415,16 +1415,14 @@ const  Home = () => {
                   </span>
                   <div className="w-[calc(100%-3.25rem)]">
                     <h3 className="font-medium text-gray-950 dark:text-white">
-                      Yves Kalume
+                      Yash Kalume
                     </h3>
                     <span className="block text-sm tracking-wide text-gray-600 dark:text-gray-400">
-                      GDE - Android
+                      Assistant Professor
                     </span>
                     <blockquote className="mt-3">
                       <p className="text-gray-700 dark:text-gray-300">
-                        With no experience in webdesign I just redesigned my
-                        entire website in a few minutes with tailwindcss thanks
-                        to Tailus.
+                        I am really new to whiteboard and I loved this really  very much.
                       </p>
                     </blockquote>
                   </div>
@@ -1444,14 +1442,14 @@ const  Home = () => {
                   </span>
                   <div className="w-[calc(100%-3.25rem)]">
                     <h3 className="font-medium text-gray-950 dark:text-white">
-                      Yucel Faruksahan
-                    </h3>
+                     
+                    </h3>kk dubey
                     <span className="block text-sm tracking-wide text-gray-600 dark:text-gray-400">
-                      Tailkits Creator
+                      Tutor
                     </span>
                     <blockquote className="mt-3">
                       <p className="text-gray-700 dark:text-gray-300">
-                        Great work on tailfolio template. This is one of the
+                        Great work on this website . This is one of the
                         best personal website that I have seen so far :)
                       </p>
                     </blockquote>
@@ -1479,15 +1477,12 @@ const  Home = () => {
                     </span>
                     <blockquote className="mt-3">
                       <p className="text-gray-700 dark:text-gray-300">
-                        I am really new to Tailwind and I want to give a go to
-                        make some page on my own. I searched a lot of hero pages
-                        and blocks online. However, most of them are not giving
-                        me a clear view or needed some HTML/CSS coding
-                        background to make some changes from the original or too
-                        expensive to have. I downloaded the one of Tailus
-                        template which is very clear to understand at the start
-                        and you could modify the codes/blocks to fit perfectly
-                        on your purpose of the page.
+                        I am really new to Smart whiteboard and I want to give a go to
+                      I searched a lot of whiteboards
+                        and classrooms online. However, most of them are not giving
+                        me a clear view or needed some functionalities. I found this
+                        website and it is really amazing. It is very easy to use and
+                        has all the functionalities that I need. I am really happy.
                       </p>
                     </blockquote>
                   </div>
@@ -1510,16 +1505,16 @@ const  Home = () => {
                   </span>
                   <div className="w-[calc(100%-3.25rem)]">
                     <h3 className="font-medium text-gray-950 dark:text-white">
-                      Shekinah Tshiokufila
+                     Ashutosh Dixit
                     </h3>
                     <span className="block text-sm tracking-wide text-gray-600 dark:text-gray-400">
-                      Senior Software Ingeneer
+                     Assistant Professor
                     </span>
                     <blockquote className="mt-3">
                       <p className="text-gray-700 dark:text-gray-300">
-                        Tailus is redefining the standard of web design, with
-                        these blocks it provides an easy and efficient way for
-                        those who love beauty but may lack the time to implement
+                       Learn Palette is redefining the standard of whiteboards with
+                        these functionalities it provides an easy and efficient way for
+                        those who love teaching but may lack the time to implement
                         it. I can only recommend this incredible wonder.
                       </p>
                     </blockquote>
@@ -1541,14 +1536,14 @@ const  Home = () => {
                   </span>
                   <div className="w-[calc(100%-3.25rem)]">
                     <h3 className="font-medium text-gray-950 dark:text-white">
-                      Oketa Fred
+                      Tushar Dwivedi
                     </h3>
                     <span className="block text-sm tracking-wide text-gray-600 dark:text-gray-400">
-                      Fullstack Developer
+                      Student
                     </span>
                     <blockquote className="mt-3">
                       <p className="text-gray-700 dark:text-gray-300">
-                        I absolutely love Tailus! The component blocks are
+                        I absolutely love learn palette The components are
                         beautifully designed and easy to use, which makes
                         creating a great-looking website a breeze.
                       </p>
@@ -1568,16 +1563,16 @@ const  Home = () => {
                   </span>
                   <div className="w-[calc(100%-3.25rem)]">
                     <h3 className="font-medium text-gray-950 dark:text-white">
-                      Zeki
+                      Sharad Raj Mishra
                     </h3>
                     <span className="block text-sm tracking-wide text-gray-600 dark:text-gray-400">
-                      Founder of ChatExtend
+                     Tutor 
                     </span>
                     <blockquote className="mt-3">
                       <p className="text-gray-700 dark:text-gray-300">
-                        Using TailsUI has been like unlocking a secret design
+                        Using Learn Palette  has been like unlocking a secret whiteboard
                         superpower. It's the perfect fusion of simplicity and
-                        versatility, enabling us to create UIs that are as
+                        versatility, enabling us to teach happily that are as
                         stunning as they are user-friendly.
                       </p>
                     </blockquote>
@@ -1598,20 +1593,14 @@ const  Home = () => {
                   </span>
                   <div className="w-[calc(100%-3.25rem)]">
                     <h3 className="font-medium text-gray-950 dark:text-white">
-                      Joseph Kitheka
+                      Kamya Shukla
                     </h3>
                     <span className="block text-sm tracking-wide text-gray-600 dark:text-gray-400">
-                      Fullstack Developer
+                      Student
                     </span>
                     <blockquote className="mt-3">
                       <p className="text-gray-700 dark:text-gray-300">
-                        Tailus has transformed the way I develop web
-                        applications. Their extensive collection of UI
-                        components, blocks, and templates has significantly
-                        accelerated my workflow. The flexibility to customize
-                        every aspect allows me to create unique user
-                        experiences. Tailus is a game-changer for modern web
-                        development!
+                      Learn Palette  is a game-changer for me. It's the perfect tool for learning and teaching. 
                       </p>
                     </blockquote>
                   </div>
@@ -1633,114 +1622,22 @@ const  Home = () => {
                   </span>
                   <div className="w-[calc(100%-3.25rem)]">
                     <h3 className="font-medium text-gray-950 dark:text-white">
-                      Khatab Wedaa
+                      Ravi Kumar
                     </h3>
                     <span className="block text-sm tracking-wide text-gray-600 dark:text-gray-400">
-                      MerakiUI Creator
+                      Teacher
                     </span>
                     <blockquote className="mt-3">
                       <p className="text-gray-700 dark:text-gray-300">
-                        Tailus is an elegant, clean, and responsive tailwind css
-                        components it's very helpfull to start fast with your
-                        project.
+                        Learn Palette  is an elegant, clean, and responsive website
+                       it's very helpfull to start fast with your
+                       new experience in teaching.
                       </p>
                     </blockquote>
                   </div>
                 </div>
               </div>
-              <div className="p-[--card-padding] rounded-[--card-border-radius] border bg-white border-[--ui-light-border-color] dark:bg-[--card-dark-bg] dark:border-[--ui-dark-border-color] group">
-                <div className="flex gap-3">
-                  <span className="relative block rounded-[--avatar-border-radius] text-lg size-10">
-                    <img
-                      className="h-full w-full rounded-[--avatar-border-radius] object-cover"
-                      alt="John Doe"
-                      src="https://randomuser.me/api/portraits/men/11.jpg"
-                      loading="lazy"
-                      width={120}
-                      height={120}
-                    />
-                  </span>
-                  <div className="w-[calc(100%-3.25rem)]">
-                    <h3 className="font-medium text-gray-950 dark:text-white">
-                      Rodrigo Aguilar
-                    </h3>
-                    <span className="block text-sm tracking-wide text-gray-600 dark:text-gray-400">
-                      TailwindAwesome Creator
-                    </span>
-                    <blockquote className="mt-3">
-                      <p className="text-gray-700 dark:text-gray-300">
-                        I love Tailus ❤️. The component blocks are
-                        well-structured, simple to use, and beautifully
-                        designed. It makes it really easy to have a good-looking
-                        website in no time.
-                      </p>
-                    </blockquote>
-                  </div>
-                </div>
               </div>
-              <div className="p-[--card-padding] rounded-[--card-border-radius] border bg-white border-[--ui-light-border-color] dark:bg-[--card-dark-bg] dark:border-[--ui-dark-border-color] group">
-                <div className="flex gap-3">
-                  <span className="relative block rounded-[--avatar-border-radius] text-lg size-10">
-                    <img
-                      className="h-full w-full rounded-[--avatar-border-radius] object-cover"
-                      alt="John Doe"
-                      src="https://randomuser.me/api/portraits/men/12.jpg"
-                      loading="lazy"
-                      width={120}
-                      height={120}
-                    />
-                  </span>
-                  <div className="w-[calc(100%-3.25rem)]">
-                    <h3 className="font-medium text-gray-950 dark:text-white">
-                      Eric Ampire
-                    </h3>
-                    <span className="block text-sm tracking-wide text-gray-600 dark:text-gray-400">
-                      Mobile Engineer at @BRPNews • @GoogleDevExpert for Android{" "}
-                    </span>
-                    <blockquote className="mt-3">
-                      <p className="text-gray-700 dark:text-gray-300">
-                        Tailus templates are the perfect solution for anyone who
-                        wants to create a beautiful and functional website
-                        without any web design experience. The templates are
-                        easy to use, customizable, and responsive, and the
-                        support team is always available to help. I highly
-                        recommend Tailus templates to anyone who is looking to
-                        create a website.
-                      </p>
-                    </blockquote>
-                  </div>
-                </div>
-              </div>
-              <div className="p-[--card-padding] rounded-[--card-border-radius] border bg-white border-[--ui-light-border-color] dark:bg-[--card-dark-bg] dark:border-[--ui-dark-border-color] group">
-                <div className="flex gap-3">
-                  <span className="relative block rounded-[--avatar-border-radius] text-lg size-10">
-                    <img
-                      className="h-full w-full rounded-[--avatar-border-radius] object-cover"
-                      alt="John Doe"
-                      src="https://randomuser.me/api/portraits/men/13.jpg"
-                      loading="lazy"
-                      width={120}
-                      height={120}
-                    />
-                  </span>
-                  <div className="w-[calc(100%-3.25rem)]">
-                    <h3 className="font-medium text-gray-950 dark:text-white">
-                      Roland Tubonge
-                    </h3>
-                    <span className="block text-sm tracking-wide text-gray-600 dark:text-gray-400">
-                      Software Engineer
-                    </span>
-                    <blockquote className="mt-3">
-                      <p className="text-gray-700 dark:text-gray-300">
-                        Tailus is so well designed that even with a very poor
-                        knowledge of web design you can do miracles. Let
-                        yourself be seduced!
-                      </p>
-                    </blockquote>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -1753,7 +1650,7 @@ const  Home = () => {
               Built by the Community <br /> for the Community
             </h2>
             <p className="mt-6 text-gray-700 dark:text-gray-300">
-              Harum quae dolore orrupti aut temporibus ariatur.
+              Learn Palette is built by the community for the community. Here are
             </p>
           </div>
           <div className="mt-12 max-w-lg mx-auto flex justify-center flex-wrap gap-3">
@@ -1787,141 +1684,9 @@ const  Home = () => {
                 height={120}
               />
             </a>
-            <a
-              href="https://github.com/meschacirung"
-              target="_blank"
-              title="Méschac Irung"
-              className="size-16 rounded-full border border-gray-950/5 dark:border-white/5"
-            >
-              <img
-                alt="John Doe"
-                src="https://randomuser.me/api/portraits/men/3.jpg"
-                className="rounded-full"
-                loading="lazy"
-                width={120}
-                height={120}
-              />
-            </a>
-            <a
-              href="https://github.com/meschacirung"
-              target="_blank"
-              title="Méschac Irung"
-              className="size-16 rounded-full border border-gray-950/5 dark:border-white/5"
-            >
-              <img
-                alt="John Doe"
-                src="https://randomuser.me/api/portraits/men/4.jpg"
-                className="rounded-full"
-                loading="lazy"
-                width={120}
-                height={120}
-              />
-            </a>
-            <a
-              href="https://github.com/meschacirung"
-              target="_blank"
-              title="Méschac Irung"
-              className="size-16 rounded-full border border-gray-950/5 dark:border-white/5"
-            >
-              <img
-                alt="John Doe"
-                src="https://randomuser.me/api/portraits/men/5.jpg"
-                className="rounded-full"
-                loading="lazy"
-                width={120}
-                height={120}
-              />
-            </a>
-            <a
-              href="https://github.com/meschacirung"
-              target="_blank"
-              title="Méschac Irung"
-              className="size-16 rounded-full border border-gray-950/5 dark:border-white/5"
-            >
-              <img
-                alt="John Doe"
-                src="https://randomuser.me/api/portraits/men/6.jpg"
-                className="rounded-full"
-                loading="lazy"
-                width={120}
-                height={120}
-              />
-            </a>
-            <a
-              href="https://github.com/meschacirung"
-              target="_blank"
-              title="Méschac Irung"
-              className="size-16 rounded-full border border-gray-950/5 dark:border-white/5"
-            >
-              <img
-                alt="John Doe"
-                src="https://randomuser.me/api/portraits/men/7.jpg"
-                className="rounded-full"
-                loading="lazy"
-                width={120}
-                height={120}
-              />
-            </a>
-            <a
-              href="https://github.com/meschacirung"
-              target="_blank"
-              title="Méschac Irung"
-              className="size-16 rounded-full border border-gray-950/5 dark:border-white/5"
-            >
-              <img
-                alt="John Doe"
-                src="https://randomuser.me/api/portraits/men/1.jpg"
-                className="rounded-full"
-                loading="lazy"
-                width={120}
-                height={120}
-              />
-            </a>
-            <a
-              href="https://github.com/meschacirung"
-              target="_blank"
-              title="Méschac Irung"
-              className="size-16 rounded-full border border-gray-950/5 dark:border-white/5"
-            >
-              <img
-                alt="John Doe"
-                src="https://randomuser.me/api/portraits/men/8.jpg"
-                className="rounded-full"
-                loading="lazy"
-                width={120}
-                height={120}
-              />
-            </a>
-            <a
-              href="https://github.com/meschacirung"
-              target="_blank"
-              title="Méschac Irung"
-              className="size-16 rounded-full border border-gray-950/5 dark:border-white/5"
-            >
-              <img
-                alt="John Doe"
-                src="https://randomuser.me/api/portraits/men/9.jpg"
-                className="rounded-full"
-                loading="lazy"
-                width={120}
-                height={120}
-              />
-            </a>
-            <a
-              href="https://github.com/meschacirung"
-              target="_blank"
-              title="Méschac Irung"
-              className="size-16 rounded-full border border-gray-950/5 dark:border-white/5"
-            >
-              <img
-                alt="John Doe"
-                src="https://randomuser.me/api/portraits/men/10.jpg"
-                className="rounded-full"
-                loading="lazy"
-                width={120}
-                height={120}
-              />
-            </a>
+           
+
+            
           </div>
         </div>
       </div>
@@ -1930,7 +1695,7 @@ const  Home = () => {
   <footer className="rounded-xl border border-[--ui-light-border-color] dark:border-[--ui-dark-border-color]">
     <div className="max-w-6xl mx-auto space-y-16 px-6 py-16 text-gray-600 2xl:px-0">
       <div className="flex flex-wrap items-center justify-between gap-4 border-b pb-8 border-[--ui-light-border-color] dark:border-[--ui-dark-border-color]">
-        <a href="/" aria-label="tailus logo">
+        <a href="/" aria-label="">
           <svg
             className="text-gray-950 dark:text-white h-7"
             viewBox="0 0 298 84"
@@ -2015,7 +1780,7 @@ const  Home = () => {
             </svg>
           </a>
           <a
-            href="https://youtube.com/@tailus-ui"
+            href=""
             target="blank"
             aria-label="medium"
             className="size-8 flex *:m-auto rounded-[--btn-border-radius] text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-500"
