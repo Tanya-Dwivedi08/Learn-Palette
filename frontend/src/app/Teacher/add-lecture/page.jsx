@@ -99,7 +99,7 @@ const lecture = () => {
 
                   <form onSubmit={lectureForm.handleSubmit}>
                     <div className="mx-auto max-w-xs">
-
+<label htmlFor="">Subject</label>
                       {
                         lectureForm.touched.subject &&
                         <small className="text-red-500">{lectureForm.errors.subject}</small>
@@ -126,7 +126,7 @@ const lecture = () => {
                         value={lectureForm.values.lname}
 
                       /> */}
-
+<label htmlFor="">Description</label>
                       {
                         lectureForm.touched.description &&
                         <small className="text-red-500">{lectureForm.errors.description}</small>
@@ -141,7 +141,7 @@ const lecture = () => {
 
                       />
 
-                      
+<label htmlFor="">Topic</label>
                       {
                         lectureForm.touched.topic &&
                         <small className="text-red-500">{lectureForm.errors.topic}</small>
@@ -176,8 +176,10 @@ const lecture = () => {
                       </div>
                       
                       
-                      <button type="submit" className="mt-5 mb-5 tracking-wide font-semibold bg-green-400 text-white-500 w-full py-4 rounded-lg hover:bg-green-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
-                        <svg
+                    
+
+<button type="submit" className="mt-5 mb-5 tracking-wide font-semibold bg-pink-400 text-black-500 w-full py-4 rounded-lg hover:bg-purple -700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
+<svg
                           className="w-6 h-6 -ml-2"
                           fill="none"
                           stroke="currentColor"
@@ -189,8 +191,8 @@ const lecture = () => {
                           <circle cx="8.5" cy={7} r={4} />
                           <path d="M20 8v6M23 11h-6" />
                         </svg>
-                        <span className="ml-">Sign In</span>
-                      </button>
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600">Sign-In</span>
+                  </button>
 
                     </div>
                   </form>
