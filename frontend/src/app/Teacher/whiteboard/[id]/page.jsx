@@ -379,7 +379,7 @@ function Whiteboard() {
 
     return (
         <div className="bg-white">
-            <h1 className="text-4xl font-bold text-center">WhiteBoard</h1>
+            <h4 className="text-3xl font-bold text-center">WhiteBoard</h4>
             <button onClick={storeCanvas}>Save</button>
             <div className="grid grid-cols-12">
                 <div className="col-span-3">

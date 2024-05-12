@@ -1,79 +1,4 @@
-// 'use client'
-// import useTeacherContext from "@/app/context/TeacherContext";
-// import { Formik } from "formik";
-// import { useParams, useRouter } from "next/navigation";
-// import  { useEffect, useState } from "react";
-// import toast from "react-hot-toast";
 
-// const Updateclassroom = () => {
-  
-//   const { id } = useParams();
-//   const [currentTeacher, setCurrentTeacher] = useState(JSON.parse(sessionStorage.getItem('teacher')));
-//   const [classroomData, setclassroomData] = useState(null);
-//   const [selFile, setSelFile] = useState("");
-// const router = useRouter();
-
-
-//   const fetchclassroomData = async () => {
-//     const res = await fetch("http://localhost:5000/class/getbyid/" + id )
-//     const data = await res.json();
-
-//     console.log(data);
-//     setclassroomData(data);
-//   };
-
-//   useEffect(() => {
-//     fetchclassroomData();
-//   }, []);
-
-//   const submitForm = async (values) => {
-//     console.log(values);
-//     values.simage = selFile;
-//     const res = await fetch('http://localhost:5000/class/update/' + id, {
-//       method: 'PUT',
-//       body: JSON.stringify(values),
-//       headers: {
-//         'Content-Type': 'application/json',
-//               "x-auth-token": currentTeacher.token,
-          
-//       }
-//     });
-
-//     console.log(res.status);
-//     action.resetForm();
-//       if (res.status === 200) {
-//     toast("Updated successfully")
-//     res.json().then((data) => {
-//       console.log(data);
-//       sessionStorage.setItem("teacher", JSON.stringify(data));
-//       setTeacherLoggedIn(true);
-//       setCurrentTeacher(data);
-//    router.push('/Teacher/manage-classroom')
-//   });
-  
-       
-//       } else if (res.status === 401){
-//         toast.error("Something went wrong");
-//       }
-      
-//     }
-
-  
-//   const uploadFile = (e) => {
-//     const file = e.target.files[0];
-//     if (!file) return;
-//     setSelFile(file.name);
-//     const fd = new FormData();
-//     fd.append("myfile", file);
-//     fetch("http://localhost:5000/util/uploadfile", {
-//       method: "POST",
-//       body: fd,
-//     }).then((res) => {
-//       if (res.status === 200) {
-//         console.log("file uploaded");
-//       }
-//     });
-//   };
 
 'use client'
 import useTeacherContext from "@/app/context/TeacherContext";
@@ -118,7 +43,7 @@ const router = useRouter();
 
     if (res.status === 200) {
     toast("Updated successfully")
-   router.push('/Teacher/manage-classrom')
+   router.push('/Teacher/manage-classroom')
     }
   else if (res.status === 401){
         toast.error("Something went wrong");}

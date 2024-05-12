@@ -89,7 +89,6 @@ router.put('/update/:id', (req, res) => {
         });
 });
 
-// getall
 router.get('/getall', (req, res) => {
     Model.find()
         .then((result) => {
