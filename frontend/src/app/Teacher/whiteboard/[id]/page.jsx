@@ -378,40 +378,48 @@ function Whiteboard() {
     };
 
     return (
-        <div>
-            {/* <button onClick={storeCanvas}>Save</button> */}
-            <Swatch
-                toolType={toolType}
-                setToolType={setToolType}
-                width={width}
-                setWidth={setWidth}
-                setElements={setElements}
-                setColorWidth={setColorWidth}
-                setPath={setPath}
-                colorWidth={colorWidth}
-                setShapeWidth={setShapeWidth}
-            />
-            <canvas
-                ref={canvasRef}
-                id="canvas"
-                className="App"
-                width={window.innerWidth}
-                height={window.innerHeight}
-                onMouseDown={handleMouseDown}
-                onMouseMove={handleMouseMove}
-                onMouseUp={handleMouseUp}
-                onTouchStart={(e) => {
-                    var touch = e.touches[0];
-                    handleMouseDown({ clientX: touch.clientX, clientY: touch.clientY });
-                }}
-                onTouchMove={(e) => {
-                    var touch = e.touches[0];
-                    handleMouseMove({ clientX: touch.clientX, clientY: touch.clientY });
-                }}
-                onTouchEnd={handleMouseUp}
-            >
-                Canvas
-            </canvas>
+        <div className="bg-white">
+            <h1 className="text-4xl font-bold text-center">WhiteBoard</h1>
+            <button onClick={storeCanvas}>Save</button>
+            <div className="grid grid-cols-12">
+                <div className="col-span-3">
+
+                    <Swatch
+                        toolType={toolType}
+                        setToolType={setToolType}
+                        width={width}
+                        setWidth={setWidth}
+                        setElements={setElements}
+                        setColorWidth={setColorWidth}
+                        setPath={setPath}
+                        colorWidth={colorWidth}
+                        setShapeWidth={setShapeWidth}
+                    />
+                </div>
+                <div className="col-span-9">
+                    <canvas
+                        ref={canvasRef}
+                        id="canvas"
+                        className="App"
+                        width={window.innerWidth}
+                        height={window.innerHeight}
+                        onMouseDown={handleMouseDown}
+                        onMouseMove={handleMouseMove}
+                        onMouseUp={handleMouseUp}
+                        onTouchStart={(e) => {
+                            var touch = e.touches[0];
+                            handleMouseDown({ clientX: touch.clientX, clientY: touch.clientY });
+                        }}
+                        onTouchMove={(e) => {
+                            var touch = e.touches[0];
+                            handleMouseMove({ clientX: touch.clientX, clientY: touch.clientY });
+                        }}
+                        onTouchEnd={handleMouseUp}
+                    >
+                        Canvas
+                    </canvas>
+                </div>
+            </div>
         </div>
     );
 }
