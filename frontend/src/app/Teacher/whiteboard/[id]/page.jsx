@@ -158,8 +158,10 @@ function Whiteboard() {
         if (toolType === "selection") {
             const element = getElementAtPosition(clientX, clientY, elements);
             if (element) {
-                const offsetX = clientX - element.x1;
-                const offsetY = clientY - element.y1;
+                // const offsetX = clientX - element.x1;
+                // const offsetY = clientY - element.y1;
+                const offsetX = clientX;
+                const offsetY = clientY;
                 setSelectedElement({ ...element, offsetX, offsetY });
                 if (element.position === "inside") {
                     setAction("moving");
@@ -329,9 +331,9 @@ function Whiteboard() {
     }
 
     useEffect(() => {
-      fetchCanvas();
+        fetchCanvas();
     }, [])
-    
+
 
     const getCanvasDataURL = () => {
         const canvas = canvasRef.current;
@@ -354,7 +356,7 @@ function Whiteboard() {
         })
             .then((response) => {
                 console.log(response.status);
-                if(response.status === 200){
+                if (response.status === 200) {
                     toast.success('Canvas saved successfully');
                 }
                 return response.json();
@@ -377,7 +379,7 @@ function Whiteboard() {
 
     return (
         <div>
-            <button onClick={storeCanvas}>Save</button>
+            {/* <button onClick={storeCanvas}>Save</button> */}
             <Swatch
                 toolType={toolType}
                 setToolType={setToolType}
