@@ -92,7 +92,7 @@ const Viewlectures = () => {
                           
                               <img
                                 // src="https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg"
-                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdb3E3Xxt8ZGFyQENtAyUm7uSKMKGhjgd8_g&usqp=CAU"
+                                src="https://pbs.twimg.com/media/GFNBKzQWYAAvDBD?format=jpg&name=large"
                                 alt="image"
                                 classname="h-full w-full object-cover object-center"
                               />
