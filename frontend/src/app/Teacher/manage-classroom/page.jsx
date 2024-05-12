@@ -53,10 +53,9 @@ const Manageclassroom = () => {
                 >
                     {classroom.name}
                 </td>
-                
-                
+         
                 <td className="px-6 py-4">{classroom.description}</td>
-                <td className="px-6 py-4">{classroom.topic}</td>
+            
                 <td className="px-6 py-4">
                     <Link
                         href={`/Teacher/view-classroom/${classroom._id}`}
@@ -89,7 +88,19 @@ const Manageclassroom = () => {
     return (
 
         <div>
-
+ <div className="w-full mt-5 container  mx-auto">
+            <div className="w-full flex items-center justify-between">
+              <a
+                className=" text-center ml-80 flex items-center text-indigo-400 no-underline hover:no-underline font-bold text-4xl lg:text-6xl justify-center "
+                href="#"
+              >
+                {/* Learn */}
+                <span className="  bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-pink-500 to-purple-500  text-center">
+          Classroom
+                </span>
+              </a>
+            </div>
+          </div>
             <div className="relative overflow-x-auto shadow-md sm:rounded-lg p-4 lg:mx-2 md:mx-2">
                 <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 shadow max-w-L my-6 mt-6">
                     <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -97,9 +108,8 @@ const Manageclassroom = () => {
                             <th scope="col" className="px-6 py-3">
                                 Name
                             </th>
-                            <th scope="col" className="px-6 py-3">
-                                Subject
-                            </th>
+                            
+                
                             <th scope="col" className="px-6 py-3">
                                 Description
                             </th>
@@ -119,6 +129,7 @@ const Manageclassroom = () => {
                         {displayclassroom()}
                     </tbody>
                 </table>
+              
             </div>
 
         </div>

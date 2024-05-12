@@ -66,78 +66,107 @@ const router = useRouter();
       <div className="col-md-3 mx-auto pt-5">
         <div className="card">
           <div className="card-body">
-            <h3 className="text-center my-5">Update Service</h3>
+            <h3 className="text-center my-5"></h3>
             {LectureData !== null ? (
               <Formik initialValues={LectureData} onSubmit={submitForm}>
-
-                {(LectureData) => (
-
-                  <form onSubmit={LectureData.handleSubmit}>
-                    <label> Name</label>
-
-                    <span
-                      style={{ color: "red", fontSize: 10, marginLeft: 10 }}
-                    >
-                      {LectureData.errors.teacher}
-                    </span>
-                    <input
-                      id="teacher"
-                      onChange={LectureData.handleChange}
-                      value={LectureData.values.teacher}
-                      type="text"
-                      className="form-control mb-4"
-                    />
-
-                    <label>subject</label>
-                    <span
-                      style={{ color: "red", fontSize: 10, marginLeft: 10 }}
-                    >
-                      {LectureData.errors.subject}
-                    </span>
-                    <input
-                      id="subject"
-                      onChange={LectureData.handleChange}
-                      value={LectureData.values.subject}
-                      type="text"
-                      className="form-control mb-4"
-                    />
-                      <label>Description</label>
-                    <span
-                      style={{ color: "red", fontSize: 10, marginLeft: 10 }}
-                    >
-                      {LectureData.errors.description}
-                    </span>
-                    <input
-                      id="description"
-                      onChange={LectureData.handleChange}
-                      value={LectureData.values.description}
-                      type="text"
-                      className="form-control mb-4"
-                    />
-
-                    <label>createAT</label>
-                    <input
-                      id="createAT"
-                      onChange={LectureData.handleChange}
-                      value={LectureData.values.createAT}
-                      type="text"
-                      className="form-control mb-4"
-                    />
-
-                    <label>Thumbnail</label>
-                    <input
-                      type="file"
-                      id="pimage"
-                      className="form-control mb-4"
-                      placeholder="Thumbnail"
-                      onChange={uploadFile} />
-
-                    
-
-                    <button type="submit" className="btn btn-primary w-100">
-                      Submit
-                    </button>
-                  </form>
+                {(lectureData) => (
+                  <section className="bg-white dark:bg-gray-900">
+                  <div className="max-w-2xl px-4 py-8 mx-auto lg:py-16">
+                    <h2 className="mb-4 text-xl font-bold text-gray-900 dark:text-white">
+                      Update Services
+                    </h2>
+                    <form onSubmit={lectureData.handleSubmit}>
+                      <div className="grid gap-4 mb-4 sm:grid-cols-2 sm:gap-6 sm:mb-5">
+                        <div className="sm:col-span-2">
+                          <label
+                            htmlFor="subject"
+                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                          >
+                          subject
+                          </label>
+                          <input
+                            type="text"
+                            name="subject"
+                            id="subject"
+                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            value={lectureData.values.subject}
+                            onChange={lectureData.handleChange}
+                            placeholder="Type subject"
+                            required=""
+                          />
+                        </div>
+                        
+                        
+                        
+                        <div>
+                          <label
+                            htmlFor="Thumbnail"
+                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                          >
+                            Thumbnail
+                          </label>
+                          <input
+                            type="file"
+                            name="pimage"
+                            id="Thumbnail"
+                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            value={lectureData.values.Thumbnail}
+                            onChange={lectureData.handleChange}
+                            placeholder="Thumbnail"/>
+                             </div>
+                             <div className="w-full">
+                          <label
+                            htmlFor="Description"
+                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                          >
+                            Description
+                          </label>
+                          <input
+                            type="text"
+                            name="Description"
+                            id="Description"
+                            value={lectureData.values.Description}
+                            onChange={lectureData.handleChange}
+                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            
+                            placeholder=" Description"
+                            required=""
+                          />
+                        </div>
+                         </div>
+                         <div className="w-full">
+                          <label
+                            htmlFor="topic"
+                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                          >
+                           Topic
+                          </label>
+                          <input
+                            type="text"
+                            name="topic"
+                            id="topic"
+                            value={lectureData.values.topic}
+                            onChange={lectureData.handleChange}
+                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            
+                            placeholder="topic"
+                            required=""
+                          />
+                        </div>
+                         
+                      <div className="flex items-center space-x-4">
+                        <button
+                          type="submit"
+                          className="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                        >
+                          Update lecture
+                        </button>
+                     
+                      </div>
+                    </form>
+                  </div>
+                  </section>
+                
                 )}
               </Formik>
             ) : (
@@ -149,5 +178,5 @@ const router = useRouter();
     </div>
   );
 };
-
-export default UpdateLecture;
+  
+  export default UpdateLecture ;

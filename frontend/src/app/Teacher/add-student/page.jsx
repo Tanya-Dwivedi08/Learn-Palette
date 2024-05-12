@@ -100,10 +100,10 @@ const student = () => {
 
                   <form onSubmit={studentForm.handleSubmit}>
                     <div className="mx-auto max-w-xs">
-
+                    <label htmlFor="">First Name</label>
                       {
                         studentForm.touched.fname &&
-                        <small class="text-red-500">{studentForm.errors.name}</small>
+                        <small class="text-red-500">{studentForm.errors.fname}</small>
                       }
                       <input
                         className="w-full px-8 py-4 mb-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
@@ -114,8 +114,10 @@ const student = () => {
                         value={studentForm.values.fname}
 
                       />
+
+                      <label htmlFor="">Last Name</label>
                       {
-                        studentForm.touched.fname &&
+                        studentForm.touched.lname &&
                         <small class="text-red-500">{studentForm.errors.lname}</small>
                       }
                       <input
@@ -127,7 +129,7 @@ const student = () => {
                         value={studentForm.values.lname}
 
                       />
-
+<label htmlFor="">Email</label>
                       {
                         studentForm.touched.email &&
                         <small class="text-red-500">{studentForm.errors.email}</small>
@@ -141,6 +143,7 @@ const student = () => {
                         value={studentForm.values.email}
 
                       />
+                      <label htmlFor="">Password</label>
                       {
                         studentForm.touched.password &&
                         <small class="text-red-500">{studentForm.errors.password}</small>
@@ -154,6 +157,7 @@ const student = () => {
                         value={studentForm.values.password}
 
                       />
+                      <label htmlFor="">Confirm Password</label>
                       {
                         studentForm.touched.cpassword &&
                         <small class="text-red-500">{studentForm.errors.cpassword}</small>
@@ -167,21 +171,23 @@ const student = () => {
                         value={studentForm.values.cpassword}
 
                       />
-                      <button type="submit" className="mt-5 mb-5 tracking-wide font-semibold bg-green-400 text-white-500 w-full py-4 rounded-lg hover:bg-green-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
-                        <svg
-                          className="w-6 h-6 -ml-2"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth={2}
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-                          <circle cx="8.5" cy={7} r={4} />
-                          <path d="M20 8v6M23 11h-6" />
-                        </svg>
-                        <span className="ml-">Sign In</span>
-                      </button>
+                    
+
+                      <button type="submit" className="mt-5 mb-5 tracking-wide font-semibold bg-pink-400 text-black-500 w-full py-4 rounded-lg hover:bg-purple -700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
+                    <svg
+                      className="w-6 h-6 -ml-2"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={2}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                      <circle cx="8.5" cy={7} r={4} />
+                      <path d="M20 8v6M23 11h-6" />
+                    </svg>
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600">Sign-In </span>
+                  </button>
 
                     </div>
                   </form>

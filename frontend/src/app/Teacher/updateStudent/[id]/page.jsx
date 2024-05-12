@@ -1,21 +1,95 @@
-'use client';
-import{useStudentContext} from '@/app/context/StudentContext';
+// 'use client';
+// import{useStudentContext} from '@/app/context/StudentContext';
+// import { Formik } from "formik";
+// import { useParams, useRouter } from "next/navigation";
+// import  { useEffect, useState } from "react";
+// import toast from "react-hot-toast";
+
+// const UpdateStudent = () => {
+  
+//   const { id } = useParams();
+//   const [currentStudent, setCurrentStudent] = useState(JSON.parse(sessionStorage.getItem('Student')));
+//   const [StudentData, setStudentData] = useState(null);
+//   const [selFile, setSelFile] = useState("");
+// const router = useRouter();
+
+
+//   const fetchStudentData = async () => {
+//     const res = await fetch("http://localhost:5000/student/getbyid/" + id )
+//     const data = await res.json();
+
+//     console.log(data);
+//     setStudentData(data);
+//   };
+
+//   useEffect(() => {
+//     fetchStudentData();
+//   }, []);
+
+//   const submitForm = async (values) => {
+//     console.log(values);
+//     values.simage = selFile;
+//     const res = await fetch('http://localhost:5000/student/update/' + id, {
+//       method: 'PUT',
+//       body: JSON.stringify(values),
+//       headers: {
+//         'Content-Type': 'application/json',
+//               "x-auth-token": currentStudent.token,
+          
+//       }
+//     });
+
+//     console.log(res.status);
+//     action.resetForm();
+//       if (res.status === 200) {
+//     toast("Updated successfully")
+//     res.json().then((data) => {
+//       console.log(data);
+//       sessionStorage.setItem("Student", JSON.stringify(data));
+//       setStudentLoggedIn(true);
+//       setCurrentStudent(data);
+//    router.push('/student/manage-Student')
+//   });
+  
+       
+//       } else if (res.status === 401){
+//         toast.error("Something went wrong");
+//       }
+      
+//     }
+
+//   const uploadFile = (e) => {
+//     const file = e.target.files[0];
+//     if (!file) return;
+//     setSelFile(file.name);
+//     const fd = new FormData();
+//     fd.append("myfile", file);
+//     fetch("http://localhost:5000/util/uploadfile", {
+//       method: "POST",
+//       body: fd,
+//     }).then((res) => {
+//       if (res.status === 200) {
+//         console.log("file uploaded");
+//       }
+//     });
+//   };
+'use client'
+import usestudentContext from "@/app/context/studentContext";
 import { Formik } from "formik";
 import { useParams, useRouter } from "next/navigation";
 import  { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
-const UpdateStudent = () => {
-  
+const updatestudent = () => {
+  const [currentStudent, setCurrentStudent] = useState(JSON.parse(sessionStorage.getItem('student')));
   const { id } = useParams();
-  const [currentStudent, setCurrentStudent] = useState(JSON.parse(sessionStorage.getItem('Student')));
   const [StudentData, setStudentData] = useState(null);
   const [selFile, setSelFile] = useState("");
 const router = useRouter();
 
 
   const fetchStudentData = async () => {
-    const res = await fetch("http://localhost:5000/student/getbyid/" + id )
+    const res = await fetch("http://localhost:5000/student/getbyid/" + id);
     const data = await res.json();
 
     console.log(data);
@@ -34,29 +108,17 @@ const router = useRouter();
       body: JSON.stringify(values),
       headers: {
         'Content-Type': 'application/json',
-              "x-auth-token": currentStudent.token,
-          
+        "x-auth-token" : currentStudent.token
       }
     });
-
-    console.log(res.status);
-    action.resetForm();
-      if (res.status === 200) {
-    toast("Updated successfully")
-    res.json().then((data) => {
-      console.log(data);
-      sessionStorage.setItem("Student", JSON.stringify(data));
-      setStudentLoggedIn(true);
-      setCurrentStudent(data);
-   router.push('/Teacher/manage-Student')
-  });
   
-       
-      } else if (res.status === 401){
-        toast.error("Something went wrong");
-      }
-      
+    console.log(res.status);
+
+    if (res.status === 200) {
+    toast("Updated successfully")
+   router.push('/Teacher/manage-student')
     }
+  };
 
   const uploadFile = (e) => {
     const file = e.target.files[0];
@@ -93,69 +155,67 @@ const router = useRouter();
                       <div className="grid gap-4 mb-4 sm:grid-cols-2 sm:gap-6 sm:mb-5">
                         <div className="sm:col-span-2">
                           <label
-                            htmlFor="name"
+                            htmlFor="fname"
                             className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                           >
-                            Student Name
+                            F.Name
                           </label>
                           <input
                             type="text"
-                            name="name"
-                            id="name"
+                            name="fname"
+                            id="fname"
                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                             defaultValue="“"
-                            placeholder="Type Student name"
+                            placeholder="Type first name"
+                            required=""
+                          />
+                        </div>
+                        <div className="sm:col-span-2">
+                          <label
+                            htmlFor="lname"
+                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                          >
+                            L.Name
+                          </label>
+                          <input
+                            type="text"
+                            name="lname"
+                            id="lname"
+                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                            defaultValue="“"
+                            placeholder="Type last name"
                             required=""
                           />
                         </div>
                         <div className="w-full">
                           <label
-                            htmlFor="Subject"
+                            htmlFor="email"
                             className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                           >
-                            Subject
+                           email
                           </label>
                           <input
                             type="text"
-                            name="Subject"
-                            id="Subject"
+                            name="email"
+                            id="email"
                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                             defaultValue=""
-                            placeholder=" Subject"
+                            placeholder="email"
                             required=","
                           />
                         </div>
-                        
-                        
-                        <div>
-                          <label
-                            htmlFor="Thumbnail"
-                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                          >
-                            Thumbnail
-                          </label>
-                          <input
-                            type="file"
-                            name="pimage"
-                            id="Thumbnail"
-                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                            onChange={uploadFile}
-                            placeholder="Thumbnail"/>
-                            
-                         
-                        </div>
                         <div className="sm:col-span-2">
                           <label
-                            htmlFor="description"
+                            htmlFor="password"
                             className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                           >
-                            Description
+                            password
                           </label>
                           <textarea
-                            id="description"
+                            id="password"
                             rows={8}
                             className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                            placeholder="Write a Student description here..."
+                            placeholder="update password here..."
                             defaultValue={
                               ""
                             }
@@ -196,4 +256,4 @@ const router = useRouter();
   );
 };
 
-export default UpdateStudent;
+export default updatestudent;
