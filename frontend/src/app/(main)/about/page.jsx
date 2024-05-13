@@ -1,4 +1,5 @@
 'use client'
+import Link from 'next/link';
 import React from 'react'
 const About = () => {
   return (
@@ -51,24 +52,24 @@ const About = () => {
                   Why Choose Us
                 </span>
                 <h2 className="mb-5 text-3xl font-bold text-dark dark:text-black sm:text-[40px]/[48px]">
-                  Make your customers happy by giving services.
+                  Make your teaching and learning experience better and easier.
                 </h2>
-                <p className="mb-5 text-base text-body-color dark:text-dark-6">
-                  It is a long established fact that a reader will be distracted by
-                  the readable content of a page when looking at its layout. The point
-                  of using Lorem Ipsum is that it has a more-or-less.
+                <p className="mb-5 text-base dark:text-black sm:text-[15px]/[15px] ">
+                Welcome to Learn Palette, where learning and innovation collide. With an emphasis on whiteboard solutions, we are enthusiastic about utilizing cutting-edge technology to revolutionize the educational experience.
+
+At Learn Palette, we recognize how important it is for the classroom to shape children's minds. We are committed to developing technologies that improve teamwork, stimulate innovation, and motivate learning because of this. Our goal is to empower teachers and students by offering dynamic, adaptable, and intuitive whiteboard solutions that revolutionize teaching and learning.
+
+Our team, which possesses extensive experience in both education and technology, is motivated by a common goal of transforming conventional teaching techniques. We think every classroom should have the resources necessary to promote active engagement, faster dynamic relationships, and accommodate a variety of learning styles. 
                 </p>
-                <p className="mb-8 text-base text-body-color dark:text-dark-6">
-                  A domain name is one of the first steps to establishing your brand.
-                  Secure a consistent brand image with a domain name that matches your
-                  business.
+                <p className="mb-8 text-base text-body-color text-dark dark:text-black-6">
+                
                 </p>
-                <a
-                  href="javascript:void(0)"
+                <Link
+                  href="/"
                   className="inline-flex items-center justify-center py-3 text-base font-medium text-center text-white border border-transparent rounded-md px-7 bg-primary hover:bg-opacity-90"
                 >
                   Get Started
-                </a>
+                </Link>
               </div>
             </div>
           </div>
