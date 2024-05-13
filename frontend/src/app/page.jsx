@@ -68,12 +68,12 @@ const  Home = () => {
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                    href="/contact"
                     className="block md:px-4 transition hover:text-primary-600 dark:hover:text-primary-400"
                   >
                     <span>support</span>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -192,7 +192,7 @@ const  Home = () => {
         <div className="md:block hidden w-1/2 mx-auto ">
           <img
             className="rounded-m min-w-[400px] px-20 block mx-auto"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA9MPh9UE3X_T2EepIOzbA5mk-YSSXDjOYuL0_2lLo9Vq2xOyIKNj8NhIekfSa9uq7aaM&usqp=CAU"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdlSmkBpiI9YJNzEuODD37HBxczT5gTcssAw&usqp=CAU"
             alt="heh"
            
           />
