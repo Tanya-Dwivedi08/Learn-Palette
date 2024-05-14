@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "react-copy-to-clipboard": "^5.1.0",
+    "react-whiteboard": "^1.0.0",
+    "regenerator-runtime": "^0.14.1",
+    "roughjs": "^4.6.6",
+    "socket.io-client": "^4.7.5"
+  }
+}
