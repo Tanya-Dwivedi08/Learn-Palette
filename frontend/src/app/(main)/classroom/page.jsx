@@ -33,7 +33,7 @@ const classroom = () => {
                         />
                     </div>
                     <div className="text-center px-3 pb-6 pt-2">
-                        <h3 className="text-black text-sm bold font-sans">{classroom.name}</h3>
+                        <h3 className="text-white text-sm bold font-sans">{classroom.name}</h3>
                         <p className="mt-2 font-sans font-light text-grey-700">
                             {classroom.description}
                         </p>

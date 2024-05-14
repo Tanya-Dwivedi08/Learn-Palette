@@ -382,6 +382,7 @@ function Whiteboard() {
             img.src = dataUrl;
         }
     };
+    
 
     return (
         <div className="bg-white">

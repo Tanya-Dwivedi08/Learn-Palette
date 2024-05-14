@@ -1,6 +1,4 @@
-
 const { Schema, model, Types } = require('../connection');
-
 const mySchema = new Schema({
     teacher: { type: Types.ObjectId, ref: 'teacher' },
     classroom: { type: Types.ObjectId, ref: 'class' },

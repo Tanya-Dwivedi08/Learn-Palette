@@ -18,6 +18,7 @@ const Viewlectures = () => {
     }
   };
 
+
   useEffect(() => {
     fetchTeacherData();
   }, []);
