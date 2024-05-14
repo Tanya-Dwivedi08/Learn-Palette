@@ -25,8 +25,8 @@ const studentlogin = () => {
         headers: { "Content-Type": "application/json" },
       });
       console.log(res.status);
-      action.resetForm();
       if (res.status === 200) {
+        action.resetForm();
         toast.success("Student login successfully");
         res.json().then((data) => {
           console.log(data);
