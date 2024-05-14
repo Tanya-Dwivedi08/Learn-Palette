@@ -385,7 +385,7 @@ function Whiteboard() {
 
     return (
         <div className="bg-white">
-            <h1 className="text-4xl font-bold text-center">WhiteBoard</h1>
+            
             <button onClick={storeCanvas}>Save</button>
             <div className="grid grid-cols-12">
                 <div className="col-span-3">
@@ -427,6 +427,7 @@ function Whiteboard() {
                 </div>
             </div>
         </div>
+        
     );
 }
 

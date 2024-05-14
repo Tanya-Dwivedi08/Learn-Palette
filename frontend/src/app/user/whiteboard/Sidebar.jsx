@@ -20,7 +20,7 @@ const Sidebar = ({ users, user, socket }) => {
         Users
       </button>
       <div
-        className="position-fixed pt-2 h-100 bg-dark"
+        className="position- pt-2 h-100 bg-dark"
         ref={sideBarRef}
         style={{
           width: "150px",

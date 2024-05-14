@@ -7,12 +7,12 @@ const Managewhiteboard = () => {
     const [whiteboardList, setwhiteboardList] = useState([]);
     const [currentTeacher, setCurrentTeacher] = useState(JSON.parse(sessionStorage.getItem('teacher')));
     const fetchwhiteboardsData = () => {
-        fetch('http://localhost:5000/whiteboard/getall',{
+        fetch('http://localhost:5000/whiteboard/getall', {
             headers: {
                 "Content-Type": "application/json",
                 "x-auth-token": currentTeacher.token,
-              },
-            })
+            },
+        })
             .then((response) => {
                 return response.json();
             })
@@ -75,19 +75,19 @@ const Managewhiteboard = () => {
 
     return (
         <div>
-<div className="w-full mt-5 container  mx-auto">
-            <div className="w-full flex items-center justify-between">
-              <a
-                className=" text-center ml-80 flex items-center text-indigo-400 no-underline hover:no-underline font-bold text-4xl lg:text-6xl justify-center "
-                href="#"
-              >
-                {/* Learn */}
-                <span className="  bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-pink-500 to-purple-500  text-center">
-     Whiteboard
-                </span>
-              </a>
+            <div className="w-full mt-5 container  mx-auto">
+                <div className="w-full flex items-center justify-between">
+                    <a
+                        className=" text-center ml-80 flex items-center text-indigo-400 no-underline hover:no-underline font-bold text-4xl lg:text-6xl justify-center "
+                        href="#"
+                    >
+                        {/* Learn */}
+                        <span className="  bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-pink-500 to-purple-500  text-center">
+                            Whiteboard
+                        </span>
+                    </a>
+                </div>
             </div>
-          </div>
 
             <div className="relative overflow-x-auto shadow-md sm:rounded-lg p-8 lg:mx-2 md:mx-2">
                 <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">

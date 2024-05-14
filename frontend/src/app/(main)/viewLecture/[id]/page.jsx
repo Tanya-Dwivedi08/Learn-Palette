@@ -92,8 +92,8 @@ const Viewlectures = () => {
                           
                               <img
                                 // src="https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg"
-                                src="https://png.pngtree.com/png-vector/20220302/ourmid/pngtree-whiteboard-png-image_4474605.png"
-                                alt="Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant."
+                                src="https://pbs.twimg.com/media/GFNBKzQWYAAvDBD?format=jpg&name=large"
+                                alt="image"
                                 classname="h-full w-full object-cover object-center"
                               />
                             </div>

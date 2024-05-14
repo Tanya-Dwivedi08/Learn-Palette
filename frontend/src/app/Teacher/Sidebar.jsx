@@ -18,14 +18,14 @@ const Sidebar = () => {
 
       <aside
         id="default-sidebar"
-        className="fixed top-0 left-0 z-40 w-80 h-screen transition-transform -translate-x-full sm:translate-x-0"
+        className="f top-0 left-0 z-20 w-50 h-screen transition-transform -translate-x-full sm:translate-x-0"
         aria-label="Sidebar"
       >
         <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
           <ul className="space-y-2 font-medium">
 
 
-            <div className="flex justify-between   items-center space-x-3">
+            <div className="flex justify-between items-center space-x-2">
               <img src=" /logo project.jpg" className='h-16 w-16 ' alt="" />LEARN PALETTE
               {/* 
       <p className="text-2xl leading-6 text-black ">OvonRueden</p> */}
