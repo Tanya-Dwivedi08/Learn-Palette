@@ -220,27 +220,33 @@ function Whiteboard() {
     const handleMouseMove = (e) => {
         const canvas = document.getElementById("canvas");
         const context = canvas.getContext("2d");
+        
+        const rect = canvas.getBoundingClientRect(); // get the bounding rectangle of the canvas
         const { clientX, clientY } = e;
+        const x = clientX - rect.left; // adjust for the canvas's left offset
+        const y = clientY - rect.top; // adjust for the canvas's top offset
+        
+
         if (toolType === "selection") {
-            const element = getElementAtPosition(clientX, clientY, elements);
+            const element = getElementAtPosition(x, y, elements);
             e.target.style.cursor = element
                 ? cursorForPosition(element.position)
                 : "default";
         }
         if (action === "erasing") {
-            checkPresent(clientX, clientY);
+            checkPresent(x, y);
         }
         if (action === "sketching") {
             if (!isDrawing) return;
             const colour = points[points.length - 1].newColour;
             const linewidth = points[points.length - 1].newLinewidth;
             const transparency = points[points.length - 1].transparency;
-            const newEle = { clientX, clientY, colour, linewidth, transparency };
+            const newEle = { x, y, colour, linewidth, transparency };
 
             setPoints((state) => [...state, newEle]);
-            var midPoint = midPointBtw(clientX, clientY);
-            context.quadraticCurveTo(clientX, clientY, midPoint.x, midPoint.y);
-            context.lineTo(clientX, clientY);
+            var midPoint = midPointBtw(x, y);
+            context.quadraticCurveTo(x, y, midPoint.x, midPoint.y);
+            context.lineTo(x, y);
             context.stroke();
         } else if (action === "drawing") {
             const index = elements.length - 1;
@@ -251,8 +257,8 @@ function Whiteboard() {
                 index,
                 x1,
                 y1,
-                clientX,
-                clientY,
+                x,
+                y,
                 toolType,
                 shapeWidth,
                 colorWidth.hex
@@ -272,8 +278,8 @@ function Whiteboard() {
             } = selectedElement;
             const offsetWidth = x2 - x1;
             const offsetHeight = y2 - y1;
-            const newX = clientX - offsetX;
-            const newY = clientY - offsetY;
+            const newX = x - offsetX;
+            const newY = y - offsetY;
             updateElement(
                 id,
                 newX,
@@ -287,8 +293,8 @@ function Whiteboard() {
         } else if (action === "resize") {
             const { id, type, position, ...coordinates } = selectedElement;
             const { x1, y1, x2, y2 } = resizedCoordinates(
-                clientX,
-                clientY,
+                x,
+                y,
                 position,
                 coordinates
             );
