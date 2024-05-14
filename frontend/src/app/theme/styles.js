@@ -13,7 +13,7 @@ export const styles = reactCSS({
     },
     topicons: {
       border: "none",
-      width: `${window.innerWidth * 0.073}px`,
+      width: `${window.innerWidth * 0.05}px`,
       height: `${window.innerHeight * 0.09}px`,
       background: "none",
       borderRadius: "0.1%",
@@ -30,6 +30,7 @@ export const styles = reactCSS({
       outline: "none",
       filter: "blur(0.5px)",
       padding: "0.5%",
+      marginRight: "1%",
       marginTop:
         window.innerWidth <= 1024 //320
           ? `${window.innerHeight - window.innerHeight * 0.981}px`

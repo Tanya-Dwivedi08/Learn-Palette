@@ -27,6 +27,7 @@ export default function Swatch({
   setPath,
   colorWidth,
   setShapeWidth,
+  className
 }) {
   const [displayStroke, setDisplayStroke] = useState(false);
 
@@ -58,19 +59,17 @@ export default function Swatch({
     }
   };
   return (
-    <div>
+    <div className={className}>
       <div className="row">
         <div
           className="p-10 icon-bar"
           style={{
-            // position: "absolute",
+            position: "absolute",
             backgroundColor: "#f0f0f0",
-            height: `${window.innerHeight}px`,
-            width: `${window.innerWidth * 0.073 * 1.8}px`,
-            // left: "50px",
-            // top: `${
-            //   (window.innerHeight - window.innerHeight * 0.09 * 8) / 2
-            // }px`,
+            height: `${window.innerHeight * 0.8}px`,
+            width: `${window.innerWidth * 0.073}px`,
+            left: "50px",
+            top: `100px`,
             borderRadius: "10px",
           }}
         >
@@ -195,25 +194,26 @@ export default function Swatch({
 
         <div className="col-md-11">
           <div
-            className="row icon-vbar"
+            className="row icon-vbar px-5"
             style={{
               position: "absolute",
               backgroundColor: "#f0f0f0",
-              width:
-                window.innerWidth <= 1024
-                  ? `${window.innerWidth * 0.073 * 5.6}px`
-                  : `${window.innerWidth * 0.073 * 4.79}px`,
+              width: "50%",
               height: `${window.innerHeight * 0.1}px`,
-              right: `${
-                (window.innerWidth - window.innerWidth * 0.073 * 4.8) / 20
-              }px`,
-              top: "0px",
+              right: `50px`,
+              top: "10px",
               borderRadius: "10px",
             }}
           >
+            
+            <button
+              style={styles.picker}
+              onClick={handleClickStroke}
+            ></button>
             <button
               style={styles.topicons}
               data-toggle="tooltip"
+              className="px-5"
               data-placement="top"
               title="Clear"
               onClick={() => {
@@ -234,12 +234,6 @@ export default function Swatch({
                 <Download />
               </a>
             </button>
-            <div>
-              <button
-                style={styles.picker}
-                onClick={handleClickStroke}
-              ></button>
-            </div>
             <button
               style={styles.topicons}
               onClick={increaseWidth}

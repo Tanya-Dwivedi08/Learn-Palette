@@ -376,19 +376,23 @@ function Whiteboard() {
     };
 
     return (
-        <div className="bg-white">
-            <button onClick={storeCanvas}
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-            >Save Whiteboard</button>
-            <div className="grid grid-cols-12">
+        <div className="bg-slate-200 absolute w-full h-screen top-0 left-0 p-5">
+            <div className="flex gap-5">
 
-                <div className="col-span-9">
+                <button onClick={storeCanvas}
+                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                >Back</button>
+                <button onClick={storeCanvas}
+                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                >Save Whiteboard</button>
+            </div>
                     <canvas
+                    className="bg-white m-5 shadow-lg rounded-lg"
                         ref={canvasRef}
                         id="canvas"
-                        className="App"
-                        width={window.innerWidth}
-                        height={window.innerHeight}
+                        
+                        width={window.innerWidth-100}
+                        height={window.innerHeight * 0.9}
                         onMouseDown={handleMouseDown}
                         onMouseMove={handleMouseMove}
                         onMouseUp={handleMouseUp}
@@ -404,8 +408,6 @@ function Whiteboard() {
                     >
                         Canvas
                     </canvas>
-                </div>
-                <div className="col-span-3">
                     <Swatch
                         toolType={toolType}
                         setToolType={setToolType}
@@ -417,8 +419,6 @@ function Whiteboard() {
                         colorWidth={colorWidth}
                         setShapeWidth={setShapeWidth}
                     />
-                </div>
-            </div>
 
         </div>
     );
